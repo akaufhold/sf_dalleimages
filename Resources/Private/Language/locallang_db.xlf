@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:sf_seolighthouse/Resources/Private/Language/locallang_db" date="2021-03-21T21:33:18Z" product-name="sf_seolighthouse">
+		<header/>
+		<body>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics" resname="tx_sfseolighthouse_domain_model_lighthousestatistics">
+				<source>Lighthouse Statistics</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.target" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.target">
+				<source>Target Url</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.acs" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.acs">
+				<source>Accessibility</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.bps" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.bps">
+				<source>Best-Practice</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.pes" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.pes">
+				<source>Performance</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.pwa" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.pwa">
+				<source>Progressive Web App</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.seos" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.seos">
+				<source>SEO</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.fcp" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.fcp">
+				<source>First Contentful Paint</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.si" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.si">
+				<source>Speed Index</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.lcp" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.lcp">
+				<source>Largest Contentful Paint</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.tti" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.tti">
+				<source>Time To Interactive</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.tbt" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.tbt">
+				<source>Total Blocking Time</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.cls" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.cls">
+				<source>Cumulative Layout Shift</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.fcps" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.fcp">
+				<source>Score First Contentful Paint</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.sis" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.si">
+				<source>Score Speed Index</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.lcps" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.lcp">
+				<source>Score Largest Contentful Paint</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.ttis" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.tti">
+				<source>Score Time To Interactive</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.tbts" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.tbt">
+				<source>Score Total Blocking Time</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.clss" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.cls">
+				<source>Score Cumulative Layout Shift</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.device" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.device">
+				<source>Device</source>
+			</trans-unit>
+			<trans-unit id="tx_sfseolighthouse_domain_model_lighthousestatistics.audit" resname="tx_sfseolighthouse_domain_model_lighthousestatistics.audit" xml:space="preserve">
+				<source>Lighthouse-Test Result</source>
+			</trans-unit>
+			<trans-unit id="tx_sf_seolighthouse_showlighthouse.listHeader" resname="tx_sf_seolighthouse_showlighthouse.listHeader">
+				<source>Listing Lighthouse Data</source>
+			</trans-unit>
+			<trans-unit id="tx_sf_seolighthouse_showlighthouse.url" resname="tx_sf_seolighthouse_showlighthouse.url">
+				<source>Lighthouse Target Url</source>
+			</trans-unit>
+			<trans-unit id="tx_sf_seolighthouse_showlighthouse.url" resname="tx_sf_seolighthouse_showlighthouse.url">
+				<source>Lighthouse Target Url</source>
+			</trans-unit>
+			<trans-unit id="tx_sf_seolighthouse_showlighthouse.description" resname="tx_sf_seolighthouse_showlighthouse.name">
+				<source>lighthouse</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

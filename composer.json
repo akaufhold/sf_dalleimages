@@ -1,0 +1,35 @@
+{
+    "name": "stackfactory/sf-seolighthouse",
+    "type": "typo3-cms-extension",
+    "description": "Shows Lighthouse Score in Frontend, Backend and TYPO3 Console",
+    "version": "1.0.0",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS, lighthouse, seo, pagespeed"],
+    "authors": [
+        {
+            "name": "Andreas Kauhold",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4 || ^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stackfactory\\SfSeolighthouse\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Stackfactory\\SfSeolighthouse\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "typo3-ter/sf-seolighthouse": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "sf_seolighthouse"
+        }
+    }
+}

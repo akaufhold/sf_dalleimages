@@ -1,0 +1,708 @@
+$progressColor:#003ea1;
+$snippetColor: #003ea1;
+$progressBackColor:#ccc;
+$borderColor:#ddd;
+
+$successColor:#28a745;
+$averageColor:#ffa400;
+$errorColor:#d8000c;
+
+$successColor_50:rgba(40, 167, 69, .5);
+$averageColor_50:rgba(255, 164, 0, .5);
+$errorColor_50:rgba(216, 0, 12, .5);
+
+$headerBackground:#d7dfe7;
+
+$highlightColor:#ebf3fb;
+$highlightBorderColor:#bdc5cd;
+
+$iconSize:16px;
+$borderColor:#aaa;
+$background-color-bs: #0078e6;
+
+$whiteColor: #fff;
+
+$fontSnippet: 'Roboto Mono', 'Menlo', 'dejavu sans mono', 'Consolas', 'Lucida Console', monospace;
+
+@keyframes runProgressBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+h5 {
+  font-weight: bold;
+}
+
+#typo3-inner-docbody {
+  padding: 0;
+}
+
+.custom-control {
+  margin-top: .5em;
+}
+
+.panel-heading {
+  > h1 {
+    margin: 0;
+  }
+
+  > h2 {
+    margin: 6px 0 6px;
+  }
+}
+
+/* LIGHTHOUSE PRESELECT */
+.tx_sfseolighthouse {
+  .topMarg {
+    margin-top: 1em;
+  }
+
+  .targetUrl {
+    padding: .5em 1.25em;
+  }
+
+  .categoriesCheck > * {
+    display: flex;
+  }
+
+  .custom-control {
+    padding-left: 5px;
+    padding-top: 0;
+    position: relative;
+
+    &.custom-radio {
+      min-height: 3em;
+    }
+
+    &.form-check {
+      min-height: 3.1em;
+      width: 100%;
+
+      input {
+        &.form-check-input {
+          margin-left: 0;
+        }
+      }
+
+      label {
+        margin: 0;
+        position: absolute;
+
+        &.form-check-label {
+          justify-content: center;
+          padding: 6px 6px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    label {
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+  }
+
+  .formAppend {
+    display: none;
+  }
+
+  .progressBar {
+    * {
+      line-height: .3;
+    }
+
+    .counterContainer {
+      background: $progressBackColor;
+      border-radius: .3em;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      padding: 0 .25em;
+      position: relative;
+      width: 100%;
+
+      .counterTitle {
+        display: inline-block;
+        height: .75em;
+        min-width: 10em;
+        position: relative;
+        z-index: 10;
+
+        > * {
+          display: inline-block;
+          font-size: .6em;
+          font-weight: bold;
+          height: 100%;
+          line-height: 1em;
+          text-transform: uppercase;
+        }
+      }
+
+      .counterAmount {
+        background: $progressColor;
+        left: 0;
+        min-height: .8em;
+        min-height: 100%;
+        position: absolute;
+        top: 0;
+        width: 0%;
+
+        .totalTime {
+          display: inline-block;
+        }
+      }
+
+      .progressMessage,
+      .errorMessage,
+      .successMessage {
+        display: none;
+      }
+
+      &.progress {
+        height: auto;
+        margin: 0;
+
+        .counterAmount {
+          animation: runProgressBar 18s linear 2s 1 forwards;
+          width: 0%;
+        }
+
+        .counterTitle {
+          >* {
+            display: none;
+          }
+
+          .progressMessage {
+            color: white;
+            display: inline-block;
+          }
+        }
+      }
+
+      &.done {
+        .counterTitle {
+          >* {
+            display: none;
+          }
+
+          .successMessage {
+            display: inline-block;
+          }
+        }
+      }
+
+      &.error {
+        .counterAmount {
+          background: $errorColor;
+          transition-duration: .5s;
+          width: 100%;
+        }
+
+        .counterTitle {
+          >* {
+            display: none;
+          }
+
+          .errorMessage {
+            color: white;
+            display: inline-block;
+          }
+        }
+      }
+
+      &.success {
+        .counterAmount {
+          background: $successColor;
+          transition-duration: .5s !important;
+          width: 100% !important;
+        }
+
+        .counterTitle {
+          >* {
+            display: none;
+          }
+
+          .totalTime,
+          .successMessage {
+            color: white;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  &.table {
+    position: relative;
+
+    tr {
+      > td,
+      > th {
+        &.result,
+        &.delete {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /* LIGHTHOUSE RESULT OUTPUT */
+  form.newLighthouseStatistics {
+    display: none;
+
+    &.container-fluid {
+      padding: 0;
+    }
+
+    .mainAuditCharts,
+    .additionalAudits {
+      display: none;
+    }
+
+    .performance {
+      display: none;
+      position: relative;
+    }
+
+    .performanceButtons {
+      margin-top: 1em;
+
+      a.btn {
+        &:first-child {
+          margin-right: 1em;
+        }
+      }
+    }
+
+    .performanceHeadline,
+    .performanceListHeader,
+    .performanceAuditCharts {
+      display: none;
+    }
+
+    .performanceMenu {
+      position: absolute;
+      right: 1.5em;
+      top: 1.8em;
+
+      a {
+        display: inline-block;
+      }
+
+      .icon {
+        border: 1px solid $borderColor;
+        padding: 1em;
+
+        .icon-markup {
+          padding: .25em;
+        }
+      }
+    }
+
+    .audits {
+      .btn {
+        margin-top: 0;
+      }
+    }
+
+    .auditButtons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: .5em;
+
+      > * {
+        flex: 49% 0 1;
+      }
+
+      .saveCharts {
+        background: $successColor;
+        color: $whiteColor;
+        display: none;
+      }
+    }
+
+    .list-lighthouse {
+      &.label {
+        background: $background-color-bs;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 1em;
+        justify-content: space-between;
+        line-height: 1.25;
+        margin: 1em 0 0;
+        min-height: 3em;
+        padding: 1em 1em;
+        text-align: left;
+        width: 100%;
+
+        &.collapsed {
+          .icon {
+            transform: rotateZ(0deg);
+          }
+        }
+
+        .icon {
+          align-self: flex-end;
+          transform: rotateZ(180deg);
+        }
+      }
+      margin-bottom: 1em;
+
+      &.list-header {
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-top: 0;
+
+        li {
+          border: 0;
+          border-bottom: 0 solid $borderColor;
+
+          > span {
+            color: #000;
+            text-transform: unset;
+          }
+        }
+      }
+
+      &.list-score,
+      &.list-lighthouse-performance {
+        margin: 0;
+      }
+
+      li {
+        cursor: pointer;
+        height: 3.3em;
+        padding: 0;
+
+        &.notApplicable {
+          display: none;
+        }
+
+        &:hover {
+          background-color: $highlightColor;
+          position: relative;
+          transform: scale(1.01);
+          transition-duration: .25s;
+          z-index: 2;
+
+          .label {
+            .icon-actions-chevron-down {
+              display: inline-block;
+            }
+          }
+        }
+
+        > span {
+          color: #222;
+          font-size: .9em;
+
+          table {
+            overflow-x: auto;
+            margin-top: .75rem;
+
+            tr {
+              th,
+              td {
+                text-transform: none;
+                font-size: 11px;
+
+                &:last-child:not(:first-child) {
+                  text-align: right;
+                }
+
+                .lh-node__snippet {
+                  font-family: $fontSnippet;
+                  color: $snippetColor;
+                }
+              }
+
+              &.row-sub {
+                td {
+                  padding-left: 1rem;
+                }
+              }
+            }
+          }
+
+          .icon-size-small {
+            height: 12px;
+            line-height: 12px;
+            width: 12px;
+          }
+        }
+
+        .label {
+          display: inline-block;
+          padding: 1.2em 1em 1.2em;
+          text-transform: uppercase;
+
+          .icon-actions-chevron-down {
+            display: none;
+            padding-right: 1em;
+          }
+        }
+
+        .value {
+          display: block;
+          font-weight: 700;
+          height: 100%;
+          padding: 1em 0;
+          padding-right: 1em;
+          position: absolute;
+          right: 5em;
+          text-align: center;
+          text-transform: lowercase;
+          top: 0;
+        }
+
+        .score {
+          color: white;
+          display: block;
+          font-weight: 700;
+          height: 100%;
+          padding: 1em 0;
+          position: absolute;
+          right: 0;
+          text-align: center;
+          top: 0;
+          width: 5em;
+
+          &.slow {
+            background-color: $errorColor;
+          }
+
+          &.average {
+            background-color: $averageColor;
+          }
+
+          &.fast {
+            background-color: $successColor;
+          }
+
+          &.icon {
+            background-color: #eee;
+
+            > span {
+              &::before {
+                content: '';
+                border-left: calc($iconSize/ 2) solid transparent;
+                border-right: calc($iconSize / 2) solid transparent;
+                border-bottom: $iconSize solid $errorColor;
+                display: block;
+                font-size: 16px;
+                height: $iconSize;
+                margin: 0 1.15rem 0;
+                padding: 0;
+                width: $iconSize;
+              }
+
+              &::after {
+                content: "i";
+                display: inline-block;
+                position: absolute;
+                top: 11px;
+                width: 99%;
+                z-index: 1000;
+                left: 0;
+                font-size: 11px;
+                text-transform: lowercase;
+              }
+            }
+          }
+        }
+
+        .description {
+          display: block;
+          height: 0;
+          overflow: hidden;
+          padding: 0 6% 0 1em;
+          width: 100%;
+
+          > b {
+            display: block;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            width: 100%;
+          }
+
+          > .more-link {
+            display: block;
+            font-size: 12px;
+            margin-top: 8px;
+            color: $whiteColor;
+            text-decoration: none;
+            max-width: 150px;
+
+            &-text {
+              padding-left: 5px;
+              color: $progressColor;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        &.active {
+          background-color: $highlightColor;
+          border-color: $highlightBorderColor;
+          height: auto;
+          transform: scaleX(1.01);
+
+          .label {
+            .icon-actions-chevron-down {
+              display: inline-block;
+            }
+          }
+
+          .description {
+            height: 100%;
+            padding-bottom: 1em;
+          }
+        }
+
+        &.list-additional-header {
+          background: $headerBackground;
+
+          >.label {
+            color: #000;
+          }
+        }
+      }
+
+      &.list-additional {
+        li {
+          .value {
+            max-width: 75%;
+          }
+        }
+      }
+    }
+
+    .list-screenshots {
+      &.collapse {
+        &.in {
+          display: flex;
+        }
+      }
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: row;
+
+      li {
+        flex-basis: 20%;
+        list-style: none;
+        text-align: center;
+
+        &.list-group-item {
+          border-right: $borderColor;
+
+          &:first-child {
+            border-left: $borderColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.getLighthouseData {
+  margin-top: .5em;
+}
+
+/* CHARTS TAB */
+
+.lighthouseCharts {
+  /* min-height: 20em;
+  padding-top: 0; */
+
+  &#performanceAuditsChart {
+    min-height: 20em;
+  }
+}
+
+.overallCharts {
+  padding-top: 3em;
+
+  > div {
+    display: flex;
+    max-height: 100%;
+    padding: 0;
+
+    /* .lighthouseCharts {
+      display: none;
+      max-height: auto;
+      padding-top: 0;
+      width: 20%;
+    } */
+  }
+}
+
+.outputControl {
+  margin: 0;
+  padding: 0;
+
+  .custom-control {
+    position: relative;
+
+    &.custom-radio {
+      min-height: 3em;
+    }
+
+    label {
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+  }
+}
+
+.recordlist {
+  overflow-x: scroll;
+  margin-top: 2em;
+
+  table.table {
+    tr {
+      display: none;
+
+      &.active {
+        display: table-row;
+      }
+
+      td,
+      th {
+        width: auto;
+
+        &.date {
+          width: 160px;
+        }
+
+        &.device,
+        &.result,
+        &.delete {
+          width: 60px;
+        }
+
+        &.fast {
+          background-color: $successColor_50;
+        }
+
+        &.average {
+          background-color: $averageColor_50;
+        }
+
+        &.slow {
+          background-color: $errorColor_50;
+        }
+      }
+    }
+  }
+}
+
+.container-control .row > div {
+  padding: 0;
+  padding-right: .75em;
+}
