@@ -37,9 +37,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
 
-  .addEntry('request', './Assets/Scripts/request.js')
-  .addEntry('list', './Assets/Scripts/list.js')
-  .addEntry('charts', './Assets/Scripts/charts.js')
+  .addEntry('request', './Assets/Scripts/ajax.js')
 
   .splitEntryChunks()
 
@@ -308,7 +306,7 @@ Encore.copyFiles({
 
 if (Encore.isProduction()) {
   Encore.addPlugin(
-    new OptimizeCSSAssetsPlugin({
+    new OptimizeCSSAssetsPlugin({kkk
       assetNameRegExp: /\.(c|s[ac])ss$/,
       cssProcessorPluginOptions: {
         preset: [

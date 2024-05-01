@@ -20,15 +20,10 @@
   "dependencies": {
     "add": "^2.0.6",
     "bootstrap": "^5.1.1",
-    "chart.js": "3.0.2",
-    "circular-dependency-plugin": "^5.2.2",
-    "datatables": "^1.10.18",
-    "datatables.net-bs4": "^3.2.2",
     "moment": "2.29.1",
     "normalize-css": "^2.3.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "purgecss-webpack-plugin": "^4.0.3",
-    "roughjs": "4.3.1",
     "stylelint-semantic-groups": "^1.1.2"
   },
   "devDependencies": {
@@ -38,7 +33,6 @@
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.1.1",
     "browserslist": "^4.16.8",
-    "caniuse-lite": "^1.0.30001252",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^10.2.4",
     "core-js": "3",
@@ -56,7 +50,7 @@
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
     "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^9.0.0",
     "normalize-css": "^2.3.1",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
@@ -77,6 +71,7 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^3.20.1",
+    "tapable": "^2.2.1",
     "terser-webpack-plugin": "^5.1.3"
   }
 }
