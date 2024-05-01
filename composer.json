@@ -1,10 +1,10 @@
 {
-    "name": "stackfactory/sf-seolighthouse",
+    "name": "stackfactory/sf-dalleimages",
     "type": "typo3-cms-extension",
-    "description": "Shows Lighthouse Score in Frontend, Backend and TYPO3 Console",
+    "description": "Shows text prompt for generating images with dalle ai in realtime",
     "version": "1.0.0",
     "license": ["GPL-2.0+"],
-    "keywords": ["TYPO3 CMS, lighthouse, seo, pagespeed"],
+    "keywords": ["TYPO3 CMS, dalle, generated images, ai images"],
     "authors": [
         {
             "name": "Andreas Kauhold",
@@ -16,20 +16,20 @@
     },
     "autoload": {
         "psr-4": {
-            "Stackfactory\\SfSeolighthouse\\": "Classes"
+            "Stackfactory\\SfDalleimages\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Stackfactory\\SfSeolighthouse\\Tests\\": "Tests"
+            "Stackfactory\\SfDalleimages\\Tests\\": "Tests"
         }
     },
     "replace": {
-        "typo3-ter/sf-seolighthouse": "self.version"
+        "typo3-ter/sf-dalleimages": "self.version"
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "sf_seolighthouse"
+            "extension-key": "sf_dalleimages"
         }
     }
 }

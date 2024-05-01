@@ -1,42 +1,8 @@
 <?php
 defined('TYPO3_MODE') || die();
 
-call_user_func(
-    function()
-    {
+call_user_func(function(){
 
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'SfSeolighthouse',
-            'Showlighthouse',
-            [
-                \Stackfactory\SfSeolighthouse\Controller\LighthouseStatisticsController::class => 'analyse, list, show, new, create, delete',
-                \Stackfactory\SfSeolighthouse\Controller\ChartsController::class => 'charts'
-            ],
-            // non-cacheable actions
-            [
-                \Stackfactory\SfSeolighthouse\Controller\LighthouseStatisticsController::class => 'create, delete'
-            ]
-        );
-
-        // wizards
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            'mod {
-                wizards.newContentElement.wizardItems.plugins {
-                    elements {
-                        showlighthouse {
-                            iconIdentifier = sf_seolighthouse-plugin-showlighthouse
-                            title = LLL:EXT:sf_seolighthouse/Resources/Private/Language/locallang_db.xlf:tx_sf_seolighthouse_showlighthouse.name
-                            description = LLL:EXT:sf_seolighthouse/Resources/Private/Language/locallang_db.xlf:tx_sf_seolighthouse_showlighthouse.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = sfseolighthouse_showlighthouse
-                            }
-                        }
-                    }
-                    show = *
-                }
-           }'
-        );
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 		
 			$iconRegistry->registerIcon(
@@ -45,5 +11,14 @@ call_user_func(
 				['source' => 'EXT:sf_seolighthouse/Resources/Public/Icons/user_plugin_showlighthouse.svg']
 			);
 		
-    }
-);
+			$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1610674549] = [
+				'nodeName' => 'sendToDalleButton',
+				'priority' => 40,
+				'class' => Stackfactory\SfDalleimages\Tca\SendToDalleButton::class,
+			];
+
+			$GLOBALS['TYPO3_CONF_VARS']['BE']['AJAX']['sf_dalleimage::handleFormSubmission'] = [
+				'callbackMethod' => \Stackfactory\SfDalleimages\Controller\AjaxController::class . '->formSubmitAction',
+				'csrfTokenCheck' => false,
+		];
+});

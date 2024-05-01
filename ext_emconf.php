@@ -11,8 +11,8 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'SEO Lighthouse Score',
-    'description' => 'Shows Lighthouse Score & Charts in Backend',
+    'title' => 'Dalle Image Generator',
+    'description' => 'Shows text prompt for generating images with dalle ai in realtime',
     'category' => 'misc',
     'author' => 'Andreas Kauhold',
     'author_email' => 'info@stackfactory.de',
@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-10.4.99',
+            'typo3' => '10.4.0-12.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
