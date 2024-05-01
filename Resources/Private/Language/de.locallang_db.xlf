@@ -4,10 +4,10 @@
 		<header/>
 		<body>
 			<trans-unit id="tt_content.dalleimage.prompt">
-				<source>Text prompt for dalle image generation</source>
+				<target>Texteingabe für Bildgenerierung mit Dalle</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.file">
-				<source>Dalle generated image</source>
+				<target>Dalle generated image</target>
 			</trans-unit>
 		</body>
 	</file>
