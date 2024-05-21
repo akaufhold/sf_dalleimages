@@ -19,11 +19,6 @@
             "Stackfactory\\SfDalleimages\\": "Classes"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Stackfactory\\SfDalleimages\\Tests\\": "Tests"
-        }
-    },
     "replace": {
         "typo3-ter/sf-dalleimages": "self.version"
     },

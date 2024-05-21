@@ -1,22 +1,11 @@
-plugin.tx_sfseolighthouse_showlighthouse {
+plugin.sf_dalleimages {
     view {
-        templateRootPaths.0 = EXT:sf_seolighthouse/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_sfseolighthouse_showlighthouse.view.templateRootPath}
-        partialRootPaths.0 = EXT:sf_seolighthouse/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_sfseolighthouse_showlighthouse.view.partialRootPath}
-        layoutRootPaths.0 = EXT:sf_seolighthouse/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_sfseolighthouse_showlighthouse.view.layoutRootPath}
-    }
-    persistence {
-        storagePid = {$plugin.tx_sfseolighthouse_showlighthouse.persistence.storagePid}
-        #recursive = 1
-        classes {
-            tx_sfseolighthouse_domain_model_lighthousestatistics {
-                mapping {
-                    columns.crdate.mapOnProperty = crdate
-                }
-            }
-        }
+        templateRootPaths.0 = EXT:sf_dalleimages/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.sf_dalleimages.view.templateRootPath}
+        partialRootPaths.0 = EXT:sf_dalleimages/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.sf_dalleimages.view.partialRootPath}
+        layoutRootPaths.0 = EXT:sf_dalleimages/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.sf_dalleimages.view.layoutRootPath}
     }
 
     features {
@@ -26,76 +15,4 @@ plugin.tx_sfseolighthouse_showlighthouse {
         # Should be on by default, but can be disabled if all action in the plugin are uncached
         requireCHashArgumentForActionArguments = 1
     }
-    mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
-    }
-    ajax{
-        getLighthouseData = 123
-    }
 }
-# these classes are only used in auto-generated templates
-plugin.tx_sfseolighthouse._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    .tx-sf-seolighthouse table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
-
-    .tx-sf-seolighthouse table th {
-        font-weight:bold;
-    }
-
-    .tx-sf-seolighthouse table td {
-        vertical-align:top;
-    }
-
-    .typo3-messages .message-error {
-        color:red;
-    }
-
-    .typo3-messages .message-ok {
-        color:green;
-    }
-)
-
-# Module configuration
-module.tx_sfseolighthouse {
-    persistence {
-        storagePid  = {$module.tx_sfseolighthouse_lighthouse.persistence.storagePid}
-        url         = {$module.tx_sfseolighthouse_lighthouse.persistence.url}
-    }
-    view {
-        templateRootPaths.0 = EXT:sf_seolighthouse/Resources/Private/Backend/Templates/
-        templateRootPaths.1 = {$module.tx_sfseolighthouse_lighthouse.view.templateRootPath}
-        partialRootPaths.0 = EXT:sf_seolighthouse/Resources/Private/Backend/Partials/
-        partialRootPaths.1 = {$module.tx_sfseolighthouse_lighthouse.view.partialRootPath}
-        layoutRootPaths.0 = EXT:sf_seolighthouse/Resources/Private/Backend/Layouts/
-        layoutRootPaths.1 = {$module.tx_sfseolighthouse_lighthouse.view.layoutRootPath}
-    }
-}
-
-# ajax action plugin one
-ajax_tx_sfseolighthouse_getLighthouseData = PAGE
-ajax_tx_sfseolighthouse_getLighthouseData {
-   typeNum < plugin.tx_sfseolighthouse_showlighthouse.settings.ajax.getLighthouseData
-  
-   config {
-      disableAllHeaderCode = 1
-      additionalHeaders = Content-type:text/html
-      xhtml_cleaning = 0
-      admPanel = 0
-      debug = 1
-      no_cache = 1
-   }
-}
-
-config.no_cache = 1

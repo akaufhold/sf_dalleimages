@@ -1,8 +1,8 @@
 /* global
     require, module
 */
-const _StyleLintPlugin = require("stylelint-bare-webpack-plugin");
-const StyleLintPlugin = new _StyleLintPlugin({
+const StylelintBarePlugin = require("stylelint-bare-webpack-plugin");
+const StyleLintPlugin = new StylelintBarePlugin({
   configFile: "stylelint.config.js",
   failOnError: true,
   emitErrors: true,
