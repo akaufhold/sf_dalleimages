@@ -1,10 +1,10 @@
 <?php
 
-use Stackfactory\SfDalleimages\Controller\AjaxController;
+use Stackfactory\SfDalleimages\Utility\DalleUtility;
 
 return [
     'sf_dalleimages_getDalleImage' => [
-        'path' => '/sf_dalleimages/Ajax/getDalleImage/',
-        'target' => AjaxController::class . '::getDalleImageAction',
+        'path' => '/sf_dalleimages/getDalleImage/',
+        'target' => DalleUtility::class . '::processDalleImage',
     ],
 ];
