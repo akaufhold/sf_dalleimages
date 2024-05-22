@@ -7,6 +7,6 @@ services:
   Stackfactory\SfDalleimages\:
     resource: '../Classes/*'
 
-  Stackfactory\SfDalleimages\Utility\DalleUtility:
+  Stackfactory\SfDalleimages\Services\ImageService:
     public: true
     

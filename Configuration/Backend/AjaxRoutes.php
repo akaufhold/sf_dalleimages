@@ -1,10 +1,10 @@
 <?php
 
-use Stackfactory\SfDalleimages\Utility\DalleUtility;
+use Stackfactory\SfDalleimages\Services\ImageService;
 
 return [
     'sf_dalleimages_getDalleImage' => [
         'path' => '/sf_dalleimages/getDalleImage/',
-        'target' => DalleUtility::class . '::processDalleImage',
+        'target' => ImageService::class . '::processImage',
     ],
 ];

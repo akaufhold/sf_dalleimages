@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Stackfactory\SfDalleimages\Tca;
 
 use TYPO3\CMS\Backend\Form\Element\InputTextElement;
