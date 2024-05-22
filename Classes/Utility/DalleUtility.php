@@ -12,7 +12,12 @@ use TYPO3\CMS\Core\Utility\DebugUtility;
 
 final class DalleUtility
 {
-
+    /**
+     * Generate dalle image with text prompt and return url 
+     *
+     * @param string $textPrompt
+     * @return string
+     */
     public function fetchImageFromDalle($textPrompt): string
     {
         // Define the Dalle API endpoint
@@ -42,7 +47,6 @@ final class DalleUtility
 
         // Check if request was successful
         if ($response->getStatusCode() === 200) {
-            var_dump($response->getBody());
             $responseData = json_decode($response->getBody()->getContents(), true);
             // Check if image URL is present in the response
             if (isset($responseData['data'][0]['url'])) {
