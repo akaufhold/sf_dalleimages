@@ -27,13 +27,19 @@ use Doctrine\DBAL\Exception;
 use Stackfactory\SfDalleimages\Utility\DalleUtility;
 
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ResponseInterface;
+
+use GuzzleHttp\Client;
 
 class ImageService
 {
+    private DataHandler $dataHandler;
     private ServerRequestInterface $request;
     private StorageRepository $storageRepository;
-    private DataHandler $dataHandler;
+    private ResponseFactoryInterface $responseFactory;
 
     /**
      * @var ConfigurationManagerInterface
@@ -42,11 +48,14 @@ class ImageService
 
     public function __construct(
         DataHandler $dataHandler,
-        StorageRepository $storageRepository
+        StorageRepository $storageRepository,
+        ResponseFactoryInterface $responseFactory
     )
     {
         $this->dataHandler = $dataHandler;
         $this->storageRepository = $storageRepository;
+        $this->responseFactory = $responseFactory;
+        $this->client = new Client();
     }
 
     /**
@@ -63,31 +72,40 @@ class ImageService
      * @param ServerRequestInterface $request
      * @param string $imageUrl
      * @param integer $contentElementUid
-     * @return integer
+     * @return ResponseInterface
      */
-    public function processImage(ServerRequestInterface $request) {
-        // Download the image
-        $imageUrl = $this->getDalleImageUrl($request);
-        // Define the path to save the downloaded image
-        $tempPath = PATH_site . 'typo3temp/' . basename($imageUrl);
-        // Save the image to TYPO3 storage
-        $file = $this->saveImageToStorage($localFilePath);
-        // Create a file reference for the content element
-        $fileReferenceUid = $this->addUserImageReference($file, $contentElementUid);
-        return $fileReferenceUid;
+    public function processImage(ServerRequestInterface $request): ResponseInterface 
+    {
+        $this->request = $request;
+
+        $fieldname = 'assets';
+        $fileUid = $this->saveImageAsAsset($this->getDalleImageUrl($request));
+
+        $contentID = $this->request->getQueryParams();
+
+        var_dump($contentID);
+
+
+        $fileReferenceUid = $this->addUserImageReference('tt_content', $fileUid, $contentElementUid, $fieldname);
+        $this->enableTableField('tt_content', $fieldname, $contentUid, 1);
+
+        $response = $this->responseFactory->createResponse()
+            ->withHeader('Content-Type', 'application/json; charset=utf-8');
+        $response->getBody()->write(
+            json_encode(['result' => $fileReferenceUid], JSON_THROW_ON_ERROR),
+        );
+        return $response;
     }
 
     /**
      * Add new image to file system
      *
-     * @param ServerRequestInterface $request
      * @param string $imageUrl
      * @param integer $contentElementUid
      * @return string
      */
-    public function getDalleImageUrl(ServerRequestInterface $request): string
+    public function getDalleImageUrl(): string
     {
-        $this->request = $request;
         $textPrompt = $this->request->getQueryParams()['input']
         ?? throw new \InvalidArgumentException(
             'Please provide a number',
@@ -96,44 +114,49 @@ class ImageService
 
         if ($textPrompt!='') {
             // Fetch image from Dalle
-            var_dump($textPrompt);
             $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
             //$imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
-            $imageUrl = 'https://webpacktest.ddev.site/fileadmin/user_upload/apartment.jpg';
-            var_dump($imageUrl);
+            $imageUrl = 'https://picsum.photos/200/300';
             return $imageUrl;
-        }
-    }
-    
-
-    function downloadImage($url, $targetPath) {
-        $client = new Client();
-        $response = $client->get($url, ['sink' => $targetPath]);
-    
-        if ($response->getStatusCode() === 200) {
-            return $targetPath;
-        } else {
-            throw new \Exception('Failed to download image');
         }
     }
 
     /**
-     * Add new image to file system
+     * Save the image from the URL in sys_file and file system
      *
-     * @param string $localFilePath
-     * @param integer $storageUid
-     * @param string $folderIdentifier
-     * @return void
+     * @param string $imageUrl
+     * @return integer
      */
-    function saveImageToStorage($localFilePath, $storageUid = 1, $folderIdentifier = '/user_upload/') {
-        $storageRepository = GeneralUtility::makeInstance(StorageRepository::class);
-        $storage = $storageRepository->findByUid($storageUid);
-        $folder = $storage->getFolder($folderIdentifier);
-        $fileName = basename($localFilePath);
+    public function saveImageAsAsset(string $imageUrl): int
+    {
+        // Define the local file path
+        $tempFilePath = GeneralUtility::tempnam('dalle_image_') . '.jpg';
+        $response = $this->client ->get($imageUrl, ['sink' => $tempFilePath]);
+
+        // Check if the download was successful
+        if ($response->getStatusCode() !== 200) {
+            throw new \RuntimeException('Failed to download image');
+        }
+
+        // Get the default storage
+        $storage = $this->storageRepository ->getDefaultStorage();
+        // Define the target folder and file name
+        $targetPath = '/user_upload';
+
+        if ($storage->hasFolder($targetPath)) {
+            $folder = $storage->getFolder($targetPath);
+        } else {
+            throw new \Exception ($targetPath . " path not found");
+        }
     
-        // Move the file into TYPO3 storage
-        $file = $storage->addFile($localFilePath, $folder, $fileName);
-        return $file;
+        $fileName = basename($tempFilePath);
+
+        /** @var File $file */
+        $file = $storage->addFile($tempFilePath, $folder, $fileName);
+
+        // Optionally, delete the temporary local file
+        unlink($tempFilePath);
+        return $file->getUid();
     }
 
     /**
@@ -143,14 +166,13 @@ class ImageService
      * @param Context $context
      * @param integer $uid
      * @param integer $curUserId
-     * @param string $firstName
-     * @param string $lastName
      * @throws Exception
      * @throws AspectNotFoundException
-     * @return void
+     * @return integer
      */
-    public function addUserImageReference($table, $context, $uid, $curUserId, $fieldname='image'): void
+    public function addUserImageReference($table, $uid, $curUserId, $fieldname='image'): int
     {
+        $context = GeneralUtility::makeInstance(Context::class);
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
         try {
             $query = $connection
@@ -175,8 +197,41 @@ class ImageService
                     Connection::PARAM_INT,
                     Connection::PARAM_STR
                 ]);
+            return (int)$connection->lastInsertId();
         } catch (Exception $exception) {
             $connection->rollBack();
+            throw $exception;
+        }
+    }
+
+    /**
+     * Enable table fields for using assets like  
+     *
+     * @param string $table
+     * @param integer $curUserId
+     * @param int imgEnabled
+     * @throws Exception
+     * @return void
+     */
+    public function enableTableField($table, $fieldname, $uid, $enabled): void
+    {
+        try {
+            $query = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getConnectionForTable($table)
+            ->update(
+                $table,
+                [
+                    $fieldname => $imgEnabled,
+                ],
+                [
+                    'uid' => $uid
+                ],
+                [
+                    Connection::PARAM_INT,
+                ]
+            );
+            //$query = $query->getSQL();
+        } catch (Exception $exception) {
             throw $exception;
         }
     }
