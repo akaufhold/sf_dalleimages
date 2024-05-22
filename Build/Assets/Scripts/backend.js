@@ -8,13 +8,15 @@ require(['TYPO3/CMS/Ajax/AjaxRequest'], function (AjaxRequest) {
       document.getElementsByClassName('sendToDalle') &&
       document.getElementsByClassName('sendToDalle')[0].addEventListener('click', () => {
         const textPrompt = imagePrompt[0].value
+        const uid = urlParams.get('edit[tt_content]')
+        console.log(uid)
         // Generate a random number between 1 and 32
         new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
-          .withQueryArguments({input: textPrompt})
+          .withQueryArguments({input: textPrompt, uid: uid})
           .get()
           .then(async function (response) {
-            const resolved = await response.resolve()
-            console.log(resolved.result)
+            const resolved = JSON.decode(await response.resolve())
+            console.log(resolved)
           })
       })
     })
