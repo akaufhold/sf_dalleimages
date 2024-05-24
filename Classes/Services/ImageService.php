@@ -78,23 +78,26 @@ class ImageService
     {
         $this->request = $request;
 
-        $fieldname = 'assets';
-        $fileUid = $this->saveImageAsAsset($this->getDalleImageUrl($request));
-
-        $contentID = $this->request->getQueryParams();
-
-        var_dump($contentID);
-
-
-        $fileReferenceUid = $this->addUserImageReference('tt_content', $fileUid, $contentElementUid, $fieldname);
-        $this->enableTableField('tt_content', $fieldname, $contentUid, 1);
-
-        $response = $this->responseFactory->createResponse()
-            ->withHeader('Content-Type', 'application/json; charset=utf-8');
-        $response->getBody()->write(
-            json_encode(['result' => $fileReferenceUid], JSON_THROW_ON_ERROR),
+        $textPrompt = $this->request->getQueryParams()['input'] ?? throw new \InvalidArgumentException(
+            'Please provide a text prompt for dalle image generation',
+            1580585107,
         );
-        return $response;
+        
+        if ($textPrompt != '') {
+            $fileUid = $this->saveImageAsAsset($this->getDalleImageUrl($textPrompt));
+
+            $contentID = $this->request->getQueryParams('uid');
+            $fileReferenceUid = $this->addUserImageReference('tt_content', $fileUid, $contentID, 'assets', $textPrompt);
+            $this->enableTableField('tt_content', 'assets', $contentUid, 1);
+    
+            $response = $this->responseFactory->createResponse()
+                ->withHeader('Content-Type', 'application/json; charset=utf-8');
+            $response->getBody()->write(
+                json_encode(['result' => $fileReferenceUid], JSON_THROW_ON_ERROR),
+            );
+            return $response;
+        }
+
     }
 
     /**
@@ -104,21 +107,13 @@ class ImageService
      * @param integer $contentElementUid
      * @return string
      */
-    public function getDalleImageUrl(): string
+    public function getDalleImageUrl($textPrompt): string
     {
-        $textPrompt = $this->request->getQueryParams()['input']
-        ?? throw new \InvalidArgumentException(
-            'Please provide a number',
-            1580585107,
-        );
-
-        if ($textPrompt!='') {
-            // Fetch image from Dalle
-            $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
-            //$imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
-            $imageUrl = 'https://picsum.photos/200/300';
-            return $imageUrl;
-        }
+        $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
+        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
+        // TEST DATA
+        //$imageUrl = 'https://picsum.photos/200/300';
+        return $imageUrl;
     }
 
     /**
@@ -163,14 +158,14 @@ class ImageService
      * Add user image to sys_file_reference
      *
      * @param string $table
-     * @param Context $context
      * @param integer $uid
-     * @param integer $curUserId
+     * @param integer $contentUid
+     * @param string $fieldname
      * @throws Exception
      * @throws AspectNotFoundException
      * @return integer
      */
-    public function addUserImageReference($table, $uid, $curUserId, $fieldname='image'): int
+    public function addUserImageReference($table, $uid, $contentUid, $fieldname='image', $title): int
     {
         $context = GeneralUtility::makeInstance(Context::class);
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
@@ -179,13 +174,13 @@ class ImageService
                 ->insert('sys_file_reference',
                 [
                     'uid_local' => (int)$uid,
-                    'uid_foreign' => (int)$curUserId,
+                    'uid_foreign' => (int)$contentUid,
                     'tablenames' => $table,
                     'fieldname' => $fieldname,
                     'table_local' => 'sys_file',
                     'tstamp' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'crdate' => $context->getPropertyFromAspect('date', 'timestamp'),
-                    'title' => $firstName . ' ' . $lastName
+                    'title' => $title
                 ],
                 [
                     Connection::PARAM_INT,
@@ -205,7 +200,7 @@ class ImageService
     }
 
     /**
-     * Enable table fields for using assets like  
+     * Enable table fields for using assets  
      *
      * @param string $table
      * @param integer $curUserId
