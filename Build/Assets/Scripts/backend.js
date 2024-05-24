@@ -15,15 +15,45 @@ require(['TYPO3/CMS/Ajax/AjaxRequest'], function (AjaxRequest) {
       }
 
       const sendToDalleButton = document.getElementsByClassName('sendToDalle')
-      const inputName = '[data-formengine-input-name="data[tt_content][1][tx_dalleimage_prompt_'
+      const inputNamePrefix = '[data-formengine-input-name="data[tt_content][1][tx_dalleimage_prompt_'
+      const selectNamePrefix = '[name="data[tt_content][1][tx_dalleimage_prompt_'
+
       const prompt = {
-        subject: document.querySelectorAll(`${inputName}_subject]"]`)[0],
-        description: document.querySelectorAll(`${inputName}_description]"]`)[0],
-        style: document.querySelectorAll(`${inputName}_style]"]`)[0],
-        colors: document.querySelectorAll(`${inputName}_colors]"]`)[0],
-        emotion: document.querySelectorAll(`${inputName}_emotion]"]`)[0],
-        composition: document.querySelectorAll(`${inputName}_composition]"]`)[0]
+        description: document.querySelector(`${inputNamePrefix}description]`).value,
+        subject: document.querySelector(`${inputNamePrefix}subject]`).value,
+        style: document.querySelector(`${selectNamePrefix}style]`).value,
+        colors: Array.from(document.querySelectorAll(`${selectNamePrefix}colors] option[selected]`), option => option.value),
+        emotion: Array.from(document.querySelectorAll(`${selectNamePrefix}emotion] option[selected]`), option => option.value),
+        composition: Array.from(document.querySelectorAll(`${selectNamePrefix}composition] option[selected]`), option => option.value),
+        artworks: document.querySelector(`${selectNamePrefix}artworks]`).value,
+        artists: document.querySelector(`${selectNamePrefix}artists]`).value,
+        camera_proximity: document.querySelector(`${selectNamePrefix}camera_proximity]`).value,
+        camera_position: document.querySelector(`${selectNamePrefix}camera_position]`).value,
+        camera_lenses: document.querySelector(`${selectNamePrefix}camera_lenses]`).value,
+        camera_shot: document.querySelector(`${selectNamePrefix}camera_shot]`).value,
+        lighting: document.querySelector(`${selectNamePrefix}lighting]`).value,
+        film_type: document.querySelector(`${selectNamePrefix}film_type]`).value
       }
+
+      console.log(prompt)
+
+      const finalPrompt = `
+        ${(prompt.camera_shot !== '') ? `A ${prompt.camera_shot} of a ` : ''}
+        ${(prompt.colors.length > 0) ? `${prompt.colors.join(', ')} ` : ''}
+        ${(prompt.subject !== '') ? `${prompt.subject} ` : ''}
+        ${(prompt.style !== '') ? `in the style of ${prompt.style}, ` : ''}
+        ${(prompt.artworks !== '') ? `inspired by ${prompt.artworks} ` : ''}
+        ${(prompt.artists !== '') ? `created by ${prompt.artists}. ` : ''}
+        ${(prompt.emotion.length > 0) ? `This image should evoke a sense of ${prompt.emotion.join(', ')} and ` : ''}
+        ${(prompt.composition.length > 0) ? `be composed with ${prompt.composition.join(', ')}. ` : ''}
+        ${(prompt.camera_proximity !== '') ? `Capture it with a ${prompt.camera_proximity} ` : ''}
+        ${(prompt.camera_position !== '') ? `${prompt.camera_position} shot ` : ''}
+        ${(prompt.camera_lenses !== '') ? `using ${prompt.camera_lenses}. ` : ''}
+        ${(prompt.lighting !== '') ? `Illuminate with ${prompt.lighting} ` : ''}
+        ${(prompt.film_type !== '') ? `and consider using ${prompt.film_type} film for added effect.` : ''}
+      `
+
+      document.querySelector(`${inputName}description]`).value = finalPrompt
 
       sendToDalleButton &&
       sendToDalleButton[0].addEventListener('click', () => {

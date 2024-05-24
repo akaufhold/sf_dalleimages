@@ -29,7 +29,7 @@ class SendToDalleButton extends InputTextElement{
 		
 		// Retrieve custom parameters, e.g., text and action
 		$buttonText = 'Get Image from Dalle';
-		$buttonHtml = '<a href="#" class="btn btn-primary sendToDalle">' . htmlspecialchars($buttonText) . '</a>';
+		$buttonHtml = '<a href="#" class="btn btn-primary sendToDalle" name="_savedok" form="EditDocumentController">' . htmlspecialchars($buttonText) . '</a>';
 
 		// Load JavaScript via PageRenderer
 			
