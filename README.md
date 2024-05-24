@@ -1,6 +1,6 @@
-# sf_seolighthouse
+# sf_dalleimages
 
 TYPO3 Extension for AI generating images with text Prompt
-- dalle account necessary
-- saves data in tt_content
-- display stored data in charts
+- real time generating prompts with multiple category presets
+- dalle platform account
+- saves data as "asset" in tt_content like textmedia, image, etc
