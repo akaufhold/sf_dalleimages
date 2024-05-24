@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:sf_seolighthouse/Resources/Private/Language/locallang_db" date="2021-03-21T21:33:18Z" product-name="sf_seolighthouse">
+	<file target-language="en" datatype="plaintext" original="EXT:sf_seolighthouse/Retargets/Private/Language/locallang_db" date="2021-03-21T21:33:18Z" product-name="sf_seolighthouse">
 		<header/>
 		<body>
 			<trans-unit id="tt_content.dalleimage.prompt">
@@ -9,6 +9,507 @@
 			<trans-unit id="tt_content.dalleimage.file">
 				<target>Dalle generated image</target>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low">
+				<target>Positive Stimmung, niedrige Energie</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.light">
+				<target>leicht</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.peaceful">
+				<target>friedlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.calm">
+				<target>ruhig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.serene">
+				<target>gelassen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.soothing">
+				<target>beruhigend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.relaxed">
+				<target>entspannt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.placid">
+				<target>still</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.comforting">
+				<target>tröstlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.cosy">
+				<target>gemütlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.tranquil">
+				<target>ruhig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.quiet">
+				<target>leise</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.pastel">
+				<target>pastellfarben</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.delicate">
+				<target>zart</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.graceful">
+				<target>anmutig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.subtle">
+				<target>subtil</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.balmy">
+				<target>mild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.mild">
+				<target>sanft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.ethereal">
+				<target>ätherisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.elegant">
+				<target>elegant</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.tender">
+				<target>zärtlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.low.soft">
+				<target>weich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high">
+				<target>Positive Stimmung, hohe Energie</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.bright">
+				<target>hell</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.vibrant">
+				<target>lebendig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.dynamic">
+				<target>dynamisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.spirited">
+				<target>schwungvoll</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.vivid">
+				<target>lebhaft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.lively">
+				<target>lebendig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.energetic">
+				<target>energiegeladen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.colorful">
+				<target>farbenfroh</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.joyful">
+				<target>freudig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.romantic">
+				<target>romantisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.expressive">
+				<target>ausdrucksstark</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.rich">
+				<target>reich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.kaleidoscopic">
+				<target>kaleidoskopisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.psychedelic">
+				<target>psychedelisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.saturated">
+				<target>gesättigt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.ecstatic">
+				<target>ekstatisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.brash">
+				<target>dreist</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.exciting">
+				<target>aufregend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.passionate">
+				<target>leidenschaftlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.positive.high.hot">
+				<target>heiß</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low">
+				<target>Negative Stimmung, niedrige Energie</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.muted">
+				<target>gedämpft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.bleak">
+				<target>düster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.funereal">
+				<target>traurig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.somber">
+				<target>ernst</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.melancholic">
+				<target>melancholisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.mournful">
+				<target>trauervoll</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.gloomy">
+				<target>trüb</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.dismal">
+				<target>trostlos</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.sad">
+				<target>traurig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.pale">
+				<target>blass</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.washedout">
+				<target>ausgewaschen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.desaturated">
+				<target>entsättigt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.grey">
+				<target>grau</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.subdued">
+				<target>gedämpft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.dull">
+				<target>trist</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.dreary">
+				<target>öde</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.depressing">
+				<target>deprimierend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.weary">
+				<target>müde</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.low.tired">
+				<target>erschöpft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high">
+				<target>Negative Stimmung, hohe Energie</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dark">
+				<target>dunkel</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ominous">
+				<target>unheilvoll</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.threatening">
+				<target>bedrohlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.haunting">
+				<target>gespenstisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.forbidding">
+				<target>drohend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gloomy">
+				<target>trüb</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.stormy">
+				<target>stürmisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.doom">
+				<target>Untergang</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.apocalyptic">
+				<target>apokalyptisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.sinister">
+				<target>unheimlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shadowy">
+				<target>schattig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghostly">
+				<target>geisterhaft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.unnerving">
+				<target>nervenaufreibend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.harrowing">
+				<target>erschütternd</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dreadful">
+				<target>furchtbar</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.frightful">
+				<target>erschreckend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shocking">
+				<target>schockierend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terror">
+				<target>Angst</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hideous">
+				<target>grässlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghastly">
+				<target>grauenhaft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terrifying">
+				<target>schrecklich</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.prompt.style">
+				<target>Stil</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree">
+				<target>groß und frei</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.curvaceous">
+				<target>geschwungen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.swirling">
+				<target>wirbelnd</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.organic">
+				<target>organisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.riotous">
+				<target>aufrührerisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.turbulent">
+				<target>stürmisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.flowing">
+				<target>fließend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.amorphous">
+				<target>amorph</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.natural">
+				<target>natürlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.distorted">
+				<target>verzerrt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.uneven">
+				<target>ungleichmäßig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.random">
+				<target>zufällig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.lush">
+				<target>üppig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.organic">
+				<target>organisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.bold">
+				<target>kühn</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.intuitive">
+				<target>intuitiv</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.emotive">
+				<target>emotional</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.chaotic">
+				<target>chaotisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.tumultuous">
+				<target>stürmisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.earthy">
+				<target>erdig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.churning">
+				<target>schäumend</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.prompt.style">
+				<target>style</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree">
+				<target>big and free</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.curvaceous">
+				<target>curvaceous</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.swirling">
+				<target>swirling</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.organic">
+				<target>organic</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.riotous">
+				<target>riotous</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.turbulent">
+				<target>turbulent</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.flowing">
+				<target>flowing</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.amorphous">
+				<target>amorphous</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.natural">
+				<target>natural</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.distorted">
+				<target>distorted</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.uneven">
+				<target>uneven</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.random">
+				<target>random</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.lush">
+				<target>lush</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.organic">
+				<target>organic</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.bold">
+				<target>bold</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.intuitive">
+				<target>intuitive</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.emotive">
+				<target>emotive</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.chaotic">
+				<target>chaotic</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.tumultuous">
+				<target>tumultuous</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.earthy">
+				<target>earthy</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.churning">
+				<target>churning</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.swirling">
+				<target>wirbelnd</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.organic">
+				<target>organisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.riotous">
+				<target>aufrührerisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.turbulent">
+				<target>stürmisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.flowing">
+				<target>fließend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.amorphous">
+				<target>amorph</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.natural">
+				<target>natürlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.distorted">
+				<target>verzerrt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.uneven">
+				<target>ungleichmäßig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.random">
+				<target>zufällig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.lush">
+				<target>üppig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.organic">
+				<target>organisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.bold">
+				<target>fett</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.intuitive">
+				<target>intuitiv</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.emotive">
+				<target>emotional</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.chaotic">
+				<target>chaotisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.tumultuous">
+				<target>unruhig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.earthy">
+				<target>erdig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.bigandfree.churning">
+				<target>schäumend</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured">
+				<target>klein und strukturiert</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.ornate">
+				<target>verschnörkelt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.delicate">
+				<target>zart</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.neat">
+				<target>ordentlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.precise">
+				<target>präzise</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.detailed">
+				<target>detailliert</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.opulent">
+				<target>opulent</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.lavish">
+				<target>üppig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.elegant">
+				<target>elegant</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.ornamented">
+				<target>verziert</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.fine">
+				<target>fein</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.elaborate">
+				<target>aufwändig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.accurate">
+				<target>genau</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.intricate">
+				<target>komplex</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.meticulous">
+				<target>gewissenhaft</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.decorative">
+				<target>dekorativ</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.style.smallandstructured.realistic">
+				<target>realistisch</target>
+			</trans-unit>
+
+
 		</body>
 	</file>
 </xliff>
