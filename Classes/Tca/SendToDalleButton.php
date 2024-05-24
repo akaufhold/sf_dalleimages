@@ -28,7 +28,7 @@ class SendToDalleButton extends InputTextElement{
 		//$fieldConfig = $this->data['parameterArray']['fieldTSConfig'];
 		
 		// Retrieve custom parameters, e.g., text and action
-		$buttonText = 'Send Image to Dalle';
+		$buttonText = 'Get Image from Dalle';
 		$buttonHtml = '<a href="#" class="btn btn-primary sendToDalle">' . htmlspecialchars($buttonText) . '</a>';
 
 		// Load JavaScript via PageRenderer
