@@ -10,24 +10,23 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 
-use GuzzleHttp\Client;
 use Stackfactory\SfDalleimages\Services\ImageService;
 
 class AjaxController {
-		private ServerRequestInterface $request;
-		private ImageService $imageService;
-		private ResponseFactoryInterface $responseFactory;
+    private ServerRequestInterface $request;
+    private ImageService $imageService;
+    private ResponseFactoryInterface $responseFactory;
 
     public function __construct(
-			ImageService $imageService,
-			ResponseFactoryInterface $responseFactory,
-		)
-		{
-				$this->imageService = $imageService;
-				$this->responseFactory = $responseFactory;
-		}
+        ImageService $imageService,
+        ResponseFactoryInterface $responseFactory,
+    )
+    {
+            $this->imageService = $imageService;
+            $this->responseFactory = $responseFactory;
+    }
 
-		/**
+    /**
      * Get image from Dalle Api and save to db afterwards
      *
      * @param ServerRequestInterface $request
