@@ -6,78 +6,85 @@
 			<trans-unit id="tt_content.dalleimage.prompt">
 				<target>Texteingabe für Bildgenerierung mit Dalle</target>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.empty">
+				<target>Not selected</target>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.description">
-				<source>Beschreibung</source>
+				<target>Beschreibung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.subject">
-				<source>Thema, Gegenstand, Motiv</source>
+				<target>Thema, Gegenstand, Motiv</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.palette.illustration">
+				<target>Illustration and Stylistics</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.illustration">
-				<source>Illustration</source>
+				<target>Illustration</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.crayondrawing">
-				<source>Kreidezeichnung</source>
+				<target>Kreidezeichnung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.coloringbook">
-				<source>Malfüllung</source>
+				<target>Malfüllung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.papercollage">
-				<source>Papiercollage</source>
+				<target>Papiercollage</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.pencilsketch">
-				<source>Bleistiftskizze</source>
+				<target>Bleistiftskizze</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.ballpensketch">
-				<source>Kugelschreiber-Skizze</source>
+				<target>Kugelschreiber-Skizze</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.airbrush">
-				<source>Airbrush</source>
+				<target>Airbrush</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.watercolor">
-				<source>Aquarell</source>
+				<target>Aquarell</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.acrylironcanvas">
-				<source>Acryl auf Leinwand</source>
+				<target>Acryl auf Leinwand</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.oilpainting">
-				<source>Ölgemälde</source>
+				<target>Ölgemälde</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.oilpastel">
-				<source>Ölkreide</source>
+				<target>Ölkreide</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.charcoaldrawing">
-				<source>Kohlezeichnung</source>
+				<target>Kohlezeichnung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.tattoodesign">
-				<source>Tattoo-Design</source>
+				<target>Tattoo-Design</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.graffiti">
-				<source>Graffiti</source>
+				<target>Graffiti</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.blueprint">
-				<source>Blaupause</source>
+				<target>Blaupause</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.waxcrayononpaper">
-				<source>Wachskreide auf Papier</source>
+				<target>Wachskreide auf Papier</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.coloredinkpouredandsplatteredonpaper">
-				<source>Farbige Tinte auf Papier geschüttet und gespritzt</source>
+				<target>Farbige Tinte auf Papier geschüttet und gespritzt</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.penandblackinkonpapertonedwithyellowbrownwash">
-				<source>Feder und schwarze Tinte auf Papier mit gelb-brauner Tönung</source>
+				<target>Feder und schwarze Tinte auf Papier mit gelb-brauner Tönung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.mythologicalmap">
-				<source>Mythologische Karte</source>
+				<target>Mythologische Karte</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.botanyillustration">
-				<source>Botanische Illustration</source>
+				<target>Botanische Illustration</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.historicalarchive">
-				<source>Historisches Archiv</source>
+				<target>Historisches Archiv</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.medievalmanuscript">
-				<source>Mittelalterliches Manuskript</source>
+				<target>Mittelalterliches Manuskript</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.style">
@@ -187,470 +194,474 @@
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.artworks">
-				<source>Artworks</source>
+				<target>Artworks</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.scoobydoo">
-				<source>Scooby Doo</source>
+				<target>Scooby Doo</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.flintstones">
-				<source>Flintstones</source>
+				<target>Flintstones</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.familyguy">
-				<source>Family Guy</source>
+				<target>Family Guy</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.thesimpsons">
-				<source>The Simpsons</source>
+				<target>The Simpsons</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.looneytunes">
-				<source>Looney Tunes</source>
+				<target>Looney Tunes</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.bojackhorseman">
-				<source>Bojack Horseman</source>
+				<target>Bojack Horseman</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.drseuss">
-				<source>Dr. Seuss</source>
+				<target>Dr. Seuss</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.themuppetshow">
-				<source>The Muppet Show</source>
+				<target>The Muppet Show</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.themoviematrix">
-				<source>The Movie Matrix</source>
+				<target>The Movie Matrix</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.studioghibli">
-				<source>Studio Ghibli</source>
+				<target>Studio Ghibli</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.disney2d">
-				<source>Disney 2D</source>
+				<target>Disney 2D</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.disney3d">
-				<source>Disney 3D</source>
+				<target>Disney 3D</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.pixar">
-				<source>Pixar</source>
+				<target>Pixar</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.sincity">
-				<source>Sin City</source>
+				<target>Sin City</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.spidermanauniverse">
-				<source>Spider-Man: A New Universe</source>
+				<target>Spider-Man: A New Universe</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.archer">
-				<source>Archer</source>
+				<target>Archer</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.futurama">
-				<source>Futurama</source>
+				<target>Futurama</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.southpark">
-				<source>South Park</source>
+				<target>South Park</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.adventuretime">
-				<source>Adventure Time</source>
+				<target>Adventure Time</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.akira">
-				<source>Akira</source>
+				<target>Akira</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.cowboybebop">
-				<source>Cowboy Bebop</source>
+				<target>Cowboy Bebop</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.gorillaz">
-				<source>Gorillaz</source>
+				<target>Gorillaz</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.thelegendofkorra">
-				<source>The Legend of Korra</source>
+				<target>The Legend of Korra</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.sailormoon">
-				<source>Sailor Moon</source>
+				<target>Sailor Moon</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.onepiece">
-				<source>One Piece</source>
+				<target>One Piece</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.ghostintheshell">
-				<source>Ghost in the Shell</source>
+				<target>Ghost in the Shell</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.renandstimpy">
-				<source>Ren & Stimpy</source>
+				<target>Ren & Stimpy</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.beavisandbutthead">
-				<source>Beavis and Butthead</source>
+				<target>Beavis and Butthead</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.kingofthehill">
-				<source>King of the Hill</source>
+				<target>King of the Hill</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.popeye">
-				<source>Popeye</source>
+				<target>Popeye</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.batmananimatedseries">
-				<source>Batman: The Animated Series</source>
+				<target>Batman: The Animated Series</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.powerpuffgirls">
-				<source>Powerpuff Girls</source>
+				<target>Powerpuff Girls</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.teenagemutantninjaturtles">
-				<source>Teenage Mutant Ninja Turtles</source>
+				<target>Teenage Mutant Ninja Turtles</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.xmenanimatedseries">
-				<source>X-Men: The Animated Series</source>
+				<target>X-Men: The Animated Series</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.myneighbor_totoro">
-				<source>My Neighbor Totoro</source>
+				<target>My Neighbor Totoro</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.artists">
-				<source>Künstler</source>
+				<target>Künstler</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.salvadordali">
-				<source>Salvador Dali</source>
+				<target>Salvador Dali</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.fridakahlo">
-				<source>Frida Kahlo</source>
+				<target>Frida Kahlo</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.banksy">
-				<source>Banksy</source>
+				<target>Banksy</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.picasso">
-				<source>Picasso</source>
+				<target>Picasso</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.davinci">
-				<source>da Vinci</source>
+				<target>da Vinci</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.michelangelo">
-				<source>Michelangelo</source>
+				<target>Michelangelo</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.vangogh">
-				<source>van Gogh</source>
+				<target>van Gogh</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.monet">
-				<source>Monet</source>
+				<target>Monet</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.timburton">
-				<source>Tim Burton</source>
+				<target>Tim Burton</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.takashimurakami">
-				<source>Takashi Murakami</source>
+				<target>Takashi Murakami</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.franciscodegoya">
-				<source>Francisco de Goya</source>
+				<target>Francisco de Goya</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.jeffkoons">
-				<source>Jeff Koons</source>
+				<target>Jeff Koons</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.andywarhol">
-				<source>Andy Warhol</source>
+				<target>Andy Warhol</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.frankmiller">
-				<source>Frank Miller</source>
+				<target>Frank Miller</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.marjanesatrapi">
-				<source>Marjane Satrapi</source>
+				<target>Marjane Satrapi</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.keithharing">
-				<source>Keith Haring</source>
+				<target>Keith Haring</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.edwardhopper">
-				<source>Edward Hopper</source>
+				<target>Edward Hopper</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.lisafrank">
-				<source>Lisa Frank</source>
+				<target>Lisa Frank</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.robertcrumb">
-				<source>Robert Crumb</source>
+				<target>Robert Crumb</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.roylichenstein">
-				<source>Roy Lichenstein</source>
+				<target>Roy Lichenstein</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.arthurrachkam">
-				<source>Arthur Rachkam</source>
+				<target>Arthur Rachkam</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.zahahadid">
-				<source>Zaha Hadid</source>
+				<target>Zaha Hadid</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.shraza">
-				<source>S H Raza</source>
+				<target>S H Raza</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.dorothealange">
-				<source>Dorothea Lange</source>
+				<target>Dorothea Lange</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.cindysherman">
-				<source>Cindy Sherman</source>
+				<target>Cindy Sherman</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.liuxiaodong">
-				<source>Liu Xiaodong</source>
+				<target>Liu Xiaodong</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.terryrichardson">
-				<source>Terry Richardson</source>
+				<target>Terry Richardson</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.georgehurrell">
-				<source>George Hurrell</source>
+				<target>George Hurrell</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.junjiito">
-				<source>Junji Ito</source>
+				<target>Junji Ito</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artists.billwatterson">
-				<source>Bill Watterson</source>
+				<target>Bill Watterson</target>
 			</trans-unit>
 
 
 			<trans-unit id="tt_content.dalleimage.prompt.lighting">
-				<source>Beleuchtung</source>
+				<target>Beleuchtung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.goldenhour">
-				<source>Goldene Stunde</source>
+				<target>Goldene Stunde</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.bluehour">
-				<source>Blaue Stunde</source>
+				<target>Blaue Stunde</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.midday">
-				<source>Mittag</source>
+				<target>Mittag</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.overcast">
-				<source>Bewölkt</source>
+				<target>Bewölkt</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.warm">
-				<source>Warm</source>
+				<target>Warm</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.cold">
-				<source>Kalt</source>
+				<target>Kalt</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.flashphotography">
-				<source>Blitzfotografie</source>
+				<target>Blitzfotografie</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.colorfullightning">
-				<source>Farbenfrohe Beleuchtung</source>
+				<target>Farbenfrohe Beleuchtung</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.lighting.reallightsource">
-				<source>Natürliche Lichtquelle</source>
+			<trans-unit id="tt_content.dalleimage.prompt.lighting.reallighttarget">
+				<target>Natürliche Lichtquelle</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.highkeylighting">
-				<source>High-Key-Beleuchtung</source>
+				<target>High-Key-Beleuchtung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.backlighting">
-				<source>Gegenlicht</source>
+				<target>Gegenlicht</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.studiolighting">
-				<source>Studio-Beleuchtung</source>
+				<target>Studio-Beleuchtung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.studioportrait">
-				<source>Studio-Porträt</source>
+				<target>Studio-Porträt</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.litfromabove">
-				<source>Von oben beleuchtet</source>
+				<target>Von oben beleuchtet</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.litfrombelow">
-				<source>Von unten beleuchtet</source>
+				<target>Von unten beleuchtet</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.sidelighting">
-				<source>Seitenbeleuchtung</source>
+				<target>Seitenbeleuchtung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.lighting.softlighting">
-				<source>Weiche Beleuchtung</source>
+				<target>Weiche Beleuchtung</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.palette.camera">
+				<target>Kameraeinstellungen</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype">
-				<source>Filmtyp</source>
+				<target>Filmtyp</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.cyanotype">
-				<source>Cyanotyp</source>
+				<target>Cyanotyp</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.blackandwhite">
-				<source>Schwarz-Weiß</source>
+				<target>Schwarz-Weiß</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.redscale">
-				<source>Redscale</source>
+				<target>Redscale</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.infrared">
-				<source>Infrarot</source>
+				<target>Infrarot</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.bleachbypass">
-				<source>Bleach Bypass</source>
+				<target>Bleach Bypass</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.instagramhipstamatic2015">
-				<source>Instagram Hipstamatic 2015</source>
+				<target>Instagram Hipstamatic 2015</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.contactsheet">
-				<source>Kontaktabzug</source>
+				<target>Kontaktabzug</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.coloursplash">
-				<source>Farbspritzer</source>
+				<target>Farbspritzer</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.solarised">
-				<source>Solarisiert</source>
+				<target>Solarisiert</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.anaglyph">
-				<source>Anaglyph</source>
+				<target>Anaglyph</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.polaroid600filmcolor">
-				<source>Polaroid 600 Film Farbe</source>
+				<target>Polaroid 600 Film Farbe</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.kodakinfraredfilm">
-				<source>Kodak Infrarotfilm</source>
+				<target>Kodak Infrarotfilm</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.kodakxrayfilm">
-				<source>Kodak Röntgenfilm</source>
+				<target>Kodak Röntgenfilm</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.kodakkodachromefilm">
-				<source>Kodak Kodachrome Film</source>
+				<target>Kodak Kodachrome Film</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.kodachrome64">
-				<source>Kodachrome 64</source>
+				<target>Kodachrome 64</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.kodakektar100">
-				<source>Kodak Ektar 100</source>
+				<target>Kodak Ektar 100</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.fujisuperia200">
-				<source>Fuji Superia 200</source>
+				<target>Fuji Superia 200</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.fujipro400h">
-				<source>Fuji Pro 400H</source>
+				<target>Fuji Pro 400H</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.fujichromevelvia100">
-				<source>Fujichrome Velvia 100</source>
+				<target>Fujichrome Velvia 100</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.ilfordhp5">
-				<source>Ilford HP5</source>
+				<target>Ilford HP5</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.ilforddelta3200">
-				<source>Ilford Delta 3200</source>
+				<target>Ilford Delta 3200</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.konicaminoltapro200s">
-				<source>Konica Minolta Pro 200S</source>
+				<target>Konica Minolta Pro 200S</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.anscochrome200">
-				<source>Anscochrome 200</source>
+				<target>Anscochrome 200</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.ektachrome100">
-				<source>Ektachrome 100</source>
+				<target>Ektachrome 100</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.lomochromepurple100400">
-				<source>Lomochrome Purple 100-400</source>
+				<target>Lomochrome Purple 100-400</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.lomochrometurquoise100400">
-				<source>Lomochrome Turquoise 100-400</source>
+				<target>Lomochrome Turquoise 100-400</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.lomographyxpro200">
-				<source>Lomography X-Pro 200</source>
+				<target>Lomography X-Pro 200</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.heliochrome">
-				<source>Heliochrome</source>
+				<target>Heliochrome</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.polaroid600film">
-				<source>Polaroid 600 Film</source>
+				<target>Polaroid 600 Film</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype.revologstreak">
-				<source>Revolog Streak</source>
+				<target>Revolog Streak</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.camera_position">
-				<source>Kameraposition</source>
+				<target>Kameraposition</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_position.overhead">
-				<source>Überkopfansicht</source>
+				<target>Überkopfansicht</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_position.lowangle">
-				<source>Tiefenwinkel</source>
+				<target>Tiefenwinkel</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_position.aerial">
-				<source>Luftaufnahme</source>
+				<target>Luftaufnahme</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_position.tilted">
-				<source>Geschwenkter Rahmen</source>
+				<target>Geschwenkter Rahmen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_position.overtheshoulder">
-				<source>Über die Schulter Aufnahme</source>
+				<target>Über die Schulter Aufnahme</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses">
-				<source>Kameraobjektive</source>
+				<target>Kameraobjektive</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.fastshutterspeed">
-				<source>Schnelle Verschlusszeit</source>
+				<target>Schnelle Verschlusszeit</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.slowshutterspeed">
-				<source>Langsame Verschlusszeit</source>
+				<target>Langsame Verschlusszeit</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.bokeh">
-				<source>Bokeh</source>
+				<target>Bokeh</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.tiltshift">
-				<source>Tilt-Shift-Fotografie</source>
+				<target>Tilt-Shift-Fotografie</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.motionblur">
-				<source>Bewegungsunschärfe</source>
+				<target>Bewegungsunschärfe</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.telephotolens">
-				<source>Teleobjektiv</source>
+				<target>Teleobjektiv</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.macrolens">
-				<source>Makroobjektiv</source>
+				<target>Makroobjektiv</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.wideanglelens">
-				<source>Weitwinkelobjektiv</source>
+				<target>Weitwinkelobjektiv</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.flasheyelens">
-				<source>Blitzauge-Objektiv</source>
+				<target>Blitzauge-Objektiv</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_lenses.deepdepthoffield">
-				<source>Tiefe Schärfentiefe</source>
+				<target>Tiefe Schärfentiefe</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.colors">
-					<source>Farben</source>
+					<target>Farben</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.black">
-					<source>Schwarz</source>
+					<target>Schwarz</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.white">
-					<source>Weiß</source>
+					<target>Weiß</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.red">
-					<source>Rot</source>
+					<target>Rot</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.blue">
-					<source>Blau</source>
+					<target>Blau</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.green">
-					<source>Grün</source>
+					<target>Grün</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.yellow">
-					<source>Gelb</source>
+					<target>Gelb</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.orange">
-					<source>Orange</source>
+					<target>Orange</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.purple">
-					<source>Lila</source>
+					<target>Lila</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.pink">
-					<source>Rosa</source>
+					<target>Rosa</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.brown">
-					<source>Braun</source>
+					<target>Braun</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.grey">
-					<source>Grau</source>
+					<target>Grau</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.cyan">
-					<source>Cyan</source>
+					<target>Cyan</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.magenta">
-					<source>Magenta</source>
+					<target>Magenta</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.teal">
-					<source>Türkis</source>
+					<target>Türkis</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.lime">
-					<source>Limette</source>
+					<target>Limette</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.maroon">
-					<source>Kastanienbraun</source>
+					<target>Kastanienbraun</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.olive">
-					<source>Olivgrün</source>
+					<target>Olivgrün</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.navy">
-					<source>Marineblau</source>
+					<target>Marineblau</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.colors.aqua">
-					<source>Aqua</source>
+					<target>Aqua</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.emotion">

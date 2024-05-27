@@ -6,12 +6,20 @@
 			<trans-unit id="tt_content.dalleimage.prompt">
 				<source>Text prompt for dalle image generation</source>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.empty">
+				<source>Not selected</source>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.description">
 				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.subject">
 				<source>Subject</source>
 			</trans-unit>
+
+			<trans-unit id="tt_content.palette.illustration">
+				<source>Illustration and Stylistics</source>
+			</trans-unit>
+
 			<trans-unit id="tt_content.dalleimage.prompt.illustration">
 				<source>Illustration</source>
 			</trans-unit>
@@ -441,6 +449,10 @@
 				<source>Soft Lighting</source>
 			</trans-unit>
 
+			<trans-unit id="tt_content.palette.camera">
+				<source>Camera Settings</source>
+			</trans-unit>
+
 			<trans-unit id="tt_content.dalleimage.prompt.filmtype">
 				<source>Film Type</source>
 			</trans-unit>
@@ -641,55 +653,55 @@
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot">
-				<source>Kameraaufnahme</source>
+				<source>Camera Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.closeup">
-				<source>Nahaufnahme</source>
+				<source>Close-up</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.croppedcloseup">
-				<source>Geschnittene Nahaufnahme</source>
+				<source>Cropped Close-up</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.mediumshot">
-				<source>Mittlerer Schuss</source>
+				<source>Medium Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.longshot">
-				<source>Langer Schuss</source>
+				<source>Long Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.overtheshouldershot">
-				<source>Über-die-Schulter-Schuss</source>
+				<source>Over-the-Shoulder Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.portrait">
-				<source>Porträt</source>
+				<source>Portrait</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.fashionillustration">
-				<source>Modeillustration</source>
+				<source>Fashion Illustration</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.scientificillustration">
-				<source>Wissenschaftliche Illustration</source>
+				<source>Scientific Illustration</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.silhouette">
 				<source>Silhouette</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.macroshot">
-				<source>Makroaufnahme</source>
+				<source>Macro Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.goprocamera">
-				<source>GoPro Kamera</source>
+				<source>GoPro Camera</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.droneshot">
-				<source>Drohnen-Aufnahme</source>
+				<source>Drone Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.wideangleshot">
-				<source>Weitwinkelaufnahme</source>
+				<source>Wide Angle Shot</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.fisheye">
-				<source>Fischaugenobjektiv</source>
+				<source>Fish Eye</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.tiltshiftphotography">
-				<source>Tilt-Shift-Fotografie</source>
+				<source>Tilt Shift Photography</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.camera_shot.cinematicmoviephotograph">
-				<source>Kinofilm-Fotografie</source>
+				<source>Cinematic Movie Photograph</source>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.colors">
