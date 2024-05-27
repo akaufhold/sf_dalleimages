@@ -67,41 +67,7 @@ class ImageService
     }
 
     /**
-     * Process temporary image and save to db
-     *
-     * @param ServerRequestInterface $request
-     * @param string $imageUrl
-     * @param integer $contentElementUid
-     * @return ResponseInterface
-     */
-    public function processImage(ServerRequestInterface $request): ResponseInterface 
-    {
-        $this->request = $request;
-
-        $textPrompt = $this->request->getQueryParams()['input'] ?? throw new \InvalidArgumentException(
-            'Please provide a text prompt for dalle image generation',
-            1580585107,
-        );
-        
-        if ($textPrompt != '') {
-            $fileUid = $this->saveImageAsAsset($this->getDalleImageUrl($textPrompt));
-
-            $contentID = $this->request->getQueryParams('uid');
-            $fileReferenceUid = $this->addUserImageReference('tt_content', $fileUid, $contentID, 'assets', $textPrompt);
-            $this->enableTableField('tt_content', 'assets', $contentUid, 1);
-    
-            $response = $this->responseFactory->createResponse()
-                ->withHeader('Content-Type', 'application/json; charset=utf-8');
-            $response->getBody()->write(
-                json_encode(['result' => $fileReferenceUid], JSON_THROW_ON_ERROR),
-            );
-            return $response;
-        }
-
-    }
-
-    /**
-     * Add new image to file system
+     * Return new image url
      *
      * @param string $imageUrl
      * @param integer $contentElementUid
@@ -109,10 +75,10 @@ class ImageService
      */
     public function getDalleImageUrl($textPrompt): string
     {
-        $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
-        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
+        //$this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
+        //$imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
         // TEST DATA
-        //$imageUrl = 'https://picsum.photos/200/300';
+        $imageUrl = 'https://picsum.photos/200/300';
         return $imageUrl;
     }
 
@@ -165,7 +131,7 @@ class ImageService
      * @throws AspectNotFoundException
      * @return integer
      */
-    public function addUserImageReference($table, $uid, $contentUid, $fieldname='image', $title): int
+    public function addUserImageReference($table, $uid, $contentUid, $fieldname='image', $title, $prompt): int
     {
         $context = GeneralUtility::makeInstance(Context::class);
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
@@ -180,7 +146,8 @@ class ImageService
                     'table_local' => 'sys_file',
                     'tstamp' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'crdate' => $context->getPropertyFromAspect('date', 'timestamp'),
-                    'title' => $title
+                    'title' => $title,
+                    'tx_dalleimage_prompt' => $prompt
                 ],
                 [
                     Connection::PARAM_INT,

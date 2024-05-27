@@ -10,3 +10,6 @@ services:
   Stackfactory\SfDalleimages\Services\ImageService:
     public: true
     
+  Stackfactory\SfDalleimages\Controller\AjaxController:
+    public: true
+    

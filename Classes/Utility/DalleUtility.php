@@ -34,7 +34,7 @@ final class DalleUtility
         // Define the request body with the text prompt
         $body = [
             'prompt' => $textPrompt,
-            'model' => 'dall-e-2', // Specify the DALL-E model
+            'model' => 'dall-e-3', // Specify the DALL-E model
             'n' => 1, // Number of images to generate
             'size' => '1024x1024', // Size of the image
         ];

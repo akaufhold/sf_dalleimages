@@ -1,10 +1,10 @@
 <?php
 
-use Stackfactory\SfDalleimages\Services\ImageService;
+use Stackfactory\SfDalleimages\Controller\AjaxController;
 
 return [
     'sf_dalleimages_getDalleImage' => [
         'path' => '/sf_dalleimages/getDalleImage/',
-        'target' => ImageService::class . '::processImage',
+        'target' => AjaxController::class . '::processAjaxRequest',
     ],
 ];
