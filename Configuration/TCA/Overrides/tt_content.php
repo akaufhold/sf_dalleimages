@@ -13,7 +13,7 @@ $dalleImage = [
         'config' => [
             'type' => 'input',
             'renderType' => 'sendToDalleButton',
-            'size' => 30,
+            'size' => 80,
             'max' => 500,
             'eval' => 'trim',
         ],
@@ -312,11 +312,11 @@ $dalleImage = [
             'renderType' => 'selectSingle',
             'items' => [
                 [$lll . 'tt_content.dalleimage.prompt.empty', ''],
-                [$lll . 'tt_content.dalleimage.prompt.camera_position.overhead', 'overhead'],
-                [$lll . 'tt_content.dalleimage.prompt.camera_position.lowangle', 'lowangle'],
-                [$lll . 'tt_content.dalleimage.prompt.camera_position.aerial', 'aerial'],
-                [$lll . 'tt_content.dalleimage.prompt.camera_position.tilted', 'tilted'],
-                [$lll . 'tt_content.dalleimage.prompt.camera_position.overtheshoulder', 'over the shoulder'],
+                [$lll . 'tt_content.dalleimage.prompt.camera_position.overhead', 'overhead view'],
+                [$lll . 'tt_content.dalleimage.prompt.camera_position.lowangle', 'low angle'],
+                [$lll . 'tt_content.dalleimage.prompt.camera_position.aerial', 'aerial view'],
+                [$lll . 'tt_content.dalleimage.prompt.camera_position.tilted', 'tilted frame'],
+                [$lll . 'tt_content.dalleimage.prompt.camera_position.overtheshoulder', 'over the shoulder shot'],
             ],
         ],
     ],
@@ -616,7 +616,9 @@ $GLOBALS['TCA']['tt_content']['palettes'] += $dalleCameraPalette;
 // Add the fields to palettes
 ExtensionManagementUtility::addToAllTCAtypes(
 	'tt_content',
-	'tx_dalleimage_prompt_description, 
+	'--div--; Dalle Image,
+    assets,
+    tx_dalleimage_prompt_description, 
     tx_dalleimage_prompt_colors,
     tx_dalleimage_prompt_subject, 
     --palette--;'. $lll. 'tt_content.palette.illustration; tx_dalleimage_dalleStylePalette, 
@@ -625,5 +627,5 @@ ExtensionManagementUtility::addToAllTCAtypes(
     tx_dalleimage_prompt_emotion, 
     tx_dalleimage_prompt_composition',
 	'textmedia,image',
-	'after:assets'
+	'after:image_zoom'
 );

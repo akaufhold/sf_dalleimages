@@ -275,7 +275,7 @@
 				<target>Ghost in the Shell</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.renandstimpy">
-				<target>Ren & Stimpy</target>
+				<target>Ren and Stimpy</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.artworks.beavisandbutthead">
 				<target>Beavis and Butthead</target>
@@ -882,49 +882,49 @@
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.stormy">
 				<target>stürmisch</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.doom">
 				<target>Untergang</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.apocalyptic">
 				<target>apokalyptisch</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.sinister">
 				<target>unheilvoll</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shadowy">
 				<target>schattenhaft</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghostly">
 				<target>gespenstisch</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.unnerving">
 				<target>nervenaufreibend</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.harrowing">
 				<target>erschütternd</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dreadful">
 				<target>furchtbar</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.frightful">
 				<target>erschreckend</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shocking">
 				<target>schockierend</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terror">
 				<target>Terror</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hideous">
 				<target>abscheulich</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghastly">
 				<target>grässlich</target>
-			</-trans-unit>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terrifying">
 				<target>erschreckend</target>
-			</-trans-unit>
+			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.composition">
 				<target>Komposition</target>
