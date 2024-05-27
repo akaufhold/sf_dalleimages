@@ -14,3 +14,7 @@ CREATE TABLE tt_content (
 	tx_dalleimage_prompt_emotion varchar(255) DEFAULT '' NOT NULL,
 	tx_dalleimage_prompt_composition varchar(255) DEFAULT '' NOT NULL,
 );
+
+CREATE TABLE sys_file_reference (
+	tx_dalleimage_prompt varchar(1000) DEFAULT '' NOT NULL,
+);
