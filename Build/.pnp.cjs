@@ -26,10 +26,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@popperjs/core", "npm:2.11.8"],\
-          ["add-to-calendar-button", "npm:2.6.14"],\
           ["autoprefixer", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:10.4.19"],\
-          ["axios", "npm:1.6.8"],\
           ["bootstrap", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.3"],\
           ["copy-webpack-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:11.0.0"],\
           ["css-loader", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:6.11.0"],\
@@ -43,8 +40,6 @@ const RAW_RUNTIME_STATE =
           ["fast-glob", "npm:3.3.2"],\
           ["jquery", "npm:3.7.1"],\
           ["masonry-layout", "npm:4.2.2"],\
-          ["mediaelement", "npm:5.1.1"],\
-          ["mediaelement-plugins", "npm:2.6.7"],\
           ["mini-css-extract-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:2.9.0"],\
           ["node-libcurl", "npm:3.0.0"],\
           ["path", "npm:0.12.7"],\
@@ -65,7 +60,6 @@ const RAW_RUNTIME_STATE =
           ["stylelint-order", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:6.0.4"],\
           ["stylelint-scss", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.2"],\
           ["stylelint-webpack-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:4.1.1"],\
-          ["swiper", "npm:11.1.1"],\
           ["ua-parser-js", "npm:1.0.37"],\
           ["vanilla-lazyload", "npm:17.9.0"],\
           ["webpack", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.91.0"],\
@@ -1350,15 +1344,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@popperjs/core", [\
-      ["npm:2.11.8", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/@popperjs-core-npm-2.11.8-f1692e11a0-10c0.zip/node_modules/@popperjs/core/",\
-        "packageDependencies": [\
-          ["@popperjs/core", "npm:2.11.8"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@sinclair/typebox", [\
       ["npm:0.27.8", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/@sinclair-typebox-npm-0.27.8-23e206d653-10c0.zip/node_modules/@sinclair/typebox/",\
@@ -1860,16 +1845,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["add-to-calendar-button", [\
-      ["npm:2.6.14", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/add-to-calendar-button-npm-2.6.14-9bd97d46c3-10c0.zip/node_modules/add-to-calendar-button/",\
-        "packageDependencies": [\
-          ["add-to-calendar-button", "npm:2.6.14"],\
-          ["timezones-ical-library", "npm:1.8.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["agent-base", [\
       ["npm:6.0.2", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/agent-base-npm-6.0.2-428f325a93-10c0.zip/node_modules/agent-base/",\
@@ -2199,15 +2174,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["asynckit", [\
-      ["npm:0.4.0", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/asynckit-npm-0.4.0-c718858525-10c0.zip/node_modules/asynckit/",\
-        "packageDependencies": [\
-          ["asynckit", "npm:0.4.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["autoprefixer", [\
       ["npm:10.4.19", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/autoprefixer-npm-10.4.19-7c86a73b2f-10c0.zip/node_modules/autoprefixer/",\
@@ -2242,18 +2208,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["available-typed-arrays", "npm:1.0.7"],\
           ["possible-typed-array-names", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["axios", [\
-      ["npm:1.6.8", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/axios-npm-1.6.8-85cf1e7152-10c0.zip/node_modules/axios/",\
-        "packageDependencies": [\
-          ["axios", "npm:1.6.8"],\
-          ["follow-redirects", "virtual:85cf1e7152e3c0d8e39e61ad2b81b59a43fb6bdb8f3bf49869bb97804b1403ecaee4505fcb0d4869cfdd99ee3eaa880b79498575407fb770c800bf64c64156ec#npm:1.15.6"],\
-          ["form-data", "npm:4.0.0"],\
-          ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2304,7 +2258,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/bootstrap-virtual-421c09536f/8/home/akaufhold/.yarn/berry/cache/bootstrap-npm-5.3.3-da08e2f0fe-10c0.zip/node_modules/bootstrap/",\
         "packageDependencies": [\
           ["bootstrap", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.3"],\
-          ["@popperjs/core", "npm:2.11.8"],\
+          ["@popperjs/core", null],\
           ["@types/popperjs__core", null]\
         ],\
         "packagePeers": [\
@@ -2319,10 +2273,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["bootstrap5-webpack", "workspace:."],\
-          ["@popperjs/core", "npm:2.11.8"],\
-          ["add-to-calendar-button", "npm:2.6.14"],\
           ["autoprefixer", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:10.4.19"],\
-          ["axios", "npm:1.6.8"],\
           ["bootstrap", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.3"],\
           ["copy-webpack-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:11.0.0"],\
           ["css-loader", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:6.11.0"],\
@@ -2336,8 +2287,6 @@ const RAW_RUNTIME_STATE =
           ["fast-glob", "npm:3.3.2"],\
           ["jquery", "npm:3.7.1"],\
           ["masonry-layout", "npm:4.2.2"],\
-          ["mediaelement", "npm:5.1.1"],\
-          ["mediaelement-plugins", "npm:2.6.7"],\
           ["mini-css-extract-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:2.9.0"],\
           ["node-libcurl", "npm:3.0.0"],\
           ["path", "npm:0.12.7"],\
@@ -2358,7 +2307,6 @@ const RAW_RUNTIME_STATE =
           ["stylelint-order", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:6.0.4"],\
           ["stylelint-scss", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.2"],\
           ["stylelint-webpack-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:4.1.1"],\
-          ["swiper", "npm:11.1.1"],\
           ["ua-parser-js", "npm:1.0.37"],\
           ["vanilla-lazyload", "npm:17.9.0"],\
           ["webpack", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.91.0"],\
@@ -2682,16 +2630,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/colorette-npm-2.0.20-692d428726-10c0.zip/node_modules/colorette/",\
         "packageDependencies": [\
           ["colorette", "npm:2.0.20"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["combined-stream", [\
-      ["npm:1.0.8", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/combined-stream-npm-1.0.8-dc14d4a63a-10c0.zip/node_modules/combined-stream/",\
-        "packageDependencies": [\
-          ["combined-stream", "npm:1.0.8"],\
-          ["delayed-stream", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3127,15 +3065,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["delayed-stream", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/delayed-stream-npm-1.0.0-c5a4c4cc02-10c0.zip/node_modules/delayed-stream/",\
-        "packageDependencies": [\
-          ["delayed-stream", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["delegates", [\
       ["npm:1.0.0", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/delegates-npm-1.0.0-9b1942d75f-10c0.zip/node_modules/delegates/",\
@@ -3199,15 +3128,6 @@ const RAW_RUNTIME_STATE =
           ["domelementtype", "npm:2.3.0"],\
           ["domhandler", "npm:5.0.3"],\
           ["entities", "npm:4.5.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["dom-walk", [\
-      ["npm:0.1.2", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/dom-walk-npm-0.1.2-7d20a1a8d8-10c0.zip/node_modules/dom-walk/",\
-        "packageDependencies": [\
-          ["dom-walk", "npm:0.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4113,28 +4033,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["follow-redirects", [\
-      ["npm:1.15.6", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/follow-redirects-npm-1.15.6-50635fe51d-10c0.zip/node_modules/follow-redirects/",\
-        "packageDependencies": [\
-          ["follow-redirects", "npm:1.15.6"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:85cf1e7152e3c0d8e39e61ad2b81b59a43fb6bdb8f3bf49869bb97804b1403ecaee4505fcb0d4869cfdd99ee3eaa880b79498575407fb770c800bf64c64156ec#npm:1.15.6", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-7bb5ea93fd/8/home/akaufhold/.yarn/berry/cache/follow-redirects-npm-1.15.6-50635fe51d-10c0.zip/node_modules/follow-redirects/",\
-        "packageDependencies": [\
-          ["follow-redirects", "virtual:85cf1e7152e3c0d8e39e61ad2b81b59a43fb6bdb8f3bf49869bb97804b1403ecaee4505fcb0d4869cfdd99ee3eaa880b79498575407fb770c800bf64c64156ec#npm:1.15.6"],\
-          ["@types/debug", null],\
-          ["debug", null]\
-        ],\
-        "packagePeers": [\
-          "@types/debug",\
-          "debug"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["for-each", [\
       ["npm:0.3.3", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/for-each-npm-0.3.3-0010ca8cdd-10c0.zip/node_modules/for-each/",\
@@ -4152,18 +4050,6 @@ const RAW_RUNTIME_STATE =
           ["foreground-child", "npm:3.1.1"],\
           ["cross-spawn", "npm:7.0.3"],\
           ["signal-exit", "npm:4.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["form-data", [\
-      ["npm:4.0.0", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/form-data-npm-4.0.0-916facec2d-10c0.zip/node_modules/form-data/",\
-        "packageDependencies": [\
-          ["form-data", "npm:4.0.0"],\
-          ["asynckit", "npm:0.4.0"],\
-          ["combined-stream", "npm:1.0.8"],\
-          ["mime-types", "npm:2.1.35"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4385,17 +4271,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/glob-to-regexp-npm-0.4.1-cd697e0fc7-10c0.zip/node_modules/glob-to-regexp/",\
         "packageDependencies": [\
           ["glob-to-regexp", "npm:0.4.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["global", [\
-      ["npm:4.4.0", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/global-npm-4.4.0-888ee8033d-10c0.zip/node_modules/global/",\
-        "packageDependencies": [\
-          ["global", "npm:4.4.0"],\
-          ["min-document", "npm:2.19.0"],\
-          ["process", "npm:0.11.10"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5537,28 +5412,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["mediaelement", [\
-      ["npm:5.1.1", {\
-        "packageLocation": "./.yarn/unplugged/mediaelement-npm-5.1.1-c7d30c4e7e/node_modules/mediaelement/",\
-        "packageDependencies": [\
-          ["mediaelement", "npm:5.1.1"],\
-          ["global", "npm:4.4.0"],\
-          ["svg4everybody", "npm:2.1.9"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["mediaelement-plugins", [\
-      ["npm:2.6.7", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/mediaelement-plugins-npm-2.6.7-7488407dca-10c0.zip/node_modules/mediaelement-plugins/",\
-        "packageDependencies": [\
-          ["mediaelement-plugins", "npm:2.6.7"],\
-          ["global", "npm:4.4.0"],\
-          ["mediaelement", "npm:5.1.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["meow", [\
       ["npm:10.1.5", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/meow-npm-10.1.5-a1bab640d1-10c0.zip/node_modules/meow/",\
@@ -5624,16 +5477,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["mime-types", "npm:2.1.35"],\
           ["mime-db", "npm:1.52.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["min-document", [\
-      ["npm:2.19.0", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/min-document-npm-2.19.0-458cdb3d84-10c0.zip/node_modules/min-document/",\
-        "packageDependencies": [\
-          ["min-document", "npm:2.19.0"],\
-          ["dom-walk", "npm:0.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7414,15 +7257,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["proxy-from-env", [\
-      ["npm:1.1.0", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/proxy-from-env-npm-1.1.0-c13d07f26b-10c0.zip/node_modules/proxy-from-env/",\
-        "packageDependencies": [\
-          ["proxy-from-env", "npm:1.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["punycode", [\
       ["npm:2.3.1", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/punycode-npm-2.3.1-97543c420d-10c0.zip/node_modules/punycode/",\
@@ -8465,15 +8299,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["svg4everybody", [\
-      ["npm:2.1.9", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/svg4everybody-npm-2.1.9-9ad05ab5f0-10c0.zip/node_modules/svg4everybody/",\
-        "packageDependencies": [\
-          ["svg4everybody", "npm:2.1.9"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["svgo", [\
       ["npm:3.2.0", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/svgo-npm-3.2.0-3ad9c97efb-10c0.zip/node_modules/svgo/",\
@@ -8486,15 +8311,6 @@ const RAW_RUNTIME_STATE =
           ["css-what", "npm:6.1.0"],\
           ["csso", "npm:5.0.5"],\
           ["picocolors", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["swiper", [\
-      ["npm:11.1.1", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/swiper-npm-11.1.1-fbb4753780-10c0.zip/node_modules/swiper/",\
-        "packageDependencies": [\
-          ["swiper", "npm:11.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8594,15 +8410,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/text-table-npm-0.2.0-d92a778b59-10c0.zip/node_modules/text-table/",\
         "packageDependencies": [\
           ["text-table", "npm:0.2.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["timezones-ical-library", [\
-      ["npm:1.8.2", {\
-        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/timezones-ical-library-npm-1.8.2-4b43988993-10c0.zip/node_modules/timezones-ical-library/",\
-        "packageDependencies": [\
-          ["timezones-ical-library", "npm:1.8.2"]\
         ],\
         "linkType": "HARD"\
       }]\
