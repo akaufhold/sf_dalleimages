@@ -9,6 +9,8 @@
 Resources/Public/
 
 Build/yarn.lock
+Build/.pnp.cjs
+Build/.pnp.loader.mjs
 .gitconfig
 
 /vendor/
