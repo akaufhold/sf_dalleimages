@@ -3,16 +3,16 @@
 require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (AjaxRequest, DocumentService) {
   requirejs(['jquery'], function ($) {
     DocumentService.ready().then(() => {
-      $(document).ajaxComplete(function () {
+      $(document).ajaxComplete(function () { /* Prevent input values runtime error */
+        /* Initializing button constants and input name prefixes */
         const generatePromptButton = document.getElementsByClassName('generatePrompt')
         const sendToDalleButton = document.getElementsByClassName('sendToDalle')
         const inputNamePrefix = '[name="data[tt_content][1][tx_dalleimage_prompt_'
         const formEngineNamePrefix = '[data-formengine-input-name="data[tt_content][1][tx_dalleimage_prompt_'
         const inputfieldList = 'colors,camera_position,subject,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
 
-        // const selectfieldList = ''
-
         if (sendToDalleButton.length) {
+          /* Create Prompt Object from input and select values */
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
             prompt[el] = document.querySelector(`${inputNamePrefix}${el}]"]`).value.replaceAll(',', ', ')
@@ -24,6 +24,7 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             })
           })
 
+          /* Generate text prompt for dalle image api call */
           const getFinalPrompt = (prompt) => {
             return `${(prompt.illustration !== '') ? `A ${prompt.illustration} of a ` : 'A '}` +
             `${(prompt.colors) ? `${prompt.colors} ` : ''}` +
@@ -40,6 +41,7 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
           }
 
+          /* Get content uid from url parameter */
           /* eslint-disable no-unused-vars */
           const getCurrentContentUid = () => {
             let uid = 0
@@ -51,6 +53,7 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             return uid
           }
 
+          /* Click Events for custom TCA Buttons */
           require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
             new RegularEvent('click', function (e) {
               document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
