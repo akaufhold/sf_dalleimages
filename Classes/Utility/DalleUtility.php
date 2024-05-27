@@ -22,7 +22,7 @@ final class DalleUtility
     {
         // Define the Dalle API endpoint
         $dalleEndpoint = 'https://api.openai.com/v1/images/generations';
-		$apiKey = 'sk-proj-S00mJYo8iMjEagJHh3oGT3BlbkFJQRk7AwpVIhTw3RgjP4u0';
+		$apiKey = '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';
 
         // Define the Dalle API headers (replace "YOUR_API_KEY" with your actual API key)
         $headers = [
