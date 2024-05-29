@@ -77,8 +77,8 @@ class ImageService
     {
         $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
         $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
-        // TEST DATA
-        //$imageUrl = 'https://picsum.photos/200/300';
+        //// TEST DATA
+        // $imageUrl = 'https://picsum.photos/200/300';
         return $imageUrl;
     }
 
@@ -131,10 +131,12 @@ class ImageService
      * @throws AspectNotFoundException
      * @return integer
      */
-    public function addUserImageReference($table, $uid, $contentUid, $fieldname='image', $title, $prompt): int
+    public function addUserImageReference($table, $uid, $contentUid, $title, $prompt, $fieldname='image'): int
     {
         $context = GeneralUtility::makeInstance(Context::class);
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
+        // Begin transaction
+        // $connection->beginTransaction();
         try {
             $query = $connection
                 ->insert('sys_file_reference',
