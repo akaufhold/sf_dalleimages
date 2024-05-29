@@ -2,7 +2,7 @@
 
 import '../Scss/backend.scss'
 
-const window.progressbarInstance
+var progressbarInstance // still use var for global purpose
 
 class ProgressBar {
   progressBar
@@ -13,31 +13,29 @@ class ProgressBar {
 
   init () {
     /* PROGRESS BAR */
-    console.log(this.progressbar)
     this.counterContainer = this.progressbar.getElementsByClassName('counterContainer')[0]
-    console.log(this.counterContainer)
   }
 
   /* PROGRESS BAR */
   pbReset () {
-    this.counterContainer.find('.counterAmount').css({width: '0%'})
-    this.counterContainer.removeClass('progress').removeClass('error').removeClass('success')
-    this.counterContainer.find('.counterTitle').find('.errorMessage').html('error')
+    this.counterContainer.querySelector('.counterAmount').style.width = '0%'
+    this.counterContainer.classList.remove('progress', 'error', 'success')
+    this.counterContainer.querySelector('.errorMessage').innerHTML = 'error'
   }
 
   /* SET PROGRESS BAR STATUS */
   setPbStatus (status) {
     this.pbReset()
-    this.counterContainer.addClass(status)
+    this.counterContainer.classList.add(status)
     if ((status === 'success') || (status === 'error')) {
-      this.counterContainer.find('.counterAmount').css({width: '100%'})
+      this.counterContainer.querySelector('.counterAmount').style.width = '100%'
     }
   }
 
   /* ERROR HANDLING */
   errorHandling (errorMessage) {
     this.setPbStatus('error')
-    this.progressbar.find('.errorMessage').append(': ' + errorMessage.substring(0, 130))
+    this.progressbar.querySelector('.errorMessage').append(': ' + errorMessage.substring(0, 130))
   }
 }
 
@@ -45,10 +43,10 @@ class ProgressBar {
 require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (AjaxRequest, DocumentService) {
   requirejs(['jquery'], function ($) {
     DocumentService.ready().then(() => {
-      $(document).ajaxComplete(function () { /* Prevent input values runtime error */
+      $(document).on('ajaxComplete', function () { /* Prevent input values runtime error */
         const progressbar = document.getElementsByClassName('progressBar')[0]
-        if (progressbar.length) {
-          progressbarInstance = new ProgressBar(progressbar[0])
+        if (progressbar) {
+          progressbarInstance = new ProgressBar(progressbar)
         };
 
         /* Initializing button constants and input name prefixes */
@@ -107,9 +105,8 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             }).bindTo(generatePromptButton[0])
 
             new RegularEvent('click', function (e) {
-              console.log(progressbarInstance)
               progressbarInstance.setPbStatus('progress')
-              /* new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
+              new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
                 .withQueryArguments({
                   backendFormUrl: window.location.origin + window.location.pathname,
                   input: getFinalPrompt(prompt),
@@ -119,10 +116,10 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
                 .then(async function (response) {
                   const resolved = await response.resolve()
                   const someTabTriggerEl = document.querySelector('.nav-tabs').children[1].children[0]
-
-                  resolved.result && someTabTriggerEl.click()                   // Switching tabs with js since no solution found with URIBuilder
-                  location.reload()
-                }) */
+                  progressbarInstance.setPbStatus('success')
+                  // resolved.result && someTabTriggerEl.click() // Switching tabs with js since no solution found with URIBuilder
+                  // resolved.result && location.reload()
+                })
             }).bindTo(sendToDalleButton[0])
           })
         }

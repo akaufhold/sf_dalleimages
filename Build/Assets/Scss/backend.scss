@@ -1,6 +1,13 @@
 @import "variables";
 
+@keyframes run-progress-bar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
 .progressBar {
+	max-width: 302px;
+
 	* {
 		line-height: .3;
 	}
@@ -57,7 +64,7 @@
 			margin: 0;
 
 			.counterAmount {
-				animation: runProgressBar 18s linear 2s 1 forwards;
+				animation: run-progress-bar 18s linear 2s 1 forwards;
 				width: 0%;
 			}
 
