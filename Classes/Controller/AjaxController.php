@@ -11,18 +11,21 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 
 use Stackfactory\SfDalleimages\Services\ImageService;
+use Stackfactory\SfDalleimages\Services\UriService;
 
 class AjaxController {
-    private ServerRequestInterface $request;
     private ImageService $imageService;
+    private UriService $uriService;
     private ResponseFactoryInterface $responseFactory;
 
     public function __construct(
         ImageService $imageService,
+        UriService $uriService,
         ResponseFactoryInterface $responseFactory,
     )
     {
             $this->imageService = $imageService;
+            $this->uriService = $uriService;
             $this->responseFactory = $responseFactory;
     }
 
@@ -36,18 +39,28 @@ class AjaxController {
     {
         $this->request = $request;
 
+        /* Get parameters from ajax call */
         $textPrompt = $this->request->getQueryParams()['input'] ?? throw new \InvalidArgumentException(
             'Please provide a text prompt for dalle image generation',
             1580585107,
         );
+
+        $contentID = (int) $this->request->getQueryParams()['uid'];
+
+        $backendFormUrl = $this->request->getQueryParams()['backendFormUrl'] ?? throw new \InvalidArgumentException(
+            'Please provide a backend from url to ajax request',
+            1580585107,
+        );
+
         
         if ($textPrompt != '') {
+            $mediaTabUrl = $this->uriService->getEditFormUrl($backendFormUrl, $contentID, 'media');
+
             $fileUid = $this->imageService->saveImageAsAsset($this->imageService->getDalleImageUrl($textPrompt));
 
-            $contentID = $this->request->getQueryParams('uid');
             $fileReferenceUid = $this->imageService->addUserImageReference('tt_content', $fileUid, $contentID, 'assets', substr($textPrompt, 0, 254), $textPrompt);
-            $this->imageService->enableTableField('tt_content', 'assets', $contentUid, 1);
-    
+            $this->imageService->enableTableField('tt_content', 'assets', $contentID, 1);
+
             $response = $this->responseFactory->createResponse()
                 ->withHeader('Content-Type', 'application/json; charset=utf-8');
             $response->getBody()->write(
