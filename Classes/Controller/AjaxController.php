@@ -24,9 +24,9 @@ class AjaxController {
         ResponseFactoryInterface $responseFactory,
     )
     {
-            $this->imageService = $imageService;
-            $this->uriService = $uriService;
-            $this->responseFactory = $responseFactory;
+        $this->imageService = $imageService;
+        $this->uriService = $uriService;
+        $this->responseFactory = $responseFactory;
     }
 
     /**
@@ -58,14 +58,12 @@ class AjaxController {
 
             $fileUid = $this->imageService->saveImageAsAsset($this->imageService->getDalleImageUrl($textPrompt));
 
-            $fileReferenceUid = $this->imageService->addUserImageReference('tt_content', $fileUid, $contentID, 'assets', substr($textPrompt, 0, 254), $textPrompt);
+            $fileReferenceUid = $this->imageService->addUserImageReference('tt_content', $fileUid, $contentID, substr($textPrompt, 0, 254), $textPrompt, 'assets');
             $this->imageService->enableTableField('tt_content', 'assets', $contentID, 1);
 
-            $response = $this->responseFactory->createResponse()
-                ->withHeader('Content-Type', 'application/json; charset=utf-8');
-            $response->getBody()->write(
-                json_encode(['result' => $fileReferenceUid], JSON_THROW_ON_ERROR),
-            );
+            /* create ajax response */
+            $response = $this->responseFactory->createResponse()->withHeader('Content-Type', 'application/json; charset=utf-8');
+            $response->getBody()->write(json_encode(['result' => $fileReferenceUid], JSON_THROW_ON_ERROR));
             return $response;
         }
     }
