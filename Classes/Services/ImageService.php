@@ -199,4 +199,29 @@ class ImageService
             throw $exception;
         }
     }
+
+    public function getLastAssetForContentElement($table, int $contentElementUid): ?string
+    {
+        $databaseConnection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('sys_file_reference');
+
+        $queryBuilder = $databaseConnection->createQueryBuilder();
+        $queryBuilder
+            ->select('uid_local')
+            ->from('sys_file_reference')
+            ->where(
+                $queryBuilder->expr()->eq('tablenames', $queryBuilder->createNamedParameter($table)),
+                $queryBuilder->expr()->eq('uid_foreign', $queryBuilder->createNamedParameter($contentElementUid)),
+                $queryBuilder->expr()->isNotNull('uid_local')
+            )
+            ->orderBy('crdate', 'DESC')
+            ->setMaxResults(1);
+
+        $statement = $queryBuilder->execute();
+        $assetUid = $statement->fetchColumn();
+
+        // Fetch the URL of the asset using $assetUid and return it
+        // You can implement this part according to your requirements
+
+        return $assetUid ? (string) $assetUid : null;
+    }
 }
