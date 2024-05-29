@@ -26,6 +26,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@popperjs/core", "npm:2.11.8"],\
           ["autoprefixer", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:10.4.19"],\
           ["bootstrap", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.3"],\
           ["copy-webpack-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:11.0.0"],\
@@ -1344,6 +1345,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@popperjs/core", [\
+      ["npm:2.11.8", {\
+        "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/@popperjs-core-npm-2.11.8-f1692e11a0-10c0.zip/node_modules/@popperjs/core/",\
+        "packageDependencies": [\
+          ["@popperjs/core", "npm:2.11.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@sinclair/typebox", [\
       ["npm:0.27.8", {\
         "packageLocation": "../../../../../../../home/akaufhold/.yarn/berry/cache/@sinclair-typebox-npm-0.27.8-23e206d653-10c0.zip/node_modules/@sinclair/typebox/",\
@@ -2258,7 +2268,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/bootstrap-virtual-421c09536f/8/home/akaufhold/.yarn/berry/cache/bootstrap-npm-5.3.3-da08e2f0fe-10c0.zip/node_modules/bootstrap/",\
         "packageDependencies": [\
           ["bootstrap", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.3"],\
-          ["@popperjs/core", null],\
+          ["@popperjs/core", "npm:2.11.8"],\
           ["@types/popperjs__core", null]\
         ],\
         "packagePeers": [\
@@ -2273,6 +2283,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["bootstrap5-webpack", "workspace:."],\
+          ["@popperjs/core", "npm:2.11.8"],\
           ["autoprefixer", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:10.4.19"],\
           ["bootstrap", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:5.3.3"],\
           ["copy-webpack-plugin", "virtual:1febe6a77c66d3aa931cc1e76f41fabb3497aac9a2e99bdc824f70092e9106e53d8101e231fd9b6a4061c9806ffa4cd7b3faa87f80b1454287c642d6d0e14194#npm:11.0.0"],\
