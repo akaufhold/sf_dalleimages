@@ -520,7 +520,6 @@ $dalleImage = [
                 [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.uneven', 'uneven'],
                 [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.random', 'random'],
                 [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.lush', 'lush'],
-                [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.organic', 'organic'],
                 [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.bold', 'bold'],
                 [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.intuitive', 'intuitive'],
                 [$lll . 'tt_content.dalleimage.prompt.composition.bigandfree.emotive', 'emotive'],
