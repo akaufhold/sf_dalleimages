@@ -5,16 +5,22 @@ call_user_func(function(){
 
 	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 	
-	$iconRegistry->registerIcon(
+	/*$iconRegistry->registerIcon(
 		'sf_seolighthouse-plugin-showlighthouse',
 		\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 		['source' => 'EXT:sf_seolighthouse/Resources/Public/Icons/user_plugin_showlighthouse.svg']
-	);
+	);*/
 
-	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1610674549] = [
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716642329] = [
 		'nodeName' => 'sendToDalleButton',
 		'priority' => 40,
 		'class' => Stackfactory\SfDalleimages\Tca\SendToDalleButton::class,
+	];
+
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716995129] = [
+		'nodeName' => 'lastInsertedImage',
+		'priority' => 40,
+		'class' => Stackfactory\SfDalleimages\Tca\LastInsertedImage::class,
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]

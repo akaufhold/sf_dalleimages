@@ -9,6 +9,13 @@
 			<trans-unit id="tt_content.dalleimage.prompt.empty">
 				<target>Not selected</target>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.lastImage">
+				<target>Last Image in Record</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.headline.description">
+				<target>Dalle Bildgenerierung Eingabe</target>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.description">
 				<target>Beschreibung</target>
 			</trans-unit>

@@ -9,6 +9,13 @@
 			<trans-unit id="tt_content.dalleimage.prompt.empty">
 				<source>Not selected</source>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.lastImage">
+				<source>Last Image in Record</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.headline.description">
+				<source>Dalle Image Prompt</source>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.description">
 				<source>Description</source>
 			</trans-unit>

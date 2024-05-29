@@ -7,6 +7,14 @@ defined('TYPO3_MODE') or die();
 $lll = 'LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_db.xlf:';
 
 $dalleImage = [
+    'last_inserted_image' => [
+        'label' => $lll . 'tt_content.dalleimage.lastImage',
+        'exclude' => 1,
+        'config' => [
+            'type' => 'user',
+            'renderType' => 'lastInsertedImage',
+        ],
+    ],
     'tx_dalleimage_prompt_description' => [
         'label' => $lll . 'tt_content.dalleimage.prompt.description',
         'exclude' => 1,
@@ -18,7 +26,16 @@ $dalleImage = [
             'eval' => 'trim',
         ],
     ],
-    
+    'tx_dalleimage_prompt_subject' => [
+        'label' => $lll . 'tt_content.dalleimage.prompt.subject',
+        'exclude' => 1,
+        'config' => [
+            'type' => 'input',
+            'size' => 10,
+            'max' => 255,
+            'eval' => 'trim',
+        ],
+    ],
     'tx_dalleimage_prompt_colors' => [
         'label' => $lll . 'tt_content.dalleimage.prompt.colors',
         'exclude' => 1,
@@ -47,16 +64,6 @@ $dalleImage = [
                 [$lll . 'tt_content.dalleimage.prompt.colors.aqua', 'aqua'],
             ],
             'size' => 2,
-            'max' => 255,
-            'eval' => 'trim',
-        ],
-    ],
-    'tx_dalleimage_prompt_subject' => [
-        'label' => $lll . 'tt_content.dalleimage.prompt.subject',
-        'exclude' => 1,
-        'config' => [
-            'type' => 'input',
-            'size' => 10,
             'max' => 255,
             'eval' => 'trim',
         ],
@@ -616,7 +623,8 @@ $GLOBALS['TCA']['tt_content']['palettes'] += $dalleCameraPalette;
 ExtensionManagementUtility::addToAllTCAtypes(
 	'tt_content',
 	'--div--; Dalle Image,
-    assets,
+    last_inserted_image, 
+    '.$lll. 'tt_content.dalleimage.headline.description,
     tx_dalleimage_prompt_description, 
     tx_dalleimage_prompt_colors,
     tx_dalleimage_prompt_subject, 
