@@ -75,10 +75,10 @@ class ImageService
      */
     public function getDalleImageUrl($textPrompt): string
     {
-        //$this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
-        //$imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
+        $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
+        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
         // TEST DATA
-        $imageUrl = 'https://picsum.photos/200/300';
+        //$imageUrl = 'https://picsum.photos/200/300';
         return $imageUrl;
     }
 
@@ -183,7 +183,7 @@ class ImageService
             ->update(
                 $table,
                 [
-                    $fieldname => $imgEnabled,
+                    $fieldname => $enabled,
                 ],
                 [
                     'uid' => $uid
