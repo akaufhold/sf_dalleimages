@@ -1,9 +1,56 @@
 'use strict'
+
+import '../Scss/backend.scss'
+
+const window.progressbarInstance
+
+class ProgressBar {
+  progressBar
+  constructor (progressBar) {
+    this.progressbar = progressBar
+    this.init()
+  }
+
+  init () {
+    /* PROGRESS BAR */
+    console.log(this.progressbar)
+    this.counterContainer = this.progressbar.getElementsByClassName('counterContainer')[0]
+    console.log(this.counterContainer)
+  }
+
+  /* PROGRESS BAR */
+  pbReset () {
+    this.counterContainer.find('.counterAmount').css({width: '0%'})
+    this.counterContainer.removeClass('progress').removeClass('error').removeClass('success')
+    this.counterContainer.find('.counterTitle').find('.errorMessage').html('error')
+  }
+
+  /* SET PROGRESS BAR STATUS */
+  setPbStatus (status) {
+    this.pbReset()
+    this.counterContainer.addClass(status)
+    if ((status === 'success') || (status === 'error')) {
+      this.counterContainer.find('.counterAmount').css({width: '100%'})
+    }
+  }
+
+  /* ERROR HANDLING */
+  errorHandling (errorMessage) {
+    this.setPbStatus('error')
+    this.progressbar.find('.errorMessage').append(': ' + errorMessage.substring(0, 130))
+  }
+}
+
 /* eslint-disable no-undef */
 require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (AjaxRequest, DocumentService) {
   requirejs(['jquery'], function ($) {
     DocumentService.ready().then(() => {
       $(document).ajaxComplete(function () { /* Prevent input values runtime error */
+        const progressbar = document.getElementsByClassName('progressBar')[0]
+        if (progressbar.length) {
+          progressbarInstance = new ProgressBar(progressbar[0])
+        };
+
         /* Initializing button constants and input name prefixes */
         const generatePromptButton = document.getElementsByClassName('generatePrompt')
         const sendToDalleButton = document.getElementsByClassName('sendToDalle')
@@ -33,9 +80,9 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             `${(prompt.artworks !== '') ? `Inspired by ${prompt.artworks}. ` : ''}` +
             `${(prompt.artists !== '') ? `Created by ${prompt.artists}. ` : ''}` +
             `${(prompt.emotion) ? `This image should evoke a sense of ${prompt.emotion}. ` : ''}` +
-            `${(prompt.composition) ? `It should be composed with ${prompt.composition}. ` : ''}` +
-            `${(prompt.camera_position !== '') ? `Capture it with a ${prompt.camera_position} ` : ''}` +
-            `${(prompt.camera_lenses !== '') ? `${prompt.camera_lenses} ` : ''}` +
+            `${(prompt.composition) ? `It's composition should be ${prompt.composition}. ` : ''}` +
+            `${(prompt.camera_position !== '') ? `Capture it from a ${prompt.camera_position}. ` : ''}` +
+            `${(prompt.camera_lenses !== '') ? `Use ${prompt.camera_lenses}. ` : ''}` +
             `${(prompt.camera_shot !== '') ? `${prompt.camera_shot}. ` : '. '}` +
             `${(prompt.lighting !== '') ? `Illuminate with ${prompt.lighting}. ` : ''}` +
             `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
@@ -60,16 +107,22 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             }).bindTo(generatePromptButton[0])
 
             new RegularEvent('click', function (e) {
-              new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
+              console.log(progressbarInstance)
+              progressbarInstance.setPbStatus('progress')
+              /* new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
                 .withQueryArguments({
-                  input: getFinalPrompt(prompt), 
+                  backendFormUrl: window.location.origin + window.location.pathname,
+                  input: getFinalPrompt(prompt),
                   uid: getCurrentContentUid()
                 })
                 .get()
                 .then(async function (response) {
                   const resolved = await response.resolve()
-                  resolved.result && location.reload()
-                })
+                  const someTabTriggerEl = document.querySelector('.nav-tabs').children[1].children[0]
+
+                  resolved.result && someTabTriggerEl.click()                   // Switching tabs with js since no solution found with URIBuilder
+                  location.reload()
+                }) */
             }).bindTo(sendToDalleButton[0])
           })
         }
