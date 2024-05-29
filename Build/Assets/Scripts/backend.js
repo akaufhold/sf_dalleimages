@@ -16,14 +16,14 @@ class ProgressBar {
     this.counterContainer = this.progressbar.getElementsByClassName('counterContainer')[0]
   }
 
-  /* PROGRESS BAR */
+  /* progress bar reset */
   pbReset () {
     this.counterContainer.querySelector('.counterAmount').style.width = '0%'
     this.counterContainer.classList.remove('progress', 'error', 'success')
     this.counterContainer.querySelector('.errorMessage').innerHTML = 'error'
   }
 
-  /* SET PROGRESS BAR STATUS */
+  /* set status for progress bar */
   setPbStatus (status) {
     this.pbReset()
     this.counterContainer.classList.add(status)
@@ -32,7 +32,7 @@ class ProgressBar {
     }
   }
 
-  /* ERROR HANDLING */
+  /* error output for progress bar */
   errorHandling (errorMessage) {
     this.setPbStatus('error')
     this.progressbar.querySelector('.errorMessage').append(': ' + errorMessage.substring(0, 130))
@@ -49,6 +49,23 @@ const getCurrentContentUid = () => {
     name === 'edit' && (uid = val.split('edit[tt_content][')[1].split(']')[0])
   })
   return uid
+}
+
+/* Generate text prompt for dalle image api call */
+const getFinalPrompt = (prompt) => {
+  return `${(prompt.illustration !== '') ? `A ${prompt.illustration} of a ` : 'A '}` +
+  `${(prompt.colors) ? `${prompt.colors} ` : ''}` +
+  `${(prompt.subject !== '') ? `${prompt.subject}` : ''}` +
+  `${(prompt.style !== '') ? ` in the style of ${prompt.style}. ` : '. '}` +
+  `${(prompt.artworks !== '') ? `Inspired by ${prompt.artworks}. ` : ''}` +
+  `${(prompt.artists !== '') ? `Created by ${prompt.artists}. ` : ''}` +
+  `${(prompt.emotion) ? `This image should evoke a sense of ${prompt.emotion}. ` : ''}` +
+  `${(prompt.composition) ? `It's composition should be ${prompt.composition}. ` : ''}` +
+  `${(prompt.camera_position !== '') ? `Capture it from a ${prompt.camera_position}. ` : ''}` +
+  `${(prompt.camera_lenses !== '') ? `Use ${prompt.camera_lenses}. ` : ''}` +
+  `${(prompt.camera_shot !== '') ? `${prompt.camera_shot}. ` : '. '}` +
+  `${(prompt.lighting !== '') ? `Illuminate with ${prompt.lighting}. ` : ''}` +
+  `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
 }
 
 /* eslint-disable no-undef */
@@ -80,23 +97,6 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
               }).bindTo(document.querySelector(`${inputNamePrefix}${el}]"]`))
             })
           })
-
-          /* Generate text prompt for dalle image api call */
-          const getFinalPrompt = (prompt) => {
-            return `${(prompt.illustration !== '') ? `A ${prompt.illustration} of a ` : 'A '}` +
-            `${(prompt.colors) ? `${prompt.colors} ` : ''}` +
-            `${(prompt.subject !== '') ? `${prompt.subject}` : ''}` +
-            `${(prompt.style !== '') ? ` in the style of ${prompt.style}. ` : '. '}` +
-            `${(prompt.artworks !== '') ? `Inspired by ${prompt.artworks}. ` : ''}` +
-            `${(prompt.artists !== '') ? `Created by ${prompt.artists}. ` : ''}` +
-            `${(prompt.emotion) ? `This image should evoke a sense of ${prompt.emotion}. ` : ''}` +
-            `${(prompt.composition) ? `It's composition should be ${prompt.composition}. ` : ''}` +
-            `${(prompt.camera_position !== '') ? `Capture it from a ${prompt.camera_position}. ` : ''}` +
-            `${(prompt.camera_lenses !== '') ? `Use ${prompt.camera_lenses}. ` : ''}` +
-            `${(prompt.camera_shot !== '') ? `${prompt.camera_shot}. ` : '. '}` +
-            `${(prompt.lighting !== '') ? `Illuminate with ${prompt.lighting}. ` : ''}` +
-            `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
-          }
 
           /* Click Events for custom TCA Buttons */
           require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
