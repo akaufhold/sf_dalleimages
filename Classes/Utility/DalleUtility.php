@@ -6,10 +6,6 @@ namespace Stackfactory\SfDalleimages\Utility;
 
 use GuzzleHttp\Client;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\DebugUtility;
-
-
 final class DalleUtility
 {
     /**

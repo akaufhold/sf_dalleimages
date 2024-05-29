@@ -32,7 +32,26 @@ class SendToDalleButton extends InputTextElement{
 		$buttonDalleText = 'Get Image from Dalle';
 		//$buttonHtml = '<button href="#" class="btn btn-primary sendToDalle" name="_savedok" form="EditDocumentController">' . htmlspecialchars($buttonText) . '</button>';
 		$buttonHtml = '<a href="#" class="btn btn-secondary generatePrompt me-2">' . htmlspecialchars($buttonPromptText) . '</a>' 
-								. '<a href="#" class="btn btn-primary sendToDalle">' . htmlspecialchars($buttonDalleText) . '</a>';
+								. '<a href="#" class="btn btn-primary sendToDalle">' . htmlspecialchars($buttonDalleText) . '</a>'
+								. '<div class="progressBar progress-bar-animated">
+											<span class="counterContainer">
+													<span class="counterAmount" data-width="0%"></span>
+													<span class="counterTitle">
+													<span class="statusMessage">
+															Status
+													</span>
+													<span class="progressMessage">
+															Progress
+													</span>
+													<span class="errorMessage">
+															Error
+													</span>
+													<span class="successMessage">
+															Success
+													</span>
+													</span>
+											</span>
+									</div>';
 
 		// Load JavaScript via PageRenderer
 			
