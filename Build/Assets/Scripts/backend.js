@@ -39,6 +39,18 @@ class ProgressBar {
   }
 }
 
+/* Get content uid from url parameter */
+/* eslint-disable no-unused-vars */
+const getCurrentContentUid = () => {
+  let uid = 0
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  urlParams.forEach((name, val) => {
+    name === 'edit' && (uid = val.split('edit[tt_content][')[1].split(']')[0])
+  })
+  return uid
+}
+
 /* eslint-disable no-undef */
 require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (AjaxRequest, DocumentService) {
   requirejs(['jquery'], function ($) {
@@ -52,8 +64,8 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
         /* Initializing button constants and input name prefixes */
         const generatePromptButton = document.getElementsByClassName('generatePrompt')
         const sendToDalleButton = document.getElementsByClassName('sendToDalle')
-        const inputNamePrefix = '[name="data[tt_content][1][tx_dalleimage_prompt_'
-        const formEngineNamePrefix = '[data-formengine-input-name="data[tt_content][1][tx_dalleimage_prompt_'
+        const inputNamePrefix = '[name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
+        const formEngineNamePrefix = '[data-formengine-input-name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
         const inputfieldList = 'colors,camera_position,subject,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
 
         if (sendToDalleButton.length) {
@@ -86,18 +98,6 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
           }
 
-          /* Get content uid from url parameter */
-          /* eslint-disable no-unused-vars */
-          const getCurrentContentUid = () => {
-            let uid = 0
-            const queryString = window.location.search
-            const urlParams = new URLSearchParams(queryString)
-            urlParams.forEach((name, val) => {
-              name === 'edit' && (uid = val.split('edit[tt_content][')[1].split(']')[0])
-            })
-            return uid
-          }
-
           /* Click Events for custom TCA Buttons */
           require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
             new RegularEvent('click', function (e) {
@@ -117,8 +117,8 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
                   const resolved = await response.resolve()
                   const someTabTriggerEl = document.querySelector('.nav-tabs').children[1].children[0]
                   progressbarInstance.setPbStatus('success')
-                  // resolved.result && someTabTriggerEl.click() // Switching tabs with js since no solution found with URIBuilder
-                  // resolved.result && location.reload()
+                  resolved.result && someTabTriggerEl.click() // Switching tabs with js since no solution found with URIBuilder
+                  resolved.result && location.reload()
                 })
             }).bindTo(sendToDalleButton[0])
           })
