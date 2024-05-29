@@ -1,43 +1,9 @@
 'use strict'
 
 import '../Scss/backend.scss'
+import {ProgressBar} from './progressBar'
 
 var progressbarInstance // still use var for global purpose
-
-class ProgressBar {
-  progressBar
-  constructor (progressBar) {
-    this.progressbar = progressBar
-    this.init()
-  }
-
-  init () {
-    /* PROGRESS BAR */
-    this.counterContainer = this.progressbar.getElementsByClassName('counterContainer')[0]
-  }
-
-  /* progress bar reset */
-  pbReset () {
-    this.counterContainer.querySelector('.counterAmount').style.width = '0%'
-    this.counterContainer.classList.remove('progress', 'error', 'success')
-    this.counterContainer.querySelector('.errorMessage').innerHTML = 'error'
-  }
-
-  /* set status for progress bar */
-  setPbStatus (status) {
-    this.pbReset()
-    this.counterContainer.classList.add(status)
-    if ((status === 'success') || (status === 'error')) {
-      this.counterContainer.querySelector('.counterAmount').style.width = '100%'
-    }
-  }
-
-  /* error output for progress bar */
-  errorHandling (errorMessage) {
-    this.setPbStatus('error')
-    this.progressbar.querySelector('.errorMessage').append(': ' + errorMessage.substring(0, 130))
-  }
-}
 
 /* Get content uid from url parameter */
 /* eslint-disable no-unused-vars */
@@ -63,7 +29,7 @@ const getFinalPrompt = (prompt) => {
   `${(prompt.composition) ? `It's composition should be ${prompt.composition}. ` : ''}` +
   `${(prompt.camera_position !== '') ? `Capture it from a ${prompt.camera_position}. ` : ''}` +
   `${(prompt.camera_lenses !== '') ? `Use ${prompt.camera_lenses}. ` : ''}` +
-  `${(prompt.camera_shot !== '') ? `${prompt.camera_shot}. ` : '. '}` +
+  `${(prompt.camera_shot !== '') ? `${prompt.camera_shot}. ` : ''}` +
   `${(prompt.lighting !== '') ? `Illuminate with ${prompt.lighting}. ` : ''}` +
   `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
 }
@@ -100,10 +66,11 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
 
           /* Click Events for custom TCA Buttons */
           require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
+            /* generate prompt when click on "Generate prompt" button */
             new RegularEvent('click', function (e) {
               document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
             }).bindTo(generatePromptButton[0])
-
+            /* process ajax request when click on "Get Image from Dalle" button */
             new RegularEvent('click', function (e) {
               progressbarInstance.setPbStatus('progress')
               new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
@@ -117,7 +84,7 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
                   const resolved = await response.resolve()
                   const someTabTriggerEl = document.querySelector('.nav-tabs').children[1].children[0]
                   progressbarInstance.setPbStatus('success')
-                  resolved.result && someTabTriggerEl.click() // Switching tabs with js since no solution found with URIBuilder
+                  // resolved.result && someTabTriggerEl.click() // Switching tabs with js since no solution found with URIBuilder
                   resolved.result && location.reload()
                 })
             }).bindTo(sendToDalleButton[0])
