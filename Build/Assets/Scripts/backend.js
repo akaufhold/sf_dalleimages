@@ -49,18 +49,31 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
         const sendToDalleButton = document.getElementsByClassName('sendToDalle')
         const inputNamePrefix = '[name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
         const formEngineNamePrefix = '[data-formengine-input-name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
-        const inputfieldList = 'colors,camera_position,subject,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
+        const inputfieldList = 'subject,colors,camera_position,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
 
         if (sendToDalleButton.length) {
           /* Create Prompt Object from input and select values */
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
-            prompt[el] = document.querySelector(`${inputNamePrefix}${el}]"]`).value.replaceAll(',', ', ')
+            const currentElement = document.querySelector(`${inputNamePrefix}${el}]"]`)
+            prompt[el] = currentElement.value.replaceAll(',', ', ')
+            console.log(currentElement.tagName, currentElement.tagName === 'SELECT')
             require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
-              new RegularEvent('change', function (e) {
-                prompt[el] = document.querySelector(`${inputNamePrefix}${el}]"]`).value.replaceAll(',', ', ')
-                document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
-              }).bindTo(document.querySelector(`${inputNamePrefix}${el}]"]`))
+              if (currentElement.tagName === 'INPUT') {
+                console.log('input')
+                new RegularEvent('input', function (e) {
+                  prompt[el] = document.querySelector(`${inputNamePrefix}${el}]"]`).value.replaceAll(',', ', ')
+                  document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
+                }).bindTo(document.querySelector(`${inputNamePrefix}${el}]"]`))
+              }
+              if (currentElement.tagName === 'SELECT') {
+                console.log('SELECT')
+                new RegularEvent('change', function (e) {
+                  prompt[el] = document.querySelector(`${inputNamePrefix}${el}]"]`).value.replaceAll(',', ', ')
+                  console.log(document.querySelector(`${inputNamePrefix}description]`).value, getFinalPrompt(prompt))
+                  document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
+                }).bindTo(document.querySelector(`${inputNamePrefix}${el}]"]`))
+              }
             })
           })
 
