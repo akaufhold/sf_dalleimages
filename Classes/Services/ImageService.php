@@ -200,7 +200,16 @@ class ImageService
         }
     }
 
-    public function getLastAssetForContentElement($table, int $contentElementUid): ?string
+    /**
+     * Enable table fields for using assets  
+     *
+     * @param string $table
+     * @param integer $contentElementUid
+     * @param string sortingField
+     * @throws Exception
+     * @return array
+     */
+    public function getAssetsForContentElement($table, int $contentElementUid, $sortingField): ?array
     {
         $databaseConnection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('sys_file_reference');
 
@@ -211,17 +220,21 @@ class ImageService
             ->where(
                 $queryBuilder->expr()->eq('tablenames', $queryBuilder->createNamedParameter($table)),
                 $queryBuilder->expr()->eq('uid_foreign', $queryBuilder->createNamedParameter($contentElementUid)),
+                $queryBuilder->expr()->eq('deleted', '0'),
                 $queryBuilder->expr()->isNotNull('uid_local')
             )
-            ->orderBy('crdate', 'DESC')
-            ->setMaxResults(1);
+            ->orderBy($sortingField, 'DESC');
 
         $statement = $queryBuilder->execute();
-        $assetUid = $statement->fetchColumn();
+        $assetUids = $statement->fetchAll();
+
+        $assetUidsFlat = array_map( function($n) {
+            return $n['uid_local'];
+        }, $assetUids);
 
         // Fetch the URL of the asset using $assetUid and return it
         // You can implement this part according to your requirements
 
-        return $assetUid ? (string) $assetUid : null;
+        return $assetUidsFlat ? $assetUidsFlat : null;
     }
 }
