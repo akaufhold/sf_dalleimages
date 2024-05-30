@@ -18,9 +18,9 @@ call_user_func(function(){
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716995129] = [
-		'nodeName' => 'lastInsertedImage',
+		'nodeName' => 'PreviewImages',
 		'priority' => 40,
-		'class' => Stackfactory\SfDalleimages\Tca\LastInsertedImage::class,
+		'class' => Stackfactory\SfDalleimages\Tca\PreviewImages::class,
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]
