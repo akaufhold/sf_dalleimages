@@ -867,71 +867,171 @@
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high">
-				<target>Negative Stimmung, hohe Energie</target>
+				<target>--div--</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.haunting">
+				<target>gespenstisch</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dark">
-				<target>dunkel</target>
+				<target>düster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gloomy">
+				<target>trüb</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dismal">
+				<target>trostlos</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.depressing">
+				<target>deprimierend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.oppressive">
+				<target>drückend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.forbidding">
+				<target>drohend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.frightening">
+				<target>erschreckend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.tense">
+				<target>angespannt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.nervous">
+				<target>nervös</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.unsettling">
+				<target>beunruhigend</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ominous">
 				<target>unheilvoll</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.threatening">
-				<target>bedrohlich</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.haunting">
-				<target>spukend</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.forbidding">
-				<target>abschreckend</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gloomy">
-				<target>trübsinnig</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.stormy">
-				<target>stürmisch</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.doom">
-				<target>Untergang</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.apocalyptic">
-				<target>apokalyptisch</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.sinister">
-				<target>unheilvoll</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shadowy">
-				<target>schattenhaft</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghostly">
-				<target>gespenstisch</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.unnerving">
-				<target>nervenaufreibend</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.harrowing">
-				<target>erschütternd</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dreadful">
-				<target>furchtbar</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.frightful">
-				<target>erschreckend</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shocking">
-				<target>schockierend</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terror">
-				<target>Terror</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hideous">
-				<target>abscheulich</target>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghastly">
-				<target>grässlich</target>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.foreboding">
+				<target>ahnungsvoll</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terrifying">
 				<target>erschreckend</target>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.horrifying">
+				<target>schrecklich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gruesome">
+				<target>grausig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.macabre">
+				<target>makaber</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gory">
+				<target>blutig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.bloody">
+				<target>blutig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghastly">
+				<target>grässlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.fearful">
+				<target>ängstlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.scary">
+				<target>furchteinflößend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.evil">
+				<target>böse</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.diabolical">
+				<target>diabolisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.wicked">
+				<target>niederträchtig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.sinister">
+				<target>unheimlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.menacing">
+				<target>bedrohlich</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.satanic">
+				<target>satanisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.demonic">
+				<target>dämonisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.destructive">
+				<target>zerstörerisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.violent">
+				<target>gewalttätig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.cruel">
+				<target>grausam</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.barbaric">
+				<target>barbarisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.malicious">
+				<target>bösartig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hateful">
+				<target>hasserfüllt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.aggressive">
+				<target>aggressiv</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hostile">
+				<target>feindselig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.belligerent">
+				<target>streitlustig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.angry">
+				<target>wütend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.furious">
+				<target>wutentbrannt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.raging">
+				<target>wütend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ferocious">
+				<target>wild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.savage">
+				<target>wild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.brutal">
+				<target>brutal</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.wild">
+				<target>wild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.untamed">
+				<target>ungebändigt</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.feral">
+				<target>wild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.bloody">
+				<target>blutig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gory">
+				<target>blutig</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.horror">
+				<target>Horror</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.torturous">
+				<target>quälend</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hellish">
+				<target>höllisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.infernal">
+				<target>infernalisch</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dreadful">
+				<target>furchtbar</target>
+			</trans-unit>
+
 
 			<trans-unit id="tt_content.dalleimage.prompt.composition">
 				<target>Komposition</target>

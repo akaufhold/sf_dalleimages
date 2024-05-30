@@ -974,70 +974,169 @@
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high">
-				<source>Negative mood, high energy</source>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dark">
-				<source>dark</source>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ominous">
-				<source>ominous</source>
-			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.threatening">
-				<source>threatening</source>
+				<source>--div--</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.haunting">
 				<source>haunting</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.forbidding">
-				<source>forbidding</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dark">
+				<source>dark</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gloomy">
 				<source>gloomy</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.stormy">
-				<source>stormy</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dismal">
+				<source>dismal</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.doom">
-				<source>doom</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.depressing">
+				<source>depressing</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.apocalyptic">
-				<source>apocalyptic</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.oppressive">
+				<source>oppressive</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.sinister">
-				<source>sinister</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.forbidding">
+				<source>forbidding</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shadowy">
-				<source>shadowy</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.frightening">
+				<source>frightening</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghostly">
-				<source>ghostly</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.tense">
+				<source>tense</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.unnerving">
-				<source>unnerving</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.nervous">
+				<source>nervous</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.harrowing">
-				<source>harrowing</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.unsettling">
+				<source>unsettling</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dreadful">
-				<source>dreadful</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ominous">
+				<source>ominous</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.frightful">
-				<source>frightful</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.foreboding">
+				<source>foreboding</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.shocking">
-				<source>shocking</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terrifying">
+				<source>terrifying</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terror">
-				<source>terror</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.horrifying">
+				<source>horrifying</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hideous">
-				<source>hideous</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gruesome">
+				<source>gruesome</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.macabre">
+				<source>macabre</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gory">
+				<source>gory</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.bloody">
+				<source>bloody</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ghastly">
 				<source>ghastly</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.terrifying">
-				<source>terrifying</source>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.fearful">
+				<source>fearful</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.scary">
+				<source>scary</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.evil">
+				<source>evil</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.diabolical">
+				<source>diabolical</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.wicked">
+				<source>wicked</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.sinister">
+				<source>sinister</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.menacing">
+				<source>menacing</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.satanic">
+				<source>satanic</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.demonic">
+				<source>demonic</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.destructive">
+				<source>destructive</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.violent">
+				<source>violent</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.cruel">
+				<source>cruel</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.barbaric">
+				<source>barbaric</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.malicious">
+				<source>malicious</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hateful">
+				<source>hateful</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.aggressive">
+				<source>aggressive</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hostile">
+				<source>hostile</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.belligerent">
+				<source>belligerent</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.angry">
+				<source>angry</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.furious">
+				<source>furious</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.raging">
+				<source>raging</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.ferocious">
+				<source>ferocious</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.savage">
+				<source>savage</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.brutal">
+				<source>brutal</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.wild">
+				<source>wild</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.untamed">
+				<source>untamed</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.feral">
+				<source>feral</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.bloody">
+				<source>bloody</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.gory">
+				<source>gory</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.horror">
+				<source>horror</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.torturous">
+				<source>torturous</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.hellish">
+				<source>hellish</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.infernal">
+				<source>infernal</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.emotion.negative.high.dreadful">
+				<source>dreadful</source>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.prompt.composition">
