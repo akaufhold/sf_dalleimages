@@ -51,20 +51,17 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
         const formEngineNamePrefix = '[data-formengine-input-name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
         const inputfieldList = 'subject,colors,camera_position,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
 
-        console.log(getCurrentContentUid())
-
         if (sendToDalleButton.length) {
           /* Create Prompt Object from input and select values */
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
             const currentElement = document.querySelector(`${inputNamePrefix}${el}]"]`)
             prompt[el] = currentElement.value.replaceAll(',', ', ')
-            console.log(currentElement, currentElement.tagName, currentElement.tagName === 'SELECT')
+
             require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
               // console.log('SELECT')
               new RegularEvent('change', function (e) {
                 prompt[el] = currentElement.value.replaceAll(',', ', ')
-                console.log(document.querySelector(`${inputNamePrefix}description]`).value, getFinalPrompt(prompt))
                 document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
               }).bindTo(currentElement)
             })
