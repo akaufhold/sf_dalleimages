@@ -88,7 +88,11 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
                   const someTabTriggerEl = document.querySelector('.nav-tabs').children[1].children[0]
                   progressbarInstance.setPbStatus('success')
                   // resolved.result && someTabTriggerEl.click() // Switching tabs with js since no solution found with URIBuilder
-                  resolved.result && location.reload()
+                  const saveButton = document.querySelector('button[name="_savedok"]')
+
+                  if (resolved.result) {
+                    saveButton ? saveButton.click() : location.reload()
+                  }
                 })
             }).bindTo(sendToDalleButton[0])
           })
