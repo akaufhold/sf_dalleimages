@@ -8,6 +8,10 @@ plugin.sf_dalleimages {
         layoutRootPaths.1 = {$plugin.sf_dalleimages.view.layoutRootPath}
     }
 
+    settings {
+        dalleApiKey = {$plugin.tx_sf_dalleimages.dalleApiKey}
+    }
+
     features {
         #skipDefaultArguments = 1
         # if set to 1, the enable fields are ignored in BE context
@@ -16,3 +20,5 @@ plugin.sf_dalleimages {
         requireCHashArgumentForActionArguments = 1
     }
 }
+
+

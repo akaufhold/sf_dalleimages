@@ -4,10 +4,23 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Utility;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 use GuzzleHttp\Client;
 
 final class DalleUtility
 {
+    protected $apiKey;
+
+    public function __construct(
+
+    )
+    {
+        $backendConfigurationManager = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager::class);
+        $typoscript = $backendConfigurationManager->getTypoScriptSetup();
+        $this->apiKey = $typoscript['plugin.']["sf_dalleimages."]["settings."]["dalleApiKey"];
+    }
+
     /**
      * Generate dalle image with text prompt and return url 
      *
@@ -24,7 +37,7 @@ final class DalleUtility
         // Define the Dalle API headers (replace "YOUR_API_KEY" with your actual API key)
         $headers = [
             'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer '.$apiKey,
+            'Authorization' => 'Bearer '.$this->apiKey,
         ];
 
         // Define the request body with the text prompt
