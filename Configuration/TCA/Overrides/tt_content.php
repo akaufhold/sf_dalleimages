@@ -7,12 +7,12 @@ defined('TYPO3_MODE') or die();
 $lll = 'LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_db.xlf:';
 
 $dalleImage = [
-    'last_preview_images' => [
-        'label' => $lll . 'tt_content.dalleimage.lastImage',
+    'tx_dalleimage_last_preview_images' => [
+        'label' => $lll . 'tt_content.dalleimage.imagePreview',
         'exclude' => 1,
         'config' => [
             'type' => 'user',
-            'renderType' => 'PreviewImages',
+            'renderType' => 'previewImages',
         ],
     ],
     'tx_dalleimage_prompt_description' => [
@@ -20,7 +20,7 @@ $dalleImage = [
         'exclude' => 1,
         'config' => [
             'type' => 'input',
-            'renderType' => 'sendToDalleButton',
+            'renderType' => 'generatePrompt',
             'size' => 80,
             'max' => 500,
             'eval' => 'trim',
@@ -601,6 +601,15 @@ ExtensionManagementUtility::addTCAcolumns(
     $dalleImage
 );
 
+$dallePromptPalette = array(
+    'tx_dalleimage_dallePromptPalette' => [
+        'showitem' => 'tx_dalleimage_prompt_description',
+        'canNotCollapse' => 1
+    ],
+);
+
+$GLOBALS['TCA']['tt_content']['palettes'] += $dallePromptPalette;
+
 $dalleStylePalette = array(
     'tx_dalleimage_dalleStylePalette' => [
         'showitem' => 'tx_dalleimage_prompt_illustration, tx_dalleimage_prompt_style, tx_dalleimage_prompt_artworks, tx_dalleimage_prompt_artists', 
@@ -623,9 +632,8 @@ $GLOBALS['TCA']['tt_content']['palettes'] += $dalleCameraPalette;
 ExtensionManagementUtility::addToAllTCAtypes(
 	'tt_content',
 	'--div--; Dalle Image,
-    last_preview_images, 
-    '.$lll. 'tt_content.dalleimage.headline.description,
-    tx_dalleimage_prompt_description, 
+    tx_dalleimage_last_preview_images, --linebreak--, 
+    --palette--; '.$lll. 'tt_content.dalleimage.palette.prompt; tx_dalleimage_dallePromptPalette,
     tx_dalleimage_prompt_subject, 
     tx_dalleimage_prompt_colors,
     --palette--;'. $lll. 'tt_content.palette.illustration; tx_dalleimage_dalleStylePalette, 

@@ -11,16 +11,28 @@ call_user_func(function(){
 		['source' => 'EXT:sf_seolighthouse/Resources/Public/Icons/user_plugin_showlighthouse.svg']
 	);*/
 
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716995129] = [
+		'nodeName' => 'previewImages',
+		'priority' => 40,
+		'class' => Stackfactory\SfDalleimages\Tca\PreviewImages::class,
+	];
+
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1717157527] = [
+		'nodeName' => 'generatePrompt',
+		'priority' => 40,
+		'class' => \Stackfactory\SfDalleimages\Tca\GeneratePrompt::class,
+	];
+
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1717157525] = [
+		'nodeName' => 'progressBar',
+		'priority' => 40,
+		'class' => Stackfactory\SfDalleimages\Tca\ProgressBar::class,
+	];
+
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716642329] = [
 		'nodeName' => 'sendToDalleButton',
 		'priority' => 40,
 		'class' => Stackfactory\SfDalleimages\Tca\SendToDalleButton::class,
-	];
-
-	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716995129] = [
-		'nodeName' => 'PreviewImages',
-		'priority' => 40,
-		'class' => Stackfactory\SfDalleimages\Tca\PreviewImages::class,
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]

@@ -3,14 +3,17 @@
 	<file target-language="en" datatype="plaintext" original="EXT:sf_seolighthouse/Retargets/Private/Language/locallang_db" date="2021-03-21T21:33:18Z" product-name="sf_seolighthouse">
 		<header/>
 		<body>
+			<trans-unit id="tt_content.dalleimage.palette.prompt">
+				<target>Dalle Bildgenerierung Einstellungen</target>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt">
 				<target>Texteingabe für Bildgenerierung mit Dalle</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.empty">
 				<target>Not selected</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.lastImage">
-				<target>Last Image in Record</target>
+			<trans-unit id="tt_content.dalleimage.imagePreview">
+				<target>Bildvorschau</target>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.headline.description">

@@ -3,14 +3,17 @@
 	<file source-language="en" datatype="plaintext" original="EXT:sf_seolighthouse/Resources/Private/Language/locallang_db" date="2021-03-21T21:33:18Z" product-name="sf_seolighthouse">
 		<header/>
 		<body>
+			<trans-unit id="tt_content.dalleimage.palette.prompt">
+				<source>Generate Dalle Image Options</source>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt">
 				<source>Text prompt for dalle image generation</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.empty">
 				<source>Not selected</source>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.lastImage">
-				<source>Last Image in Record</source>
+			<trans-unit id="tt_content.dalleimage.imagePreview">
+				<source>Image Previews</source>
 			</trans-unit>
 
 			<trans-unit id="tt_content.dalleimage.headline.description">
