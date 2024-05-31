@@ -137,7 +137,6 @@
 	display: grid;
   grid-template-columns: repeat(3,100%);
   overflow:hidden;
-	padding: 0 4%;
   scroll-behavior: smooth;
 
 	&-item {
@@ -150,16 +149,17 @@
 			max-width: 210px;
 			transition: .2s all;
 
-			&:hover {
-				margin: 0 30px;
-				transform: scale(1.2);
+			&.zoom {
+				&:hover {
+					margin: 0 30px;
+					transform: scale(1.2);
+				}
 			}
 		}
 	}
 
 	.carousel-control-prev,
 	.carousel-control-next {
-		filter: invert(1);
 		min-width:30px;
 		width: 4%;
 	}
