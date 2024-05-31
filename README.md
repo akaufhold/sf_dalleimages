@@ -11,7 +11,7 @@ This extension requires OpenAi Platform API Key. </br>
 The Key can be setted in Typoscript Constant.</br> 
 
 plugin.tx_sf_dalleimages{</br>
-    dalleApiKey = </br>
+\t dalleApiKey = </br>
 }
 
 The image prompt is generating dynamically, while changing the category inputs.
