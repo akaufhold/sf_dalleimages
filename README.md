@@ -7,11 +7,11 @@ TYPO3 Extension for AI generating images with text Prompt
 
 ![grafik](https://github.com/akaufhold/sf_dalleimages/assets/27824413/bfc64ede-093b-4fb1-9e8a-583cbcfc389e)
 
-This extension requires OpenAi Platform API Key
-The Key can be setted in Typoscript Constant 
+This extension requires OpenAi Platform API Key. </br>
+The Key can be setted in Typoscript Constant.</br> 
 
-plugin.tx_sf_dalleimages{
-    dalleApiKey = 
+plugin.tx_sf_dalleimages{</br>
+    dalleApiKey = </br>
 }
 
 The image prompt is generating dynamically, while changing the category inputs.
