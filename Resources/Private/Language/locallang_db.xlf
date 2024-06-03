@@ -3,8 +3,20 @@
 	<file source-language="en" datatype="plaintext" original="EXT:sf_seolighthouse/Resources/Private/Language/locallang_db" date="2021-03-21T21:33:18Z" product-name="sf_seolighthouse">
 		<header/>
 		<body>
-			<trans-unit id="tt_content.dalleimage.palette.prompt">
+			<trans-unit id="tt_content.dalleimage.palette.options">
 				<source>Generate Dalle Image Options</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.options.model">
+				<source>Dalle Model</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.options.size">
+				<source>Image Size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.options.quality">
+				<source>Quality</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.options.amount">
+				<source>Anzahl</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt">
 				<source>Text prompt for dalle image generation</source>

@@ -70,13 +70,17 @@ class ImageService
      * Return new image url
      *
      * @param string $imageUrl
+     * @param string $model
+     * @param string $size
+     * @param string $quality
+     * @param integer $amount
      * @param integer $contentElementUid
      * @return string
      */
-    public function getDalleImageUrl($textPrompt): string
+    public function getDalleImageUrl($textPrompt, $model='dall-e-3', $size='1024x1024', $quality='Standard', $amount=1): string
     {
         $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
-        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt);
+        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount);
         
         // TEST DATA
         //$imageUrl = 'https://picsum.photos/200/300';
@@ -132,7 +136,7 @@ class ImageService
      * @throws AspectNotFoundException
      * @return integer
      */
-    public function addUserImageReference($table, $uid, $contentUid, $title, $prompt, $fieldname='image'): int
+    public function addUserImageReference($table, $uid, $contentUid, $alternative, $prompt, $fieldname='image'): int
     {
         $context = GeneralUtility::makeInstance(Context::class);
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
@@ -149,7 +153,7 @@ class ImageService
                     'table_local' => 'sys_file',
                     'tstamp' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'crdate' => $context->getPropertyFromAspect('date', 'timestamp'),
-                    'title' => $title,
+                    'alternative' => $alternative,
                     'tx_dalleimage_prompt' => $prompt
                 ],
                 [

@@ -39,25 +39,34 @@ class AjaxController {
     {
         $this->request = $request;
 
-        /* Get parameters from ajax call */
-        $textPrompt = $this->request->getQueryParams()['input'] ?? throw new \InvalidArgumentException(
+        /* Get parameters from ajax call and error handling */
+        $textPrompt = (string) $this->request->getQueryParams()['input'] ?? throw new \InvalidArgumentException(
             'Please provide a text prompt for dalle image generation',
             1580585107,
         );
-
-        $contentID = (int) $this->request->getQueryParams()['uid'];
-
-        $backendFormUrl = $this->request->getQueryParams()['backendFormUrl'] ?? throw new \InvalidArgumentException(
-            'Please provide a backend from url to ajax request',
+        $model = (string) $this->request->getQueryParams()['model'] ?? throw new \InvalidArgumentException(
+            'Please provide a model for dalle image generation',
             1580585107,
         );
-
+        $size = (string) $this->request->getQueryParams()['size'] ?? throw new \InvalidArgumentException(
+            'Please provide a image size for dalle image generation',
+            1580585107,
+        );
+        $quality = (string) $this->request->getQueryParams()['quality'] ?? throw new \InvalidArgumentException(
+            'Please provide a image quality for dalle image generation',
+            1580585107,
+        );
+        $amount = (int) $this->request->getQueryParams()['amount'] ?? throw new \InvalidArgumentException(
+            'Please provide a image amount for dalle image generation',
+            1580585107,
+        );
+        $contentID = (int) $this->request->getQueryParams()['uid'];
         
         if ($textPrompt != '') {
-            $mediaTabUrl = $this->uriService->getEditFormUrl($backendFormUrl, $contentID, 'media');
-
-            $fileUid = $this->imageService->saveImageAsAsset($this->imageService->getDalleImageUrl($textPrompt));
-
+            /* save image in fileadmin and add sys_file entry */
+            $fileUid = $this->imageService->saveImageAsAsset($this->imageService->getDalleImageUrl($textPrompt, $model, $size, $quality, $amount));
+            
+            /* add image to sys_file_reference and enable assets in related tt_content element */
             $fileReferenceUid = $this->imageService->addUserImageReference('tt_content', $fileUid, $contentID, substr($textPrompt, 0, 254), $textPrompt, 'assets');
             $this->imageService->enableTableField('tt_content', 'assets', $contentID, 1);
 

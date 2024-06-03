@@ -34,6 +34,11 @@ const getFinalPrompt = (prompt) => {
   `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
 }
 
+const getFormElement = (group, field) => {
+  const query = `[name="data[tt_content][${getCurrentContentUid()}][tx_dalleimage${group ? '_`+ group +`_' : '_'}${field}]"]`
+  return document.querySelector(query)
+}
+
 /* eslint-disable no-undef */
 require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (AjaxRequest, DocumentService) {
   requirejs(['jquery'], function ($) {
@@ -55,13 +60,15 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
           /* Create Prompt Object from input and select values */
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
-            const currentElement = document.querySelector(`${inputNamePrefix}${el}]"]`)
+            // console.log(document.querySelector(`${formEngineNamePrefix}${el}]"]`), document.querySelector(`${inputNamePrefix}${el}]"]`))
+            const currentElement = document.querySelector(`${inputNamePrefix}${el}]"]`) ?? document.querySelector(`select${formEngineNamePrefix}${el}]"]`) ?? document.querySelector(`${formEngineNamePrefix}${el}]"]`)
             prompt[el] = currentElement.value.replaceAll(',', ', ')
 
             require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
-              // console.log('SELECT')
               new RegularEvent('change', function (e) {
-                prompt[el] = currentElement.value.replaceAll(',', ', ')
+                // selecting input and hidden fields holding the value
+                const targetElement = document.querySelector(`${inputNamePrefix}${el}]"]`) ?? document.querySelector(`${formEngineNamePrefix}${el}]"]`)
+                prompt[el] = targetElement.value.replaceAll(',', ', ')
                 document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
               }).bindTo(currentElement)
             })
@@ -76,10 +83,21 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             /* process ajax request when click on "Get Image from Dalle" button */
             new RegularEvent('click', function (e) {
               progressbarInstance.setPbStatus('progress')
+              const model = getFormElement(false, 'model').value
+              const size = getFormElement(false, 'size').value
+              const quality = getFormElement(false, 'quality').value
+              const amount = getFormElement(false, 'amount').value
+              // console.log(model, size, amount)
+              console.log(model, size, quality, amount)
+              // console.log(`[name="data[tt_content][${getCurrentContentUid()}][tx_dalleimage_prompt_quality']"]`)
               new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
                 .withQueryArguments({
                   backendFormUrl: window.location.origin + window.location.pathname,
                   input: getFinalPrompt(prompt),
+                  model: model,
+                  size: size,
+                  quality: quality,
+                  amount: amount,
                   uid: getCurrentContentUid()
                 })
                 .get()
@@ -91,6 +109,7 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
                   const saveButton = document.querySelector('button[name="_savedok"]')
 
                   if (resolved.result) {
+                    // save form after image has being generated or reload frame
                     saveButton ? saveButton.click() : location.reload()
                   }
                 })

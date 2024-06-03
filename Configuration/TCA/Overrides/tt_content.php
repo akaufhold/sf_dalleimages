@@ -36,6 +36,54 @@ $dalleImage = [
             'eval' => 'trim',
         ],
     ],
+    'tx_dalleimage_model' => [
+        'label' => $lll . 'tt_content.dalleimage.options.model',
+        'exclude' => 1,
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                ['dalle v1', 'dall-e-1'],
+                ['dalle v2', 'dall-e-2'],
+                ['dalle v3', 'dall-e-3']
+            ],
+        ],
+    ],
+    'tx_dalleimage_size' => [
+        'label' => $lll . 'tt_content.dalleimage.options.size',
+        'exclude' => 1,
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                ['256x256', '256x256'],
+                ['512x512', '512x512'],
+                ['1024x1024', '1024x1024']
+            ],
+        ],
+    ],
+    'tx_dalleimage_quality' => [
+        'label' => $lll . 'tt_content.dalleimage.options.quality',
+        'exclude' => 1,
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                ['Standard', 'standard'],
+                ['HD', 'hd'],
+            ],
+        ],
+    ],
+    'tx_dalleimage_amount' => [
+        'label' => $lll . 'tt_content.dalleimage.options.amount',
+        'exclude' => 1,
+        'config' => [
+            'type' => 'input',
+            'size' => 10,
+            'max' => 255,
+            'eval' => 'trim',
+        ],
+    ],
     'tx_dalleimage_prompt_colors' => [
         'label' => $lll . 'tt_content.dalleimage.prompt.colors',
         'exclude' => 1,
@@ -603,7 +651,7 @@ ExtensionManagementUtility::addTCAcolumns(
 
 $dallePromptPalette = array(
     'tx_dalleimage_dallePromptPalette' => [
-        'showitem' => 'tx_dalleimage_prompt_description',
+        'showitem' => 'tx_dalleimage_model, tx_dalleimage_size, tx_dalleimage_quality, tx_dalleimage_amount, --linebreak--, tx_dalleimage_prompt_description',
         'canNotCollapse' => 1
     ],
 );
@@ -633,7 +681,7 @@ ExtensionManagementUtility::addToAllTCAtypes(
 	'tt_content',
 	'--div--; Dalle Image,
     tx_dalleimage_last_preview_images, --linebreak--, 
-    --palette--; '.$lll. 'tt_content.dalleimage.palette.prompt; tx_dalleimage_dallePromptPalette,
+    --palette--; '.$lll. 'tt_content.dalleimage.palette.options; tx_dalleimage_dallePromptPalette,
     tx_dalleimage_prompt_subject, 
     tx_dalleimage_prompt_colors,
     --palette--;'. $lll. 'tt_content.palette.illustration; tx_dalleimage_dalleStylePalette, 

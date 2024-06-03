@@ -25,14 +25,16 @@ final class DalleUtility
      * Generate dalle image with text prompt and return url 
      *
      * @param string $textPrompt
+     * @param string $model
+     * @param string $size
+     * @param string $quality
+     * @param integer $amount
      * @return string
      */
-    public function fetchImageFromDalle($textPrompt): string
+    public function fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount): string
     {
         // Define the Dalle API endpoint
         $dalleEndpoint = 'https://api.openai.com/v1/images/generations';
-        // TEST KEY, delete later => move to constants
-		$apiKey = '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';
 
         // Define the Dalle API headers (replace "YOUR_API_KEY" with your actual API key)
         $headers = [
@@ -43,9 +45,10 @@ final class DalleUtility
         // Define the request body with the text prompt
         $body = [
             'prompt' => $textPrompt,
-            'model' => 'dall-e-3', // Specify the DALL-E model
-            'n' => 1, // Number of images to generate
-            'size' => '1024x1024', // Size of the image
+            'model' => $model, // Specify the DALL-E model
+            'n' => $amount, // Number of images to generate
+            'size' => $size, // Size of the image
+            'quality' => $quality // Quality of the image
         ];
 
         // Send request to Dalle API
