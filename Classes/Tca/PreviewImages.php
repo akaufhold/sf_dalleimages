@@ -34,8 +34,9 @@ class PreviewImages extends AbstractNode implements NodeInterface
     {
         $record = $this->data['databaseRow'];
         $currentContentUid = $record['uid'];
+
         $this->imageService = GeneralUtility::makeInstance(ImageService::class);
-        $assetUids = $this->imageService->getAssetsForContentElement('tt_content', $currentContentUid, 'crdate');
+        getType($currentContentUid) === 'integer' && $assetUids = $this->imageService->getAssetsForContentElement('tt_content', $currentContentUid, 'crdate');
 
         // If there are no assets, return an empty string
         if (!is_array($assetUids)) {
