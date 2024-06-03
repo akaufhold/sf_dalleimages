@@ -1,9 +1,9 @@
 # sf_dalleimages
 
-TYPO3 Extension for AI generating images with text Prompt
+TYPO3 Extension for adding AI generating images to content elements with Dalle-E
 - real time generating prompts with multiple category presets
-- dalle platform account
 - saves data as "asset" in tt_content like textmedia, image, etc
+- uses dalle platform account
 
 ![grafik](https://github.com/akaufhold/sf_dalleimages/assets/27824413/bfc64ede-093b-4fb1-9e8a-583cbcfc389e)
 
