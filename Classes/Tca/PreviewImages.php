@@ -69,7 +69,7 @@ class PreviewImages extends AbstractNode implements NodeInterface
                     } catch (FileDoesNotExistException $e) {
                         throw new \RuntimeException('Could not find files with the uid "' . $uid, 1314354065);
                     }
-                    (($key%$elementsPerRow === 4) || (count($fileReferences) === ($key-1))) && $html .= sprintf('</div>');
+                    ((($key)%$elementsPerRow === 4) || (count($fileReferences) === ($key+1))) && $html .= sprintf('</div>');
                 }
                 $html .= sprintf('</div>');
 
