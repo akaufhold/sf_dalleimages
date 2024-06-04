@@ -3,9 +3,9 @@
 import '../Scss/backend.scss'
 import {ProgressBar} from './progressBar'
 
-var progressbarInstance // still use var for global purpose
+var progressbarInstance // use var for global purpose
 
-/* Get content uid from url parameter */
+/* Get content uid from url parameter or input field for new elements */
 /* eslint-disable no-unused-vars */
 const getCurrentContentUid = () => {
   let uid = 0
@@ -14,9 +14,10 @@ const getCurrentContentUid = () => {
   urlParams.forEach((name, val) => {
     name === 'edit' && (uid = val.split('edit[tt_content][')[1].split(']')[0])
   })
-  return uid
+  return uid || document.querySelectorAll("[name^='data[tt_content]'][name$='[pid]']")[0].name.split('data[tt_content][')[1].split('][pid]')[0]
 }
 
+console.log(getCurrentContentUid())
 /* Generate text prompt for dalle image api call */
 const getFinalPrompt = (prompt) => {
   return `${(prompt.illustration !== '') ? `A ${prompt.illustration} of a ` : 'A '}` +
@@ -29,14 +30,29 @@ const getFinalPrompt = (prompt) => {
   `${(prompt.composition) ? `It's composition should be ${prompt.composition}. ` : ''}` +
   `${(prompt.camera_position !== '') ? `Capture it from a ${prompt.camera_position}. ` : ''}` +
   `${(prompt.camera_lenses !== '') ? `Use ${prompt.camera_lenses}. ` : ''}` +
-  `${(prompt.camera_shot !== '') ? `${prompt.camera_shot}. ` : ''}` +
+  `${(prompt.camera_shot !== '') ? `The camera shot should be a ${prompt.camera_shot}. ` : ''}` +
   `${(prompt.lighting !== '') ? `Illuminate with ${prompt.lighting}. ` : ''}` +
   `${(prompt.film_type !== '') ? `Consider using ${prompt.film_type} film for added effect.` : ''}`
 }
 
-const getFormElement = (group, field) => {
-  const query = `[name="data[tt_content][${getCurrentContentUid()}][tx_dalleimage${group ? '_`+ group +`_' : '_'}${field}]"]`
+/* get typo3 form elements with atrributes */
+const getFormElement = (element, attrName, group, field) => {
+  const elementString = element || ''
+  const groupString = group ? '_' + group + '_' : '_'
+  const query = `${elementString}[${attrName}="data[tt_content][${getCurrentContentUid()}][tx_dalleimage${groupString}${field}]"]`
+  // console.log(query)
   return document.querySelector(query)
+}
+
+/* returns the element with the first existing selector */
+const getTargetElement = (el) => {
+  const element =
+    getFormElement(false, 'name', false, el) ??
+    getFormElement(false, 'name', 'prompt', el) ??
+    getFormElement('select', 'data-formengine-input-name', 'prompt', el) ??
+    getFormElement(false, 'data-formengine-input-name', 'prompt', el)
+
+  return element
 }
 
 /* eslint-disable no-undef */
@@ -49,11 +65,9 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
           progressbarInstance = new ProgressBar(progressbar)
         };
 
-        /* Initializing button constants and input name prefixes */
+        /* Initializing button constants and input list */
         const generatePromptButton = document.getElementsByClassName('generatePrompt')
         const sendToDalleButton = document.getElementsByClassName('sendToDalle')
-        const inputNamePrefix = '[name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
-        const formEngineNamePrefix = '[data-formengine-input-name="data[tt_content][' + getCurrentContentUid() + '][tx_dalleimage_prompt_'
         const inputfieldList = 'subject,colors,camera_position,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
 
         if (sendToDalleButton.length) {
@@ -61,15 +75,16 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
             // console.log(document.querySelector(`${formEngineNamePrefix}${el}]"]`), document.querySelector(`${inputNamePrefix}${el}]"]`))
-            const currentElement = document.querySelector(`${inputNamePrefix}${el}]"]`) ?? document.querySelector(`select${formEngineNamePrefix}${el}]"]`) ?? document.querySelector(`${formEngineNamePrefix}${el}]"]`)
-            prompt[el] = currentElement.value.replaceAll(',', ', ')
+            console.log(el)
+            const currentElement = getTargetElement(el)
+            prompt[el] = currentElement && currentElement.value.replaceAll(',', ', ')
 
             require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
               new RegularEvent('change', function (e) {
                 // selecting input and hidden fields holding the value
-                const targetElement = document.querySelector(`${inputNamePrefix}${el}]"]`) ?? document.querySelector(`${formEngineNamePrefix}${el}]"]`)
+                const targetElement = getTargetElement(el)
                 prompt[el] = targetElement.value.replaceAll(',', ', ')
-                document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
+                getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = getFinalPrompt(prompt)
               }).bindTo(currentElement)
             })
           })
@@ -78,18 +93,16 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
           require(['TYPO3/CMS/Event/RegularEvent'], function (RegularEvent) {
             /* generate prompt when click on "Generate prompt" button */
             new RegularEvent('click', function (e) {
-              document.querySelector(`${inputNamePrefix}description]`).value = document.querySelector(`${formEngineNamePrefix}description]`).value = getFinalPrompt(prompt)
+              getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = getFinalPrompt(prompt)
             }).bindTo(generatePromptButton[0])
             /* process ajax request when click on "Get Image from Dalle" button */
             new RegularEvent('click', function (e) {
               progressbarInstance.setPbStatus('progress')
-              const model = getFormElement(false, 'model').value
-              const size = getFormElement(false, 'size').value
-              const quality = getFormElement(false, 'quality').value
-              const amount = getFormElement(false, 'amount').value
-              // console.log(model, size, amount)
-              console.log(model, size, quality, amount)
-              // console.log(`[name="data[tt_content][${getCurrentContentUid()}][tx_dalleimage_prompt_quality']"]`)
+              const model = getFormElement(false, 'name', false, 'model').value
+              const size = getFormElement(false, 'name', false, 'size').value
+              const quality = getFormElement(false, 'name', false, 'quality').value
+              const amount = getFormElement(false, 'name', false, 'amount').value
+
               new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
                 .withQueryArguments({
                   backendFormUrl: window.location.origin + window.location.pathname,
