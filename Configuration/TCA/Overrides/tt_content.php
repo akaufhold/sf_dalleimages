@@ -82,6 +82,7 @@ $dalleImage = [
             'size' => 10,
             'max' => 255,
             'eval' => 'trim',
+            'default' => 1
         ],
     ],
     'tx_dalleimage_prompt_colors' => [
@@ -651,6 +652,7 @@ ExtensionManagementUtility::addTCAcolumns(
 
 $dallePromptPalette = array(
     'tx_dalleimage_dallePromptPalette' => [
+        'label' => $lll. 'tt_content.dalleimage.palette.options',
         'showitem' => 'tx_dalleimage_model, tx_dalleimage_size, tx_dalleimage_quality, tx_dalleimage_amount, --linebreak--, tx_dalleimage_prompt_description',
         'canNotCollapse' => 1
     ],
@@ -660,6 +662,7 @@ $GLOBALS['TCA']['tt_content']['palettes'] += $dallePromptPalette;
 
 $dalleStylePalette = array(
     'tx_dalleimage_dalleStylePalette' => [
+        'label' => $lll. 'tt_content.palette.illustration',
         'showitem' => 'tx_dalleimage_prompt_illustration, tx_dalleimage_prompt_style, tx_dalleimage_prompt_artworks, tx_dalleimage_prompt_artists', 
         'canNotCollapse' => 1
     ],
@@ -669,6 +672,7 @@ $GLOBALS['TCA']['tt_content']['palettes'] += $dalleStylePalette;
 
 $dalleCameraPalette = array(
     'tx_dalleimage_dalleCameraPalette' => [
+        'label' => $lll. 'tt_content.palette.camera',
         'showitem' => 'tx_dalleimage_prompt_film_type, tx_dalleimage_prompt_camera_position, tx_dalleimage_prompt_camera_lenses, tx_dalleimage_prompt_camera_shot', 
         'canNotCollapse' => 1
     ],
@@ -676,19 +680,21 @@ $dalleCameraPalette = array(
 
 $GLOBALS['TCA']['tt_content']['palettes'] += $dalleCameraPalette;
 
+$showItemDalle = '--div--;Dalle Image,
+tx_dalleimage_last_preview_images,
+--palette--;;tx_dalleimage_dallePromptPalette,
+tx_dalleimage_prompt_subject, 
+tx_dalleimage_prompt_colors,
+--palette--;;tx_dalleimage_dalleStylePalette, 
+--palette--;;tx_dalleimage_dalleCameraPalette, 
+tx_dalleimage_prompt_lighting,
+tx_dalleimage_prompt_emotion, 
+tx_dalleimage_prompt_composition';
+
 // Add the fields to palettes
 ExtensionManagementUtility::addToAllTCAtypes(
 	'tt_content',
-	'--div--; Dalle Image,
-    tx_dalleimage_last_preview_images, --linebreak--, 
-    --palette--; '.$lll. 'tt_content.dalleimage.palette.options; tx_dalleimage_dallePromptPalette,
-    tx_dalleimage_prompt_subject, 
-    tx_dalleimage_prompt_colors,
-    --palette--;'. $lll. 'tt_content.palette.illustration; tx_dalleimage_dalleStylePalette, 
-    --palette--;'. $lll. 'tt_content.palette.camera; tx_dalleimage_dalleCameraPalette, 
-    tx_dalleimage_prompt_lighting,
-    tx_dalleimage_prompt_emotion, 
-    tx_dalleimage_prompt_composition',
+    $showItemDalle,
 	'textmedia,image',
 	'after:image_zoom'
 );
