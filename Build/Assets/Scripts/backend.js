@@ -75,7 +75,6 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
             // console.log(document.querySelector(`${formEngineNamePrefix}${el}]"]`), document.querySelector(`${inputNamePrefix}${el}]"]`))
-            console.log(el)
             const currentElement = getTargetElement(el)
             prompt[el] = currentElement && currentElement.value.replaceAll(',', ', ')
 
@@ -98,10 +97,11 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             /* process ajax request when click on "Get Image from Dalle" button */
             new RegularEvent('click', function (e) {
               progressbarInstance.setPbStatus('progress')
-              const model = getFormElement(false, 'name', false, 'model').value
-              const size = getFormElement(false, 'name', false, 'size').value
-              const quality = getFormElement(false, 'name', false, 'quality').value
-              const amount = getFormElement(false, 'name', false, 'amount').value
+              const model = getTargetElement('model').value
+              const size = getTargetElement('size').value
+              const quality = getTargetElement('quality').value
+              const amount = getTargetElement('amount').value
+              console.log(model, size, quality, amount)
 
               new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
                 .withQueryArguments({
