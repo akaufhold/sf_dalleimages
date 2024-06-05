@@ -3,12 +3,27 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Tca;
 
-class DalleImageSizeOptions
+use TYPO3\CMS\Core\Utility\DebugUtility;
+use Stackfactory\SfDalleimages\Utility\BackendLanguageUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+class ImageSizeOptions
 {
+    /**
+     * Rendering item option for image size field
+     * 
+     * @param array $config
+     * @return array
+     */
     public function getSizeOptions(array &$config)
     {
-        $selectedModel = $config['row']['tx_dalleimage_model'];
+        $selectedModel = $config['row']['tx_dalleimage_model'][0];
+        $config['row']['tx_dalleimage_size'] = 0;
         $items = [];
+        
+        $itemOptionsLL = 'LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_db.xlf:tt_content.dalleimage.options.size';
+        $this->getLanguageService = GeneralUtility::makeInstance(BackendLanguageUtility::class)->getLanguageService();
+        $defaultOption = $this->getLanguageService->sL($itemOptionsLL.'.default');
 
         switch ($selectedModel) {
             case 'dall-e-1':
@@ -40,7 +55,6 @@ class DalleImageSizeOptions
                 ];
                 break;
         }
-
         $config['items'] = $items;
     }
 }

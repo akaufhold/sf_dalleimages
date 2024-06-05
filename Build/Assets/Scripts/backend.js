@@ -3,6 +3,8 @@
 import '../Scss/backend.scss'
 import {ProgressBar} from './progressBar'
 
+require('./sizeOptions')
+
 var progressbarInstance // use var for global purpose
 
 /* Get content uid from url parameter or input field for new elements */
