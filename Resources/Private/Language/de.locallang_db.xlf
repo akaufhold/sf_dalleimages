@@ -12,6 +12,9 @@
 			<trans-unit id="tt_content.dalleimage.options.size">
 				<target>Bildabmessungen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.options.size.default">
+				<target>Keine Auswahl</target>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.options.quality">
 				<target>Qualität</target>
 			</trans-unit>
@@ -44,6 +47,39 @@
 
 			<trans-unit id="tt_content.dalleimage.prompt.illustration">
 				<target>Illustration</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.simplevector">
+				<target>Einfache Vektorgrafik</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.geometriclogos">
+				<target>Geometrische Logos</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.flatdesign">
+				<target>Flaches Design</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.lineart">
+				<target>Linienzeichnung</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.abstractshapes">
+				<target>Abstrakte Formen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.isometric">
+				<target>Isometrische Illustration</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.iconset">
+				<target>Symbolset</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.handdrawnvector">
+				<target>Handgezeichnete Vektorgrafik</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.vectorportrait">
+				<target>Vektorportrait</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.geometricpattern">
+				<target>Geometrisches Muster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.monochromevector">
+				<target>Monochrome Vektorgrafik</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.crayondrawing">
 				<target>Kreidezeichnung</target>
@@ -111,6 +147,18 @@
 
 			<trans-unit id="tt_content.dalleimage.prompt.style">
 				<target>Stilistic und Ästhetic</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.minimalist">
+				<target>Minimalistische Illustration</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.infographic">
+				<target>Infografik</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.lowpoly">
+				<target>Low-Poly-Kunst</target>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.silhouette">
+				<target>Silhouette</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.style.goth">
 				<target>gotisch</target>

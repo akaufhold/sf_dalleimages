@@ -12,6 +12,9 @@
 			<trans-unit id="tt_content.dalleimage.options.size">
 				<source>Image Size</source>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.options.size.default">
+				<source>No size selected</source>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.options.quality">
 				<source>Quality</source>
 			</trans-unit>
@@ -44,6 +47,39 @@
 
 			<trans-unit id="tt_content.dalleimage.prompt.illustration">
 				<source>Illustration</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.simplevector">
+				<source>Simple Vector</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.geometriclogos">
+				<source>Geometric Logos</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.flatdesign">
+				<source>Flat Design</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.lineart">
+				<source>Line Art</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.abstractshapes">
+				<source>Abstract Shapes</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.isometric">
+				<source>Isometric Illustration</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.iconset">
+				<source>Icon Set</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.handdrawnvector">
+				<source>Hand-drawn Vector</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.vectorportrait">
+				<source>Vector Portrait</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.geometricpattern">
+				<source>Geometric Pattern</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.illustration.monochromevector">
+				<source>Monochrome Vector</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.illustration.crayondrawing">
 				<source>Crayon Drawing</source>
@@ -111,6 +147,19 @@
 
 			<trans-unit id="tt_content.dalleimage.prompt.style">
 				<source>Stylistic and Aesthetic</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.minimalist">
+				<source>Minimalist Illustration</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.infographic">
+				<source>Infographic</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.lowpoly">
+				<source>Low Poly Art</source>
+			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.stylistic.silhouette">
+				<source>Silhouette</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.style.goth">
 				<source>Gothic</source>

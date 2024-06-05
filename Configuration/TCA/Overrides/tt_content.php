@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use Stackfactory\SfDalleimages\Tca\ImageSizeOptions;
 
 defined('TYPO3_MODE') or die();
 
@@ -21,7 +22,7 @@ $dalleImage = [
         'config' => [
             'type' => 'input',
             'renderType' => 'generatePrompt',
-            'size' => 80,
+            'size' => 100,
             'max' => 500,
             'eval' => 'trim',
         ],
@@ -31,7 +32,7 @@ $dalleImage = [
         'exclude' => 1,
         'config' => [
             'type' => 'input',
-            'size' => 10,
+            'size' => 25,
             'max' => 255,
             'eval' => 'trim',
         ],
@@ -39,6 +40,7 @@ $dalleImage = [
     'tx_dalleimage_model' => [
         'label' => $lll . 'tt_content.dalleimage.options.model',
         'exclude' => 1,
+        'onChange' => 'reload',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
@@ -55,7 +57,7 @@ $dalleImage = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
-            'itemsProcFunc' => \Stackfactory\SfDalleimages\Tca::class . '->getSizeOptions',
+            'itemsProcFunc' => ImageSizeOptions::class . '->getSizeOptions',
         ],
     ],
     'tx_dalleimage_quality' => [
@@ -121,6 +123,17 @@ $dalleImage = [
             'renderType' => 'selectSingle',
             'items' => [
                 [$lll . 'tt_content.dalleimage.prompt.empty', ''],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.simplevector', 'simple vector'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.geometriclogos', 'geometric logo'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.flatdesign', 'flat design'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.lineart', 'line art'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.abstractshapes', 'abstract shapes'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.isometric', 'isometric'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.iconset', 'iconset'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.handdrawnvector', 'handdrawn vector'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.vectorportrait', 'vector portrait'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.geometricpattern', 'geometric pattern'],
+                [$lll . 'tt_content.dalleimage.prompt.illustration.monochromevector', 'monochrome vector'],
                 [$lll . 'tt_content.dalleimage.prompt.illustration.crayondrawing', 'crayon drawing'],
                 [$lll . 'tt_content.dalleimage.prompt.illustration.coloringbook', 'coloring book'],
                 [$lll . 'tt_content.dalleimage.prompt.illustration.papercollage', 'paper collage'],
@@ -153,6 +166,10 @@ $dalleImage = [
             'renderType' => 'selectSingle',
             'items' => [
                 [$lll . 'tt_content.dalleimage.prompt.empty', ''],
+                [$lll . 'tt_content.dalleimage.prompt.style.minimalist', 'minimalist'],
+                [$lll . 'tt_content.dalleimage.prompt.style.infographic', 'infographic'],
+                [$lll . 'tt_content.dalleimage.prompt.style.lowpoly', 'lowpoly'],
+                [$lll . 'tt_content.dalleimage.prompt.style.silhouette', 'silhouette'],
                 [$lll . 'tt_content.dalleimage.prompt.style.goth', 'goth'],
                 [$lll . 'tt_content.dalleimage.prompt.style.vaporwave', 'vaporwave'],
                 [$lll . 'tt_content.dalleimage.prompt.style.postapocalyptic', 'postapocalyptic'],
