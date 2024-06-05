@@ -55,11 +55,7 @@ $dalleImage = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
-            'items' => [
-                ['256x256', '256x256'],
-                ['512x512', '512x512'],
-                ['1024x1024', '1024x1024']
-            ],
+            'itemsProcFunc' => \Stackfactory\SfDalleimages\Tca::class . '->getSizeOptions',
         ],
     ],
     'tx_dalleimage_quality' => [
@@ -80,7 +76,7 @@ $dalleImage = [
         'config' => [
             'type' => 'input',
             'size' => 10,
-            'max' => 255,
+            'max' => 1,
             'eval' => 'trim',
             'default' => 1
         ],
