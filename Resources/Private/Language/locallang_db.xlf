@@ -16,7 +16,7 @@
 				<source>Quality</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.options.amount">
-				<source>Anzahl</source>
+				<source>Amount</source>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt">
 				<source>Text prompt for dalle image generation</source>
