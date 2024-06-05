@@ -31,7 +31,7 @@ class GeneratePrompt extends InputTextElement{
 		
 		$buttonHtml = '<a href="#" class="btn btn-secondary generatePrompt me-2">' . htmlspecialchars($buttonPromptText) . '</a>' 
 								. '<a href="#" class="btn btn-primary sendToDalle">' . htmlspecialchars($buttonDalleText) . '</a>'
-								. '<div class="progressBar progress-bar-animated">
+								. '<div class="progressBar mt-1 progress-bar-animated">
 											<span class="counterContainer">
 													<span class="counterAmount" data-width="0%"></span>
 													<span class="counterTitle">
