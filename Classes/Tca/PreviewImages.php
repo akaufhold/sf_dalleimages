@@ -38,7 +38,10 @@ class PreviewImages extends AbstractNode implements NodeInterface
         $this->view = GeneralUtility::makeInstance(StandaloneView::class);
 
         // Configure template path
-        $templatePath = 'EXT:sf_dalleimages/Resources/Private/Backend/Templates/';
+        $configurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);
+        $configurationManager->getDefaultBackendStoragePid(); 
+        $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
+        $templatePath = $extbaseFrameworkConfiguration['module.']['sf_dalleimages.']['view.']['templateRootPaths.'][0];
         $fluidTemplateFile = $templatePath . 'PreviewImages.html';
         $this->view->setTemplatePathAndFilename($fluidTemplateFile);
 
