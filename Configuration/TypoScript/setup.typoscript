@@ -21,4 +21,19 @@ plugin.sf_dalleimages {
     }
 }
 
+module.sf_dalleimages {
+    view {
+        templateRootPaths.0 = EXT:sf_dalleimages/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$plugin.sf_dalleimages.view.templateRootPath}
+        partialRootPaths.0 = EXT:sf_dalleimages/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$plugin.sf_dalleimages.view.partialRootPath}
+        layoutRootPaths.0 = EXT:sf_dalleimages/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$plugin.sf_dalleimages.view.layoutRootPath}
 
+        #widget {
+        #    TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+        #        templateRootPath = EXT:sf_dalleimages/Resources/Private/Backend/Templates/
+        #    }
+        #}
+    }
+}
