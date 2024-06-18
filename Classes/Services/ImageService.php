@@ -104,9 +104,7 @@ class ImageService
             throw new \RuntimeException('Failed to download image');
         }
 
-        // Get the default storage
         $storage = $this->storageRepository ->getDefaultStorage();
-        // Define the target folder and file name
         $targetPath = '/user_upload';
 
         if ($storage->hasFolder($targetPath)) {
@@ -236,9 +234,6 @@ class ImageService
         $assetUidsFlat = array_map( function($n) {
             return $n['uid_local'];
         }, $assetUids);
-
-        // Fetch the URL of the asset using $assetUid and return it
-        // You can implement this part according to your requirements
 
         return $assetUidsFlat ? $assetUidsFlat : null;
     }

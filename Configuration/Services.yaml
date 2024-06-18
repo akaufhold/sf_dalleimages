@@ -15,4 +15,10 @@ services:
     
   Stackfactory\SfDalleimages\Controller\AjaxController:
     public: true
+
+  Stackfactory\SfDalleimages\Tca\PreviewImages:
+    public: true
+    arguments:
+      $nodeFactory: '@TYPO3\CMS\Backend\Form\NodeFactory'
+      $data: []
     

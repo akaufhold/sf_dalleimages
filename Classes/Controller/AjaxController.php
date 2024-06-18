@@ -30,7 +30,7 @@ class AjaxController {
     }
 
     /**
-     * Get image from Dalle Api and save to db afterwards
+     * Process ajax request to get image from dalle api and save to db afterwards
      *
      * @param ServerRequestInterface $request
      * @return ResponseInterface

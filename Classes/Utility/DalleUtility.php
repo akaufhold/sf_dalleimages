@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Stackfactory\SfDalleimages\Utility;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager;
 
 use GuzzleHttp\Client;
 
@@ -16,7 +17,7 @@ final class DalleUtility
 
     )
     {
-        $backendConfigurationManager = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager::class);
+        $backendConfigurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);
         $typoscript = $backendConfigurationManager->getTypoScriptSetup();
         $this->apiKey = $typoscript['plugin.']["sf_dalleimages."]["settings."]["dalleApiKey"];
     }

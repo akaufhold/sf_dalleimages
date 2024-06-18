@@ -20,17 +20,6 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager;
 
-
-use TYPO3\CMS\Backend\Template\ModuleTemplate;
-use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
-
-use TYPO3\CMS\Core\Http\HtmlResponse;
-use TYPO3\CMS\Extbase\Mvc\ResponseInterface;
-use TYPO3\CMS\Core\Http\Response;
-use TYPO3\CMS\Core\Http\ResponseFactory;
-use TYPO3\CMS\Core\Http\StreamFactory;
-
-
 class PreviewImages extends AbstractNode implements NodeInterface
 {
     protected $view;
@@ -39,7 +28,10 @@ class PreviewImages extends AbstractNode implements NodeInterface
     {
         parent::__construct($nodeFactory, $data);
     }
-
+    /**
+     * Renders the custom tca preview images
+     * @return array
+     */
     public function render(): array
     {
         // Initialize StandaloneView
