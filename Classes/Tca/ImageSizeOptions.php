@@ -26,13 +26,6 @@ class ImageSizeOptions
         $defaultOption = $this->getLanguageService->sL($itemOptionsLL.'.default');
 
         switch ($selectedModel) {
-            case 'dall-e-1':
-                $items = [
-                    ['256x256', '256x256'],
-                    ['512x512', '512x512'],
-                    ['1024x1024', '1024x1024'],
-                ];
-                break;
             case 'dall-e-2':
                 $items = [
                     ['256x256', '256x256'],

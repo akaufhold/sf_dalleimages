@@ -45,7 +45,6 @@ $dalleImage = [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['dalle v1', 'dall-e-1'],
                 ['dalle v2', 'dall-e-2'],
                 ['dalle v3', 'dall-e-3']
             ],
