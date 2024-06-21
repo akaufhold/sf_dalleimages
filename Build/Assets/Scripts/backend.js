@@ -7,7 +7,8 @@ import {getCurrentContentUid, getFormElement, getTargetElement} from './helpers'
 
 require('./sizeOptions')
 
-var progressbarInstance // still use var for global purpose
+/* eslint-disable no-var */
+var progressbarInstance // use var for global purpose
 
 /* eslint-disable no-undef */
 require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (AjaxRequest, DocumentService) {
@@ -15,20 +16,19 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
     DocumentService.ready().then(() => {
       $(document).on('ajaxComplete', function () { /* Prevent input values runtime error */
         const progressbar = document.getElementsByClassName('progressBar')[0]
+        if (progressbar) {
+          progressbarInstance = new ProgressBar(progressbar)
+        };
+
         /* Initializing button constants and input list */
         const generatePromptButton = document.getElementsByClassName('generatePrompt')
         const sendToDalleButton = document.getElementsByClassName('sendToDalle')
         const inputfieldList = 'subject,colors,camera_position,style,emotion,composition,artworks,artists,illustration,camera_position,camera_lenses,camera_shot,lighting,film_type,emotion,composition'
 
-        if (progressbar) {
-          progressbarInstance = new ProgressBar(progressbar)
-        };
-
         if (sendToDalleButton.length) {
           /* Create Prompt Object from input and select values */
           const prompt = {}
           inputfieldList.split(',').forEach((el) => {
-            // console.log(document.querySelector(`${formEngineNamePrefix}${el}]"]`), document.querySelector(`${inputNamePrefix}${el}]"]`))
             const currentElement = getTargetElement(el)
             prompt[el] = currentElement && currentElement.value.replaceAll(',', ', ')
 
@@ -50,29 +50,19 @@ require(['TYPO3/CMS/Ajax/AjaxRequest', 'TYPO3/CMS/DocumentService'], function (A
             }).bindTo(generatePromptButton[0])
             /* process ajax request when click on "Get Image from Dalle" button */
             new RegularEvent('click', function (e) {
-              progressbarInstance.setPbStatus('progress')
               const model = getTargetElement('model').value
               const size = getTargetElement('size').value
               const quality = getTargetElement('quality').value
               const amount = getTargetElement('amount').value
-              console.log(model, size, quality, amount)
+              progressbarInstance.setPbStatus('progress')
 
               new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
-                .withQueryArguments({
-                  input: finalPrompt(prompt),
-                  model: model,
-                  size: size,
-                  quality: quality,
-                  amount: amount,
-                  uid: getCurrentContentUid()
-                })
+                .withQueryArguments({input: finalPrompt(prompt), model, size, quality, amount, uid: getCurrentContentUid()})
                 .get()
                 .then(async function (response) {
                   const resolved = await response.resolve()
-                  progressbarInstance.setPbStatus('success')
-                  // const someTabTriggerEl = document.querySelector('.nav-tabs').children[1].children[0] // Switching tabs with js since no solution found with URIBuilder
-                  // resolved.result && someTabTriggerEl.click()
                   const saveButton = document.querySelector('button[name="_savedok"]')
+                  progressbarInstance.setPbStatus('success')
 
                   if (resolved.result) {
                     // save form after image has being generated or reload frame
