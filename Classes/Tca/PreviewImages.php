@@ -22,6 +22,8 @@ use TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager;
 
 class PreviewImages extends AbstractNode implements NodeInterface
 {
+    protected $templateFile ='PreviewImages.html';
+    protected $elementsPerRow = 5;
     protected $view;
 
     public function __construct(NodeFactory $nodeFactory, array $data)
@@ -39,10 +41,12 @@ class PreviewImages extends AbstractNode implements NodeInterface
 
         // Configure template path
         $configurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);
-        $configurationManager->getDefaultBackendStoragePid(); 
+        $configurationManager->getDefaultBackendStoragePid();
+        
+        // Get template root path from extension config
         $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
         $templatePath = $extbaseFrameworkConfiguration['module.']['sf_dalleimages.']['view.']['templateRootPaths.'][0];
-        $fluidTemplateFile = $templatePath . 'PreviewImages.html';
+        $fluidTemplateFile = $templatePath . $this->templateFile;
         $this->view->setTemplatePathAndFilename($fluidTemplateFile);
 
         // Fetch data and prepare variables for the template
@@ -52,16 +56,11 @@ class PreviewImages extends AbstractNode implements NodeInterface
         $assetUids = getType($currentContentUid) === 'integer' ? $this->imageService->getAssetsForContentElement('tt_content', $currentContentUid, 'crdate') : null;
 
         // Process data and assign to the Fluid template
-        if (!is_array($assetUids)) {
-            $this->view->assign('fileReferences', []);
-            $isSliding = false; // Example assumption
-        } else {
+        if (is_array($assetUids)) {
             $assetRepository = GeneralUtility::makeInstance(AssetRepository::class);
             $fileReferences = $assetRepository->findByUidList($assetUids);
 
-            if (!$fileReferences) {
-                $html = '<div>No image found</div>';
-            } else {
+            if ($fileReferences) {
                 $this->resourceFactory = GeneralUtility::makeInstance(ResourceFactory ::class);
                 foreach($fileReferences as $key => $fileReference) {
                     $uid = $fileReference['uid'];
@@ -74,12 +73,10 @@ class PreviewImages extends AbstractNode implements NodeInterface
                         throw new \RuntimeException('Could not find files with the uid "' . $uid, 1314354065);
                     }
                 }
-            } 
+            }
 
             $this->view->assign('fileReferences', $fileReferences);
-
-            $elementsPerRow = 5;
-            $isSliding = count($fileReferences) > $elementsPerRow;
+            $isSliding = count($fileReferences) > $this->elementsPerRow;
         }
         $this->view->assign('isSliding', $isSliding);
         $return['html'] = $this->view->render();
