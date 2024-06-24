@@ -10,7 +10,6 @@ use TYPO3\CMS\Backend\Routing\UriBuilder;
 
 use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use Stackfactory\SfDalleimages\Utility\DalleIntegration;
 
 use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 
@@ -22,7 +21,7 @@ class GeneratePrompt extends InputTextElement{
 	 *
 	 * @return array
 	 */
-	public function render()
+	public function render(): array
 	{
 		$result = parent::render();
 
@@ -51,9 +50,6 @@ class GeneratePrompt extends InputTextElement{
 											</span>
 									</div>';
 
-		// Load JavaScript via PageRenderer
-		$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-		$this->pageRenderer->loadRequireJsModule('TYPO3/CMS/SfDalleimages/Backend');
 
 		// Append the button HTML to the existing HTML
 		$result['html'] .= $buttonHtml;

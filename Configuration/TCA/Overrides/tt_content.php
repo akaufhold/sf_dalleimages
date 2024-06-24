@@ -3,7 +3,7 @@
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use Stackfactory\SfDalleimages\Tca\ImageSizeOptions;
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 $lll = 'LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_db.xlf:';
 
@@ -20,7 +20,7 @@ $dalleImage = [
         'label' => $lll . 'tt_content.dalleimage.prompt.description',
         'exclude' => 1,
         'config' => [
-            'type' => 'input',
+            'type' => 'user',
             'renderType' => 'generatePrompt',
             'size' => 100,
             'max' => 500,

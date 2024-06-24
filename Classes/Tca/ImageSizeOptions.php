@@ -15,7 +15,7 @@ class ImageSizeOptions
      * @param array $config
      * @return array
      */
-    public function getSizeOptions(array &$config)
+    public function getSizeOptions(array &$config): void
     {
         $selectedModel = $config['row']['tx_dalleimage_model'][0];
         $config['row']['tx_dalleimage_size'] = 0;

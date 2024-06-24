@@ -1,5 +1,6 @@
 <?php
-defined('TYPO3_MODE') || die();
+
+defined('TYPO3') || die();
 
 call_user_func(function(){
 
@@ -21,18 +22,6 @@ call_user_func(function(){
 		'nodeName' => 'generatePrompt',
 		'priority' => 40,
 		'class' => \Stackfactory\SfDalleimages\Tca\GeneratePrompt::class,
-	];
-
-	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1717157525] = [
-		'nodeName' => 'progressBar',
-		'priority' => 40,
-		'class' => Stackfactory\SfDalleimages\Tca\ProgressBar::class,
-	];
-
-	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716642329] = [
-		'nodeName' => 'sendToDalleButton',
-		'priority' => 40,
-		'class' => Stackfactory\SfDalleimages\Tca\SendToDalleButton::class,
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]

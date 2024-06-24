@@ -41,7 +41,6 @@ class PreviewImages extends AbstractNode implements NodeInterface
 
         // Configure template path
         $configurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);
-        $configurationManager->getDefaultBackendStoragePid();
         
         // Get template root path from extension config
         $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
