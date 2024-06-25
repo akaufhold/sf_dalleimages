@@ -19,6 +19,13 @@ module.exports = {
     clean: true
   },
 
+  // Other webpack configuration...
+  resolve: {
+    alias: {
+        'TYPO3/CMS': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript')
+    }
+  },
+
   // Define loaders
   module: {
     rules: [
