@@ -50,6 +50,9 @@ class GeneratePrompt extends InputTextElement{
 											</span>
 									</div>';
 
+		// Load JavaScript via PageRenderer
+		$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+		$this->pageRenderer->loadRequireJsModule('@vendor/sf_dalleimages/Backend.js');
 
 		// Append the button HTML to the existing HTML
 		$result['html'] .= $buttonHtml;
