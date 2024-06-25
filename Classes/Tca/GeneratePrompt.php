@@ -6,14 +6,9 @@ namespace Stackfactory\SfDalleimages\Tca;
 
 use TYPO3\CMS\Backend\Form\Element\InputTextElement;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Backend\Routing\UriBuilder;
 
 use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-
-use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
-
-use TYPO3\CMS\Core\Http\RequestFactory;
 
 class GeneratePrompt extends InputTextElement{
 	/**
