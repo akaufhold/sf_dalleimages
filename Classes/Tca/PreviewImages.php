@@ -40,10 +40,9 @@ class PreviewImages extends AbstractNode implements NodeInterface
 
         // Configure template path
         $configurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);
-        
         // Get template root path from extension config
-        $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
-        $templatePath = $extbaseFrameworkConfiguration['module.']['sf_dalleimages.']['view.']['templateRootPaths.'][0];
+        $typoscriptSetup = $configurationManager->getTypoScriptSetup();
+        $templatePath = $typoscriptSetup['module.']['sf_dalleimages.']['view.']['templateRootPaths.'][0];
         $fluidTemplateFile = $templatePath . $this->templateFile;
         $this->view->setTemplatePathAndFilename($fluidTemplateFile);
 
@@ -77,8 +76,8 @@ class PreviewImages extends AbstractNode implements NodeInterface
             $isSliding = count($fileReferences) > $this->elementsPerRow;
         }
         $this->view->assign('isSliding', $isSliding);
-        $return['html'] = $this->view->render();
+        $result['html'] = $this->view->render();
 
-        return $return;
+        return $result;
     }
 }

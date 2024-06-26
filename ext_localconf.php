@@ -12,9 +12,9 @@ call_user_func(function(){
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1717157527] = [
-		'nodeName' => 'generatePrompt',
+		'nodeName' => 'buttonsDalle',
 		'priority' => 40,
-		'class' => \Stackfactory\SfDalleimages\Tca\GeneratePrompt::class,
+		'class' => \Stackfactory\SfDalleimages\Tca\ButtonsDalle::class,
 	];
 
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]
