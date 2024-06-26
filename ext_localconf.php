@@ -17,8 +17,8 @@ call_user_func(function(){
 		'class' => \Stackfactory\SfDalleimages\Tca\ButtonsDalle::class,
 	];
 
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]
-		= Stackfactory\SfDalleimages\Hooks\BackendControllerHook::class . '->registerClientSideEventHandler';
+	//$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]
+	//		= Stackfactory\SfDalleimages\Hooks\BackendControllerHook::class . '->registerClientSideEventHandler';
 
 
 	/*$GLOBALS['TYPO3_CONF_VARS']['BE']['AJAX']['sf_dalleimage::handleFormSubmission'] = [

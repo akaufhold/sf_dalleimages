@@ -28,10 +28,9 @@ class ButtonsDalle extends InputTextElement{
 		// Initialize StandaloneView
 		$this->view = GeneralUtility::makeInstance(StandaloneView::class);
 
-		// DebugUtility::debug($result);
 		// Load JavaScript via PageRenderer
 		$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-		$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/Backend.js');
+		$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/backend.js');
 
 		// Configure template path
 		$configurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);

@@ -9,8 +9,6 @@ import AjaxRequest from '@typo3/core/ajax/ajax-request.js'
 import DocumentService from '@typo3/core/document-service.js'
 import RegularEvent from '@typo3/core/event/regular-event.js'
 
-require('./sizeOptions')
-
 /* eslint-disable no-var */
 var progressbarInstance // use var for global purpose
 
