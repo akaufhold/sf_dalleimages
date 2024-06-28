@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Tca;
 
-use TYPO3\CMS\Core\Utility\DebugUtility;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use Stackfactory\SfDalleimages\Utility\BackendLanguageUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -16,7 +16,11 @@ class ImageSizeOptions
      * @return array
      */
     public function getSizeOptions(array &$config): void
-    {
+    {		
+        // Load JavaScript via PageRenderer
+		$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+		$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/sizeOptions.js');
+
         $selectedModel = $config['row']['tx_dalleimage_model'][0];
         $config['row']['tx_dalleimage_size'] = 0;
         $items = [];

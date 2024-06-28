@@ -6,6 +6,24 @@
 			<trans-unit id="template.previewimages.noimage">
 				<target>No image found</target>
 			</trans-unit>
+			<trans-unit id="template.buttonsdalle.generatePrompt">
+				<target>Eingabeaufforderung</target>
+			</trans-unit>
+			<trans-unit id="template.buttonsdalle.sendToDalle">
+				<target>Bild von Dalle abrufen</target>
+			</trans-unit>
+			<trans-unit id="template.buttonsdalle.progressBar.status">
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="template.buttonsdalle.progressBar.progress">
+				<target>Fortschritt</target>
+			</trans-unit>
+			<trans-unit id="template.buttonsdalle.progressBar.error">
+				<target>Fehler</target>
+			</trans-unit>
+			<trans-unit id="template.buttonsdalle.progressBar.success">
+				<target>Erfolg</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -8,7 +8,8 @@ const CopyPlugin = require('copy-webpack-plugin')
 module.exports = {
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
-    backend: './Assets/Scripts/backend.js',
+    Backend: './Assets/Scripts/backend.js',
+    sizeOptions: './Assets/Scripts/sizeOptions.js',
   },
 
   // Define the destination directory and filenames of compiled resources and files
@@ -17,6 +18,13 @@ module.exports = {
     path: path.resolve(__dirname, '../Resources/Public'),
     assetModuleFilename: '[name][ext]',
     clean: true
+  },
+
+  // Other webpack configuration...
+  resolve: {
+    alias: {
+        '@typo3/core': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript')
+    }
   },
 
   // Define loaders

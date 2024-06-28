@@ -8,7 +8,8 @@
 
 Resources/Public/
 
-Build/yarn.lock
+Build/.yarn/unplugged
+Build/.yarn/install-state.gz
 Build/.pnp.cjs
 Build/.pnp.loader.mjs
 .gitconfig

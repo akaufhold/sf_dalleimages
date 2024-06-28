@@ -12,6 +12,7 @@ module.exports = {
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
     Backend: './Assets/Scripts/backend.js',
+    sizeOptions: './Assets/Scripts/sizeOptions.js',
   },
 
   // Define the destination directory and filenames of compiled resources and files
@@ -25,7 +26,7 @@ module.exports = {
   // Other webpack configuration...
   resolve: {
     alias: {
-        'TYPO3/CMS': path.resolve(__dirname, '../../../public/typo3/sysext/core/Resources/Public/JavaScript')
+        '@typo3/core': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript')
     }
   },
 
