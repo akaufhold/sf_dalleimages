@@ -2,7 +2,7 @@
     "name": "stackfactory/sf-dalleimages",
     "type": "typo3-cms-extension",
     "description": "Shows text prompt for generating images with dalle ai in realtime",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": ["GPL-2.0+"],
     "keywords": ["TYPO3 CMS, dalle, generated images, ai images"],
     "authors": [
