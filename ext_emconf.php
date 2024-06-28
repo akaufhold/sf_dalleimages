@@ -16,12 +16,12 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'misc',
     'author' => 'Andreas Kauhold',
     'author_email' => 'info@stackfactory.de',
-    'state' => 'beta',
+    'state' => 'alpha',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
+    'version' => '1.0.1',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-12.5.99',
+            'typo3' => '11.5.0-11.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
