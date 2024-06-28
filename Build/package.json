@@ -1,7 +1,6 @@
 {
-  "name": "bootstrap5-webpack",
-  "version": "1.0.0",
-  "description": "Bootstrap 5, Webpack, PostCSS, Stylelint and Eslint.",
+  "name": "sf_dalleimages",
+  "version": "1.0.2",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -20,7 +19,6 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
-    "jquery": "^3.7.1",
     "vanilla-lazyload": "^17.8.5"
   },
   "devDependencies": {
@@ -57,8 +55,7 @@
     "ua-parser-js": "^1.0.37",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
-    "webpack-shell-plugin-next": "^2.3.1",
-    "xml2js": "^0.6.2"
+    "webpack-shell-plugin-next": "^2.3.1"
   },
   "packageManager": "yarn@4.3.1"
 }
