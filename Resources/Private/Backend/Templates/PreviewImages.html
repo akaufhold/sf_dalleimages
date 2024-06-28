@@ -27,9 +27,6 @@ data-namespace-typo3-fluid="true">
 										<f:variable name="imageUrl" value="{fileReference.publicUrl}" />
 										<img class="dalle-preview-item-image {f:if(condition: '{isSliding}', then: ' zoom p-2', else: '')}" src="{imageUrl}" alt="" />
 								</f:then>
-								<f:else>
-										<div>Error retrieving image</div>
-								</f:else>
 							</f:if>
 			
 							<f:if condition="{itemOverflow} === 4 || {iterator.isLast}">
@@ -53,9 +50,13 @@ data-namespace-typo3-fluid="true">
 			</f:then>
 
 			<f:else>
-				<div>No image found</div>
+
+				<div class="alert alert-secondary w-25 p-3">
+					<f:translate key="LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_be.xlf:template.previewimages.noimage" />			
+				</div>
+
 			</f:else>
-			
+
 		</f:if>
 	
 </div>

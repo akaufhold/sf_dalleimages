@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" date="2021-06-21T21:33:18Z" product-name="sf_dalleimages">
+		<header/>
+		<body>
+			<trans-unit id="template.previewimages.noimage">
+				<source>No image found</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
