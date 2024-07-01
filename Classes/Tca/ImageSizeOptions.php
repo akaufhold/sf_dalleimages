@@ -17,13 +17,12 @@ class ImageSizeOptions
      */
     public function getSizeOptions(array &$config): void
     {
-        $selectedModel = $config['row']['tx_dalleimage_model'][0];
+        $selectedModel = $config['row']['tx_dalleimage_model'];
+        DebugUtility::debug($selectedModel);
         $config['row']['tx_dalleimage_size'] = 0;
         $items = [];
         
         $itemOptionsLL = 'LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_db.xlf:tt_content.dalleimage.options.size';
-        $this->getLanguageService = GeneralUtility::makeInstance(BackendLanguageUtility::class)->getLanguageService();
-        $defaultOption = $this->getLanguageService->sL($itemOptionsLL.'.default');
 
         switch ($selectedModel) {
             case 'dall-e-2':

@@ -36,10 +36,11 @@ use GuzzleHttp\Client;
 
 class ImageService
 {
-    private DataHandler $dataHandler;
-    private ServerRequestInterface $request;
-    private StorageRepository $storageRepository;
-    private ResponseFactoryInterface $responseFactory;
+    protected DataHandler $dataHandler;
+    protected ServerRequestInterface $request;
+    protected StorageRepository $storageRepository;
+    protected ResponseFactoryInterface $responseFactory;
+    protected Client $client;
 
     /**
      * @var ConfigurationManagerInterface
@@ -79,8 +80,8 @@ class ImageService
      */
     public function getDalleImageUrl($textPrompt, $model='dall-e-3', $size='1024x1024', $quality='Standard', $amount=1): string
     {
-        $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
-        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount);
+        $dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
+        $imageUrl = $dalleUtility->fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount);
         
         // TEST DATA
         //$imageUrl = 'https://picsum.photos/200/300';

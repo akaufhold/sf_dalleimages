@@ -17,6 +17,7 @@ class AjaxController {
     private ImageService $imageService;
     private UriService $uriService;
     private ResponseFactoryInterface $responseFactory;
+    private ServerRequestInterface $request;
 
     public function __construct(
         ImageService $imageService,

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Tca;
@@ -25,6 +26,7 @@ class PreviewImages extends AbstractNode implements NodeInterface
     protected $templateFile ='PreviewImages.html';
     protected $elementsPerRow = 5;
     protected $view;
+    protected $isSliding = false;
 
     public function __construct(NodeFactory $nodeFactory, array $data)
     {
@@ -52,8 +54,8 @@ class PreviewImages extends AbstractNode implements NodeInterface
         // Fetch data and prepare variables for the template
         $record = $this->data['databaseRow'];
         $currentContentUid = $record['uid'];
-        $this->imageService = GeneralUtility::makeInstance(ImageService::class);
-        $assetUids = getType($currentContentUid) === 'integer' ? $this->imageService->getAssetsForContentElement('tt_content', $currentContentUid, 'crdate') : null;
+        $imageService = GeneralUtility::makeInstance(ImageService::class);
+        $assetUids = getType($currentContentUid) === 'integer' ? $imageService->getAssetsForContentElement('tt_content', $currentContentUid, 'crdate') : null;
 
         // Process data and assign to the Fluid template
         if (is_array($assetUids)) {
@@ -76,9 +78,9 @@ class PreviewImages extends AbstractNode implements NodeInterface
             }
 
             $this->view->assign('fileReferences', $fileReferences);
-            $isSliding = count($fileReferences) > $this->elementsPerRow;
+            $this->isSliding = count($fileReferences) > $this->elementsPerRow;
         }
-        $this->view->assign('isSliding', $isSliding);
+        $this->view->assign('isSliding', $this->isSliding);
         $return['html'] = $this->view->render();
 
         return $return;
