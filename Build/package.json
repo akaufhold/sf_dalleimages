@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap5-webpack",
+  "name": "sf_dalleimages",
   "version": "1.0.0",
   "description": "Bootstrap 5, Webpack, PostCSS, Stylelint and Eslint.",
   "main": "index.js",
@@ -37,7 +37,7 @@
     "eslint-webpack-plugin": "^4.0.1",
     "fast-glob": "^3.3.2",
     "mini-css-extract-plugin": "^2.7.6",
-    "node-libcurl": "^3.0.0",
+    "node-libcurl": "^4.0.0",
     "path": "^0.12.7",
     "postcss": "^8.4.31",
     "postcss-inline-svg": "^6.0.0",
