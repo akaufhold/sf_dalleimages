@@ -63,12 +63,12 @@ class PreviewImages extends AbstractNode implements NodeInterface
             $fileReferences = $assetRepository->findByUidList($assetUids);
 
             if ($fileReferences) {
-                $this->resourceFactory = GeneralUtility::makeInstance(ResourceFactory ::class);
+                $resourceFactory = GeneralUtility::makeInstance(ResourceFactory ::class);
                 foreach($fileReferences as $key => $fileReference) {
                     $uid = $fileReference['uid'];
                     try {
                         /** @var File $file */
-                        $file = $this->resourceFactory->getFileObject($uid);
+                        $file = $resourceFactory->getFileObject($uid);
                         $imageUrl = $file->getPublicUrl();
                         $fileReferences[$key]['publicUrl'] = $imageUrl; 
                     } catch (FileDoesNotExistException $e) {

@@ -18,7 +18,6 @@ class ImageSizeOptions
     public function getSizeOptions(array &$config): void
     {
         $selectedModel = $config['row']['tx_dalleimage_model'];
-        DebugUtility::debug($selectedModel);
         $config['row']['tx_dalleimage_size'] = 0;
         $items = [];
         

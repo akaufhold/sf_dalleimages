@@ -33,6 +33,7 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class ImageService
 {
@@ -98,11 +99,18 @@ class ImageService
     {
         // Define the local file path
         $tempFilePath = GeneralUtility::tempnam('dalle_image_') . '.jpg';
-        $response = $this->client ->get($imageUrl, ['sink' => $tempFilePath]);
+        try {
+            $response = $this->client->get($imageUrl, ['sink' => $tempFilePath]);
 
-        // Check if the download was successful
-        if ($response->getStatusCode() !== 200) {
-            throw new \RuntimeException('Failed to download image');
+            // Check if the download was successful
+            if ($response->getStatusCode() !== 200) {
+                echo "Failed to download image. Status code: " . $response->getStatusCode();
+            }
+        } catch (RequestException $e) {
+            echo "An error occurred: " . $e->getMessage();
+            if ($e->hasResponse()) {
+                echo "Response: " . $e->getResponse()->getBody();
+            }
         }
 
         $storage = $this->storageRepository ->getDefaultStorage();
@@ -115,12 +123,12 @@ class ImageService
         }
     
         $fileName = basename($tempFilePath);
-
+        
         /** @var File $file */
         $file = $storage->addFile($tempFilePath, $folder, $fileName);
 
         // Optionally, delete the temporary local file
-        unlink($tempFilePath);
+        //unlink($tempFilePath);
         return $file->getUid();
     }
 

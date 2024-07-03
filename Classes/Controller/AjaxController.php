@@ -65,7 +65,8 @@ class AjaxController {
         
         if ($textPrompt != '') {
             /* save image in fileadmin and add sys_file entry */
-            $fileUid = $this->imageService->saveImageAsAsset($this->imageService->getDalleImageUrl($textPrompt, $model, $size, $quality, $amount));
+            $imageUrl = $this->imageService->getDalleImageUrl($textPrompt, $model, $size, $quality, $amount);
+            $fileUid = $this->imageService->saveImageAsAsset($imageUrl);
             
             /* add image to sys_file_reference and enable assets in related tt_content element */
             $fileReferenceUid = $this->imageService->addUserImageReference('tt_content', $fileUid, $contentID, substr($textPrompt, 0, 254), $textPrompt, 'assets');
