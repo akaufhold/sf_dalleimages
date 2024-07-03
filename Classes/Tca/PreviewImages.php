@@ -9,7 +9,6 @@ use TYPO3\CMS\Backend\Form\NodeInterface;
 use TYPO3\CMS\Backend\Form\NodeFactory;
 use Stackfactory\SfDalleimages\Services\ImageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\DebugUtility;
 
 use Stackfactory\SfDalleimages\Domain\Repository\AssetRepository;
 

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Controller;
 
-use TYPO3\CMS\Core\Utility\DebugUtility;
-
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;

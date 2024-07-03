@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Tca;
 
-use TYPO3\CMS\Core\Utility\DebugUtility;
 use Stackfactory\SfDalleimages\Utility\BackendLanguageUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
