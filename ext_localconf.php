@@ -1,5 +1,7 @@
 <?php
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
+
+use TYPO3\CMS\Core\Information\Typo3Version;
 
 call_user_func(function(){
 
@@ -28,19 +30,4 @@ call_user_func(function(){
 		'priority' => 40,
 		'class' => Stackfactory\SfDalleimages\Tca\ProgressBar::class,
 	];
-
-	$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1716642329] = [
-		'nodeName' => 'sendToDalleButton',
-		'priority' => 40,
-		'class' => Stackfactory\SfDalleimages\Tca\SendToDalleButton::class,
-	];
-
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/backend.php']['constructPostProcess'][]
-		= Stackfactory\SfDalleimages\Hooks\BackendControllerHook::class . '->registerClientSideEventHandler';
-
-
-	/*$GLOBALS['TYPO3_CONF_VARS']['BE']['AJAX']['sf_dalleimage::handleFormSubmission'] = [
-		'callbackMethod' => \Stackfactory\SfDalleimages\Controller\AjaxController::class . '->formSubmitAction',
-		'csrfTokenCheck' => false,
-	];*/
 });
