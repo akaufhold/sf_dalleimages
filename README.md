@@ -3,6 +3,9 @@
 ## Introduction
 TYPO3 Extension for adding AI generating images to content elements with Dalle-E
 
+## Warning
+Be sure to not use any stylistics, artworks or artists presets that can cause copyright issues for commercial deployment.
+
 ## Features
 - generating prompts dynamically with multiple category presets
 - saves data as "asset" in tt_content like textmedia, image, etc 
