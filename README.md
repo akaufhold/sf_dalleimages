@@ -29,3 +29,4 @@ plugin.tx_sf_dalleimages.dalleApiKey =
 
 ## Todos
 - support for other image generating ai's (Midjourney, getimg.ai, stability.ai and others)
+- autocomplete subject with all words from english dictionary (https://github.com/dwyl/english-words)
