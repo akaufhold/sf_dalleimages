@@ -2,9 +2,11 @@ export const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
 
 export const indefiniteArticle = (phrase) => {
   // Getting the first word
+  let word
   const match = /\w+/.exec(phrase)
+
   if (match) {
-    var word = match[0]
+    word = match[0]
   } else {
     return 'an'
   }

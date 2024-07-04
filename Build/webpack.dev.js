@@ -11,7 +11,8 @@ module.exports = {
 
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
-    Backend: './Assets/Scripts/backend.js',
+    backend: './Assets/Scss/backend.scss',
+    buttons: './Assets/Scripts/buttons.js',
     sizeOptions: './Assets/Scripts/sizeOptions.js',
   },
 

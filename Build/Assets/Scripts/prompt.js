@@ -1,9 +1,13 @@
+import * as pluralize from 'pluralize'
+
 import {capitalize, indefiniteArticle} from './utilities'
 
-/* Generate text prompt for dalle image api call */
+/* Generate text prompt sending to dalle api call */
 export const finalPrompt = (prompt) => {
-  const article = indefiniteArticle(prompt.colors + prompt.subject)
-  return `${(prompt.illustration !== '') ? `${capitalize(indefiniteArticle(prompt.illustration))} ${prompt.illustration} of ${article} ` : `${article} `}` +
+  /* Check if and which article (a, an) is needed */
+  const article = pluralize.isPlural(prompt.subject) ? '' : `${indefiniteArticle(prompt.colors + prompt.subject)} `
+
+  return `${(prompt.illustration !== '') ? `${capitalize(indefiniteArticle(prompt.illustration))} ${prompt.illustration} of ${article}` : `${article} `}` +
   `${(prompt.colors) ? `${prompt.colors} ` : ''}` +
   `${(prompt.subject !== '') ? `${prompt.subject}` : ''}` +
   `${(prompt.style !== '') ? ` in the style of ${prompt.style}. ` : '. '}` +

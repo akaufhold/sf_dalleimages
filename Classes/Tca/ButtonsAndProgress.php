@@ -34,10 +34,10 @@ class ButtonsAndProgress extends InputTextElement{
 		if ($typo3Version->getMajorVersion() > 11) {
 			// Load JavaScript via PageRenderer
 			$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-			$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/backend.js');
+			$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/buttons.js');
 		} else {
 			$this->pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-			$this->pageRenderer->loadRequireJsModule('TYPO3/CMS/SfDalleimages/Backend');
+			$this->pageRenderer->loadRequireJsModule('TYPO3/CMS/SfDalleimages/buttons');
 		}
 
 
