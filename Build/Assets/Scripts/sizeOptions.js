@@ -1,4 +1,4 @@
-import DocumentService from '@typo3/core/document-service.js'
+import DocumentService from 'TYPO3/CMS/DocumentService'
 
 /* eslint-disable no-undef */
 DocumentService.ready().then(() => {

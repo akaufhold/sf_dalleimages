@@ -78,7 +78,7 @@ class PreviewImages extends AbstractNode implements NodeInterface
             $this->isSliding = count($fileReferences) > $this->elementsPerRow;
         }
         $this->view->assign('isSliding', $this->isSliding);
-        $return['html'] = $this->view->render();
+        $result['html'] = $this->view->render();
 
         return $result;
     }

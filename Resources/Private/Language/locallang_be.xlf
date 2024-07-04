@@ -6,22 +6,22 @@
 			<trans-unit id="template.previewimages.noimage">
 				<source>No image found</source>
 			</trans-unit>
-			<trans-unit id="template.buttonsdalle.generatePrompt">
+			<trans-unit id="template.buttonsAndProgress.generatePrompt">
 				<source>Generate Prompt</source>
 			</trans-unit>
-			<trans-unit id="template.buttonsdalle.sendToDalle">
+			<trans-unit id="template.buttonsAndProgress.sendToDalle">
 				<source>Get Image from Dalle</source>
 			</trans-unit>
-			<trans-unit id="template.buttonsdalle.progressBar.status">
+			<trans-unit id="template.buttonsAndProgress.progressBar.status">
 				<source>Status</source>
 			</trans-unit>
-			<trans-unit id="template.buttonsdalle.progressBar.progress">
+			<trans-unit id="template.buttonsAndProgress.progressBar.progress">
 				<source>Progress</source>
 			</trans-unit>
-			<trans-unit id="template.buttonsdalle.progressBar.error">
+			<trans-unit id="template.buttonsAndProgress.progressBar.error">
 				<source>Error</source>
 			</trans-unit>
-			<trans-unit id="template.buttonsdalle.progressBar.success">
+			<trans-unit id="template.buttonsAndProgress.progressBar.success">
 				<source>Success</source>
 			</trans-unit>
 		</body>
