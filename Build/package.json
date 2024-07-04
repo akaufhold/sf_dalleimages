@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "braces": "3.0.3",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "dotenv-webpack": "^8.0.1",
@@ -36,6 +37,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "node-libcurl": "^4.0.0",
     "path": "^0.12.7",
+    "pluralize": "^8.0.0",
     "postcss": "^8.4.31",
     "postcss-inline-svg": "^6.0.0",
     "postcss-loader": "^7.3.3",
