@@ -26,7 +26,8 @@ module.exports = {
   // Other webpack configuration...
   resolve: {
     alias: {
-        '@typo3/core': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript')
+      'TYPO3/CMS': path.resolve(__dirname, '../../../public/typo3/sysext/core/Resources/Public/JavaScript'),
+      '@typo3/core': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript')
     }
   },
 

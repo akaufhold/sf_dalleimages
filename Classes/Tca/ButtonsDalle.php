@@ -10,10 +10,12 @@ use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
+use TYPO3\CMS\Core\Information\Typo3Version;
 
 use TYPO3\CMS\Core\Utility\DebugUtility;
 
 class ButtonsDalle extends InputTextElement{
+	protected PageRenderer $pageRenderer;
 	protected $templateFile ='ButtonsDalle.html';
 	protected $view;
 	/**
@@ -27,10 +29,16 @@ class ButtonsDalle extends InputTextElement{
 
 		// Initialize StandaloneView
 		$this->view = GeneralUtility::makeInstance(StandaloneView::class);
+		$typo3Version = new Typo3Version();
+		if ($typo3Version->getMajorVersion() > 11) {
+			// Load JavaScript via PageRenderer
+			$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+			$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/backend.js');
+		} else {
+			$this->pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+			$this->pageRenderer->loadRequireJsModule('TYPO3/CMS/sf_dalleimages/backend.js');
+		}
 
-		// Load JavaScript via PageRenderer
-		$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-		$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/backend.js');
 
 		// Configure template path
 		$configurationManager = GeneralUtility::makeInstance(BackendConfigurationManager::class);
