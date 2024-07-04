@@ -4,9 +4,9 @@ import {ProgressBar} from './progressBar'
 import {finalPrompt} from './prompt'
 import {getCurrentContentUid, getFormElement, getTargetElement} from './helpers'
 
-import AjaxRequest from 'TYPO3/CMS/Ajax/AjaxRequest'
-import DocumentService from 'TYPO3/CMS/DocumentService'
-import RegularEvent from 'TYPO3/CMS/Event/RegularEvent'
+import AjaxRequest from '@typo3/core/ajax/ajax-request.js'
+import DocumentService from '@typo3/core/document-service.js'
+import RegularEvent from '@typo3/core/event/regular-event.js'
 
 /* eslint-disable no-var */
 var progressbarInstance // use var for global purpose
