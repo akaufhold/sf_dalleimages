@@ -1,9 +1,11 @@
 {
     "name": "stackfactory/sf-dalleimages",
+    "version": "1.2.0",
     "type": "typo3-cms-extension",
     "description": "Dynamical Prompting for dalle ai generated images",
     "license": ["GPL-2.0+"],
     "keywords": ["TYPO3 CMS, dalle, generated images, ai images"],
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Andreas Kauhold",
@@ -11,7 +13,7 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^11.5"
+        "typo3/cms-core": "^12.4"
     },
     "autoload": {
         "psr-4": {

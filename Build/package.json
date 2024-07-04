@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "braces": "3.0.3",
+    "braces": "^3.0.3",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "dotenv-webpack": "^8.0.1",
