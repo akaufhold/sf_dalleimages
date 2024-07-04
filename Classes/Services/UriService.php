@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Services;
 
-use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 use Psr\Http\Message\ServerRequestInterface;

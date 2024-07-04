@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Stackfactory\SfDalleimages\Controller;
 
-use TYPO3\CMS\Core\Utility\DebugUtility;
-
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -17,6 +15,7 @@ class AjaxController {
     private ImageService $imageService;
     private UriService $uriService;
     private ResponseFactoryInterface $responseFactory;
+    private ServerRequestInterface $request;
 
     public function __construct(
         ImageService $imageService,
@@ -64,7 +63,8 @@ class AjaxController {
         
         if ($textPrompt != '') {
             /* save image in fileadmin and add sys_file entry */
-            $fileUid = $this->imageService->saveImageAsAsset($this->imageService->getDalleImageUrl($textPrompt, $model, $size, $quality, $amount));
+            $imageUrl = $this->imageService->getDalleImageUrl($textPrompt, $model, $size, $quality, $amount);
+            $fileUid = $this->imageService->saveImageAsAsset($imageUrl);
             
             /* add image to sys_file_reference and enable assets in related tt_content element */
             $fileReferenceUid = $this->imageService->addUserImageReference('tt_content', $fileUid, $contentID, substr($textPrompt, 0, 254), $textPrompt, 'assets');

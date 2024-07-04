@@ -9,6 +9,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ImageSizeOptions
 {
+    protected PageRenderer $pageRenderer;
     /**
      * Rendering item option for image size field
      * 
@@ -21,13 +22,11 @@ class ImageSizeOptions
 		$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
 		$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/sizeOptions.js');
 
-        $selectedModel = $config['row']['tx_dalleimage_model'][0];
+        $selectedModel = $config['row']['tx_dalleimage_model'];
         $config['row']['tx_dalleimage_size'] = 0;
         $items = [];
         
         $itemOptionsLL = 'LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_db.xlf:tt_content.dalleimage.options.size';
-        $this->getLanguageService = GeneralUtility::makeInstance(BackendLanguageUtility::class)->getLanguageService();
-        $defaultOption = $this->getLanguageService->sL($itemOptionsLL.'.default');
 
         switch ($selectedModel) {
             case 'dall-e-2':

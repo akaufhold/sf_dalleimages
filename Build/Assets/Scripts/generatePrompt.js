@@ -1,6 +1,9 @@
+import {capitalize, indefiniteArticle} from './utilities'
+
 /* Generate text prompt for dalle image api call */
 export const finalPrompt = (prompt) => {
-  return `${(prompt.illustration !== '') ? `A ${prompt.illustration} of a ` : 'A '}` +
+  const article = indefiniteArticle(prompt.colors + prompt.subject)
+  return `${(prompt.illustration !== '') ? `${capitalize(indefiniteArticle(prompt.illustration))} ${prompt.illustration} of ${article} ` : `${article} `}` +
   `${(prompt.colors) ? `${prompt.colors} ` : ''}` +
   `${(prompt.subject !== '') ? `${prompt.subject}` : ''}` +
   `${(prompt.style !== '') ? ` in the style of ${prompt.style}. ` : '. '}` +

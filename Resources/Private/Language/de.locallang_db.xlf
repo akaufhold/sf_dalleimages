@@ -148,16 +148,16 @@
 			<trans-unit id="tt_content.dalleimage.prompt.style">
 				<target>Stilistic und Ästhetic</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.stylistic.minimalist">
+			<trans-unit id="tt_content.dalleimage.prompt.style.minimalist">
 				<target>Minimalistische Illustration</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.stylistic.infographic">
+			<trans-unit id="tt_content.dalleimage.prompt.style.infographic">
 				<target>Infografik</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.stylistic.lowpoly">
+			<trans-unit id="tt_content.dalleimage.prompt.style.lowpoly">
 				<target>Low-Poly-Kunst</target>
 			</trans-unit>
-			<trans-unit id="tt_content.dalleimage.prompt.stylistic.silhouette">
+			<trans-unit id="tt_content.dalleimage.prompt.style.silhouette">
 				<target>Silhouette</target>
 			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.style.goth">

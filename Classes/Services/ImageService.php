@@ -20,7 +20,6 @@ use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 
 use TYPO3\CMS\Core\Log\LogLevel;
-use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 use Doctrine\DBAL\Exception;
@@ -33,13 +32,15 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class ImageService
 {
-    private DataHandler $dataHandler;
-    private ServerRequestInterface $request;
-    private StorageRepository $storageRepository;
-    private ResponseFactoryInterface $responseFactory;
+    protected DataHandler $dataHandler;
+    protected ServerRequestInterface $request;
+    protected StorageRepository $storageRepository;
+    protected ResponseFactoryInterface $responseFactory;
+    protected Client $client;
 
     /**
      * @var ConfigurationManagerInterface
@@ -79,8 +80,8 @@ class ImageService
      */
     public function getDalleImageUrl($textPrompt, $model='dall-e-3', $size='1024x1024', $quality='Standard', $amount=1): string
     {
-        $this->dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
-        $imageUrl = $this->dalleUtility->fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount);
+        $dalleUtility = GeneralUtility::makeInstance(DalleUtility::class);
+        $imageUrl = $dalleUtility->fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount);
         
         // TEST DATA
         //$imageUrl = 'https://picsum.photos/200/300';
@@ -97,11 +98,18 @@ class ImageService
     {
         // Define the local file path
         $tempFilePath = GeneralUtility::tempnam('dalle_image_') . '.jpg';
-        $response = $this->client ->get($imageUrl, ['sink' => $tempFilePath]);
+        try {
+            $response = $this->client->get($imageUrl, ['sink' => $tempFilePath]);
 
-        // Check if the download was successful
-        if ($response->getStatusCode() !== 200) {
-            throw new \RuntimeException('Failed to download image');
+            // Check if the download was successful
+            if ($response->getStatusCode() !== 200) {
+                echo "Failed to download image. Status code: " . $response->getStatusCode();
+            }
+        } catch (RequestException $e) {
+            echo "An error occurred: " . $e->getMessage();
+            if ($e->hasResponse()) {
+                echo "Response: " . $e->getResponse()->getBody();
+            }
         }
 
         $storage = $this->storageRepository ->getDefaultStorage();
@@ -114,12 +122,12 @@ class ImageService
         }
     
         $fileName = basename($tempFilePath);
-
+        
         /** @var File $file */
         $file = $storage->addFile($tempFilePath, $folder, $fileName);
 
         // Optionally, delete the temporary local file
-        unlink($tempFilePath);
+        //unlink($tempFilePath);
         return $file->getUid();
     }
 
