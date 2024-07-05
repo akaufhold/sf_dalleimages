@@ -7,8 +7,8 @@ export const finalPrompt = (prompt) => {
   /* Check if and which article (a, an) is needed */
   const article = pluralize.isPlural(prompt.subject) ? '' : `${indefiniteArticle(prompt.colors + prompt.subject)} `
   /* Check if illustration and article is empty for writing color in uppercase */
-  const colors = `${(prompt.colors) ? `${(article === '' && prompt.illustration === '') ? prompt.colors.charAt(0).toUpperCase() + prompt.colors.slice(1) : prompt.colors} ` : ''}`
-  return `${(prompt.illustration !== '') ? `${capitalize(indefiniteArticle(prompt.illustration))} ${prompt.illustration} of ${article}` : `${article} `}` +
+  const colors = `${(prompt.colors) ? `${(article === '' && prompt.illustration === '') ? capitalize(prompt.colors) : prompt.colors} ` : ''}`
+  return `${(prompt.illustration !== '') ? `${capitalize(indefiniteArticle(prompt.illustration))} ${prompt.illustration} of ${article}` : `${capitalize(article)}`}` +
     colors +
     `${(prompt.subject !== '') ? `${prompt.subject}` : ''}` +
     `${(prompt.style !== '') ? ` in the style of ${prompt.style}. ` : '. '}` +
