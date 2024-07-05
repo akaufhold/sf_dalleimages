@@ -5,7 +5,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
-// 
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
 
@@ -108,6 +108,8 @@ module.exports = {
       filename: 'StyleSheets/[name].css',
       chunkFilename: '[id].css'
     }),
+
+    new FixStyleOnlyEntriesPlugin(),
 
     // Add Webpack Hooks before and after asset building
     /*new WebpackShellPluginNext({

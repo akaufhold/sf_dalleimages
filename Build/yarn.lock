@@ -5525,6 +5525,7 @@ __metadata:
     vanilla-lazyload: "npm:^17.8.5"
     webpack: "npm:^5.89.0"
     webpack-cli: "npm:^5.1.4"
+    webpack-fix-style-only-entries: "npm:^0.6.1"
     webpack-shell-plugin-next: "npm:^2.3.1"
   languageName: unknown
   linkType: soft
@@ -6376,6 +6377,13 @@ __metadata:
   bin:
     webpack-cli: bin/cli.js
   checksum: 10c0/4266909ae5e2e662c8790ac286e965b2c7fd5a4a2f07f48e28576234c9a5f631847ccddc18e1b3281c7b4be04a7ff4717d2636033a322dde13ac995fd0d9de10
+  languageName: node
+  linkType: hard
+
+"webpack-fix-style-only-entries@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "webpack-fix-style-only-entries@npm:0.6.1"
+  checksum: 10c0/91851a812800c692422dddf55f11c3fd2087ccdb4714429316947a4e7f22720e565f44f300ebc62046073bf94f79dd949d1f9ddd2c0055163972374eed331832
   languageName: node
   linkType: hard
 
