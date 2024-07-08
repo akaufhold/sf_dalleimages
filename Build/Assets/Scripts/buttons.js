@@ -1,8 +1,8 @@
 'use strict'
 
-import {ProgressBar} from './progressBar'
-import {finalPrompt} from './prompt'
-import {getCurrentContentUid, getFormElement, getTargetElement} from './helpers'
+import {ProgressBar} from './progressBar.js'
+import {finalPrompt} from './prompt.js'
+import {getCurrentContentUid, getFormElement, getTargetElement} from './helpers.js'
 
 import AjaxRequest from '@typo3/core/ajax/ajax-request.js'
 import DocumentService from '@typo3/core/document-service.js'
@@ -30,21 +30,21 @@ DocumentService.ready().then(() => {
       const currentElement = getTargetElement(el)
       prompt[el] = currentElement && currentElement.value.replaceAll(',', ', ')
 
-      new RegularEvent('change', function (e) {
+      new RegularEvent('change', async function (e) {
         // selecting input and hidden fields holding the value
         const targetElement = getTargetElement(el)
         prompt[el] = targetElement.value.replaceAll(',', ', ')
-        getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = finalPrompt(prompt)
+        getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = await finalPrompt(prompt)
       }).bindTo(currentElement)
     })
 
     /* Click Events for custom TCA Buttons */
     /* generate prompt when click on "Generate prompt" button */
-    new RegularEvent('click', function (e) {
-      getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = finalPrompt(prompt)
+    new RegularEvent('click', async function (e) {
+      getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = await finalPrompt(prompt)
     }).bindTo(generatePromptButton[0])
     /* process ajax request when click on "Get Image from Dalle" button */
-    new RegularEvent('click', function (e) {
+    new RegularEvent('click', async function (e) {
       const model = getTargetElement('model').value
       const size = getTargetElement('size').value
       const quality = getTargetElement('quality').value
@@ -52,7 +52,7 @@ DocumentService.ready().then(() => {
       progressbarInstance.setPbStatus('progress')
 
       new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
-        .withQueryArguments({input: finalPrompt(prompt), model, size, quality, amount, uid: getCurrentContentUid()})
+        .withQueryArguments({input: await finalPrompt(prompt), model, size, quality, amount, uid: getCurrentContentUid()})
         .get()
         .then(async function (response) {
           const resolved = await response.resolve()

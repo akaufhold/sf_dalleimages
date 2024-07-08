@@ -1,11 +1,11 @@
 import * as pluralize from 'pluralize'
-
-import {capitalize, indefiniteArticle} from './utilities'
+import {capitalize, indefiniteArticle} from './utilities.js'
 
 /* Generate text prompt sending to dalle api call */
-export const finalPrompt = (prompt) => {
+export const finalPrompt = async (prompt) => {
   /* Check if and which article (a, an) is needed */
   const article = pluralize.isPlural(prompt.subject) ? '' : `${indefiniteArticle(prompt.colors + prompt.subject)} `
+
   /* Check if illustration and article is empty for writing color in uppercase */
   const colors = `${(prompt.colors) ? `${(article === '' && prompt.illustration === '') ? capitalize(prompt.colors) : prompt.colors} ` : ''}`
   return `${(prompt.illustration !== '') ? `${capitalize(indefiniteArticle(prompt.illustration))} ${prompt.illustration} of ${article}` : `${capitalize(article)}`}` +

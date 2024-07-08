@@ -3,6 +3,7 @@
   "description": "Bootstrap 5, Webpack, PostCSS, Stylelint and Eslint.",
   "main": "index.js",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "webpack --config webpack.prod.js --mode production",
     "dev": "webpack --config webpack.dev.js --mode development",
@@ -10,9 +11,9 @@
     "lint:eslint": "eslint Assets/**/*.js",
     "lint:eslint.fix": "eslint --fix Assets/**/*.js",
     "lint:eslint.report.junit": "eslint -f junit -o reports/eslintreport.junit.xml Assets/**/*.js",
-    "lint:stylelint.report.json": "stylelint --config stylelint.config.js -f json -o reports/stylelintreport.json Assets/Scss/**/*.scss",
-    "lint:stylelint.report.junit": "stylelint --config stylelint.config.js --custom-formatter 'node_modules/stylelint-junit-formatter' -o reports/stylelintreport.junit.xml Assets/Scss/**/*.scss",
-    "lint:stylelint.report.verbose": "stylelint --config stylelint.config.js -f verbose -o reports/stylelintreport.verbose.txt Assets/Scss/**/*.scss"
+    "lint:stylelint.report.json": "stylelint --config stylelint.config.cjs -f json -o reports/stylelintreport.json Assets/Scss/**/*.scss",
+    "lint:stylelint.report.junit": "stylelint --config stylelint.config.cjs --custom-formatter 'node_modules/stylelint-junit-formatter' -o reports/stylelintreport.junit.xml Assets/Scss/**/*.scss",
+    "lint:stylelint.report.verbose": "stylelint --config stylelint.config.cjs -f verbose -o reports/stylelintreport.verbose.txt Assets/Scss/**/*.scss"
   },
   "author": "Andreas Kaufhold",
   "license": "ISC",
@@ -36,7 +37,8 @@
     "eslint-webpack-plugin": "^4.0.1",
     "fast-glob": "^3.3.2",
     "mini-css-extract-plugin": "^2.7.6",
-    "node-libcurl": "^4.0.0",
+    "node-gyp": "10.0.1",
+    "node-libcurl": "^4",
     "path": "^0.12.7",
     "pluralize": "^8.0.0",
     "postcss": "^8.4.31",

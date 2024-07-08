@@ -1,14 +1,18 @@
-const webpack = require('webpack')
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const WebpackShellPluginNext = require('webpack-shell-plugin-next');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
+// import WebpackShellPluginNext from 'webpack-shell-plugin-next';
+// import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+
+export default {
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
     backend: './Assets/Scss/backend.scss',
@@ -112,15 +116,16 @@ module.exports = {
     new FixStyleOnlyEntriesPlugin(),
 
     // Add Webpack Hooks before and after asset building
-    /*new WebpackShellPluginNext({
-      onWatchRun:{
+    /*
+    new WebpackShellPluginNext({
+      onWatchRun: {
         scripts: [
           'echo "Watcher Start"',
         ],
         blocking: false,
         parallel: false
       },
-      onDoneWatch:{
+      onDoneWatch: {
         scripts: [
           'echo "Clear Typo3 Cache"',
           // 'ddev app-typo3cms cache:flush',
@@ -134,8 +139,8 @@ module.exports = {
 
     // Add live browser
     new BrowserSyncPlugin({
-      //  host: 'bmas-sgb2.pixelpark.docker',
-      //  port: 54011,
+      // host: 'bmas-sgb2.pixelpark.docker',
+      // port: 54011,
       // browse to http://localhost:3001/ during development,
       https: true,
       proxy: 'https://bmas-sgb2.pixelpark.docker',
@@ -143,6 +148,7 @@ module.exports = {
       reloadOnRestart: false,
       notify: false
       // logLevel: "debug"
-    })*/
+    })
+    */
   ]
 }

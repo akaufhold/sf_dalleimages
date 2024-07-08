@@ -1,11 +1,16 @@
-const webpack = require('webpack')
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+
+export default {
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
     backend: './Assets/Scss/backend.scss',
@@ -18,15 +23,15 @@ module.exports = {
     filename: 'JavaScripts/[name].js',
     path: path.resolve(__dirname, '../Resources/Public'),
     assetModuleFilename: '[name][ext]',
-    clean: true
+    clean: true,
   },
 
   // Other webpack configuration...
   resolve: {
     alias: {
       'TYPO3/CMS': path.resolve(__dirname, '../../../public/typo3/sysext/core/Resources/Public/JavaScript'),
-      '@typo3/core': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript')
-    }
+      '@typo3/core': path.resolve(__dirname, '../../../vendor/typo3/cms-core/Resources/Public/JavaScript'),
+    },
   },
 
   // Define loaders
@@ -42,43 +47,41 @@ module.exports = {
             options: {
               importLoaders: 2,
               sourceMap: false,
-              url: true
-            }
+              url: true,
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  'autoprefixer'
-                ]
-              }
-            }
+                plugins: ['autoprefixer'],
+              },
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         type: 'asset/resource',
         generator: {
-          filename: 'Images/[name][ext]'
-        }
+          filename: 'Images/[name][ext]',
+        },
       },
       {
         test: [/\.woff$/, /\.woff2$/],
         type: 'asset/resource',
         generator: {
-          filename: 'Fonts/[name][ext]'
-        }
-      }
-    ]
+          filename: 'Fonts/[name][ext]',
+        },
+      },
+    ],
   },
 
   // Define used plugins
   plugins: [
     new ESLintPlugin({
-      failOnError: true
+      failOnError: true,
     }),
 
     new StyleLintPlugin({
@@ -87,19 +90,19 @@ module.exports = {
       files: '**/*.s?(a|c)ss',
       failOnError: true,
       emitErrors: true,
-      fix: true
+      fix: true,
     }),
 
     new CopyPlugin({
       patterns: [
-        {from: './Assets/Static', to: './'}
-      ]
+        { from: './Assets/Static', to: './' },
+      ],
     }),
 
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({
       filename: 'StyleSheets/[name].css',
-      chunkFilename: '[id].css'
-    })
-  ]
-}
+      chunkFilename: '[id].css',
+    }),
+  ],
+};
