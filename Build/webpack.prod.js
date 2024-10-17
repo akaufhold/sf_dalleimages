@@ -85,7 +85,7 @@ export default {
     }),
 
     new StyleLintPlugin({
-      configFile: 'stylelint.config.js',
+      configFile: 'stylelint.config.cjs',
       context: 'Assets',
       files: '**/*.s?(a|c)ss',
       failOnError: true,
