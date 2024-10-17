@@ -212,7 +212,7 @@ class ImageService
     }
 
     /**
-     * Enable table fields for using assets  
+     * Get flatted array of asset uids 
      *
      * @param string $table
      * @param integer $contentElementUid
