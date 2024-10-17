@@ -1,7 +1,7 @@
 CREATE TABLE tt_content (
-	tx_dalleimage_model varchar(20) NOT NULL,
-	tx_dalleimage_size varchar(20) NOT NULL,
-	tx_dalleimage_quality varchar(20) NOT NULL,
+	tx_dalleimage_model varchar(20) DEFAULT '' NOT NULL,
+	tx_dalleimage_size varchar(20) DEFAULT '' NOT NULL,
+	tx_dalleimage_quality varchar(20) DEFAULT '' NOT NULL,
 	tx_dalleimage_amount smallint(5) DEFAULT '1' NOT NULL,
 	tx_dalleimage_prompt_subject varchar(255) DEFAULT '' NOT NULL,
 	tx_dalleimage_prompt_description varchar(500) DEFAULT '' NOT NULL,
