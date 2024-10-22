@@ -710,3 +710,27 @@ ExtensionManagementUtility::addToAllTCAtypes(
 	'textmedia,image',
 	'after:image_zoom'
 );
+
+$newSysFileReferenceOverlayField = [
+    'tx_dalleimage_prompt' => [
+        'exclude' => 1,
+        'label' => $lll . 'tt_content.dalleimage.prompt.label',
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+            'max' => 255,
+            'eval' => 'trim',
+        ],
+    ],
+];
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'sys_file_reference',
+    $newSysFileReferenceOverlayField
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    'sys_file_reference',
+    'imageoverlayPalette',
+    '--linebreak--,tx_dalleimage_prompt,--linebreak--',
+    'after:title'
+);

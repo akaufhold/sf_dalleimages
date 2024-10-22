@@ -34,6 +34,9 @@
 			<trans-unit id="tt_content.dalleimage.headline.description">
 				<source>Dalle Image Prompt</source>
 			</trans-unit>
+			<trans-unit id="tt_content.dalleimage.prompt.label">
+				<source>Dalle Texteingabe</source>
+			</trans-unit>
 			<trans-unit id="tt_content.dalleimage.prompt.description">
 				<source>Description</source>
 			</trans-unit>
