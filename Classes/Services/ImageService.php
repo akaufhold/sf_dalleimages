@@ -84,7 +84,7 @@ class ImageService
         $imageUrl = $dalleUtility->fetchImageFromDalle($textPrompt, $model, $size, $quality, $amount);
         
         // TEST DATA
-        //$imageUrl = 'https://picsum.photos/200/300';
+        #$imageUrl = 'https://picsum.photos/200/300';
         return $imageUrl;
     }
 
@@ -147,7 +147,7 @@ class ImageService
         $context = GeneralUtility::makeInstance(Context::class);
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
         // Begin transaction
-        // $connection->beginTransaction();
+        #$connection->beginTransaction();
         try {
             $query = $connection
                 ->insert('sys_file_reference',
@@ -156,10 +156,10 @@ class ImageService
                     'uid_foreign' => (int)$contentUid,
                     'tablenames' => $table,
                     'fieldname' => $fieldname,
-                    'table_local' => 'sys_file',
                     'tstamp' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'crdate' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'alternative' => $alternative,
+                    'title' => $prompt,
                     'tx_dalleimage_prompt' => $prompt
                 ],
                 [
@@ -172,9 +172,14 @@ class ImageService
                     Connection::PARAM_INT,
                     Connection::PARAM_STR
                 ]);
+            // Commit transaction
+            #$connection->commit();
             return (int)$connection->lastInsertId();
-        } catch (Exception $exception) {
-            $connection->rollBack();
+        } catch (\Exception $exception) {
+            // Check if a transaction is still active before attempting rollback
+            if ($connection->isTransactionActive()) {
+                $connection->rollBack();
+            }
             throw $exception;
         }
     }
@@ -206,7 +211,11 @@ class ImageService
                 ]
             );
             //$query = $query->getSQL();
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
+            // Check if a transaction is still active before attempting rollback
+            if ($connection->isTransactionActive()) {
+                $connection->rollBack();
+            }
             throw $exception;
         }
     }
