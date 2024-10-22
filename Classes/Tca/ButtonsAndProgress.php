@@ -19,7 +19,7 @@ class ButtonsAndProgress extends InputTextElement{
 	protected $templateFile ='ButtonsAndProgress.html';
 	protected $view;
 	/**
-	 * Render Function for customized TCA Field
+	 * Render function for customized TCA field
 	 *
 	 * @return array
 	 */
@@ -27,12 +27,12 @@ class ButtonsAndProgress extends InputTextElement{
 	{
 		$result = parent::render();
 
-		// Initialize StandaloneView
+		// Initialize standalone view
 		$this->view = GeneralUtility::makeInstance(StandaloneView::class);
 		
 		$typo3Version = new Typo3Version();
 		if ($typo3Version->getMajorVersion() > 11) {
-			// Load JavaScript via PageRenderer
+			// Load JavaScript via page renderer
 			$this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
 			$this->pageRenderer->loadJavaScriptModule('@vendor/sf_dalleimages/buttons.js');
 		} else {
