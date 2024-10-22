@@ -4,11 +4,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
 
 export default {
   // Define the entry points of our application (can be multiple for different sections of a website)
@@ -104,5 +104,7 @@ export default {
       filename: 'StyleSheets/[name].css',
       chunkFilename: '[id].css',
     }),
+
+    new FixStyleOnlyEntriesPlugin(),
   ],
 };
