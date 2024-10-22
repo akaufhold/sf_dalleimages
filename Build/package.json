@@ -29,13 +29,14 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "dotenv-webpack": "^8.0.1",
-    "eslint": "^8.54.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-n": "^16.3.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-webpack-plugin": "^4.0.1",
+    "eslint": "^8.23.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-webpack-plugin": "4.2.0",
     "fast-glob": "^3.3.2",
+    "micromatch": "4.0.8",
     "mini-css-extract-plugin": "^2.7.6",
     "node-gyp": "10.0.1",
     "node-libcurl": "^4",
@@ -59,9 +60,9 @@
     "stylelint-scss": "^5.3.1",
     "stylelint-webpack-plugin": "^4.1.1",
     "ua-parser-js": "^1.0.37",
-    "webpack": "^5.89.0",
+    "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
-    "webpack-shell-plugin-next": "^2.3.1"
+    "webpack-shell-plugin-next": "^2.3.2"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.5.0"
 }
