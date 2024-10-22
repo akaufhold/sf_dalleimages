@@ -43,16 +43,18 @@ DocumentService.ready().then(() => {
     new RegularEvent('click', async function (e) {
       getFormElement(false, 'name', 'prompt', 'description').value = getFormElement(false, 'data-formengine-input-name', 'prompt', 'description').value = await finalPrompt(prompt)
     }).bindTo(generatePromptButton[0])
+
     /* process ajax request when click on "Get Image from Dalle" button */
     new RegularEvent('click', async function (e) {
       const model = getTargetElement('model').value
       const size = getTargetElement('size').value
       const quality = getTargetElement('quality').value
       const amount = getTargetElement('amount').value
+      const prompt = getTargetElement('description').value
       progressbarInstance.setPbStatus('progress')
 
       new AjaxRequest(TYPO3.settings.ajaxUrls.sf_dalleimages_getDalleImage)
-        .withQueryArguments({input: await finalPrompt(prompt), model, size, quality, amount, uid: getCurrentContentUid()})
+        .withQueryArguments({input: prompt, model, size, quality, amount, uid: getCurrentContentUid()})
         .get()
         .then(async function (response) {
           const resolved = await response.resolve()
