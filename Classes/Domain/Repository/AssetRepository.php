@@ -27,10 +27,12 @@ class AssetRepository extends FileRepository
       if (!is_array($uidList)) {
           throw new \InvalidArgumentException('The UID list has to be an array. UID list given: "' . $uidList . '"', 1316779798);
       }
+
       $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($this->table);
       if ($this->getEnvironmentMode() === 'FE') {
           $queryBuilder->setRestrictions(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
       }
+      
       $results = $queryBuilder
           ->select('*')
           ->from($this->table)
@@ -40,9 +42,11 @@ class AssetRepository extends FileRepository
           ->orderBy('creation_date','DESC')
           ->executeQuery()
           ->fetchAll();
+
       if (!is_array($results)) {
           throw new \RuntimeException('Could not find rows with one of the UIDs "' . $uid . '" in table "' . $this->table . '"', 1314354065);
       }
+
       return $results;
     }
 }
