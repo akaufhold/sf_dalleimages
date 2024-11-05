@@ -143,9 +143,14 @@
 	padding: 0 2px;
 	transition: .5s all;
 
+		&-wrap {
+			display: inline-flex;
+			margin: 0 8px;
+			position: relative;
+		}
+
 		&-image {
 			height: auto;
-			margin: 0 8px;
 			max-width: 210px;
 			transition: .2s all;
 
@@ -155,6 +160,15 @@
 					transform: scale(1.2);
 				}
 			}
+		}
+
+		&-header-controls {
+			background: $headerBackground;
+			bottom: 0;
+			height: 30px;
+			opacity: .7;
+			position: absolute;
+			width: 100%;
 		}
 	}
 

@@ -8,6 +8,7 @@
 	class="carousel carousel-dark dalle-preview slide{f:if(condition: '{isSliding}', then: ' px-5', else: '')}" 
 	data-bs-ride="carousel" 
 	data-bs-wrap="false">
+
 		<f:if condition="{fileReferences}">
 
 			<f:then>
@@ -16,15 +17,24 @@
 					<div class="carousel-inner row">
 						<f:for each="{fileReferences}" as="fileReference" iteration="iterator">
 							<f:variable name="itemOverflow">{iterator.index % 5}</f:variable>
-			
+
 							<f:if condition="{itemOverflow} === 0">
 									<div class="dalle-preview-item carousel-item {f:if(condition: '{iterator.isFirst}', then: ' active', else: '')} {f:if(condition: '{isSliding}', then: ' py-4', else: '')}">
 							</f:if>
 			
 							<f:if condition="{fileReference.publicUrl}">
 								<f:then>
+									<div class="dalle-preview-item-wrap">
 										<f:variable name="imageUrl" value="{fileReference.publicUrl}" />
 										<img class="dalle-preview-item-image {f:if(condition: '{isSliding}', then: ' zoom p-2', else: '')}" src="{imageUrl}" alt="" />
+									
+										<f:if condition="{fileReference.controlHtml}">
+											<div class="dalle-preview-item-header-controls">
+												<f:transform.html>{fileReference.controlHtml}</f:transform.html>
+											</div>
+										</f:if>
+
+									</div>
 								</f:then>
 							</f:if>
 			
