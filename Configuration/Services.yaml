@@ -21,4 +21,5 @@ services:
     arguments:
       $nodeFactory: '@TYPO3\CMS\Backend\Form\NodeFactory'
       $data: []
+      $eventDispatcher: '@Psr\EventDispatcher\EventDispatcherInterface'
     

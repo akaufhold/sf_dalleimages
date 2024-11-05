@@ -159,7 +159,7 @@ class ImageService
                     'tstamp' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'crdate' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'alternative' => $alternative,
-                    'title' => $prompt,
+                    //'title' => $prompt,
                     'tx_dalleimage_prompt' => $prompt
                 ],
                 [

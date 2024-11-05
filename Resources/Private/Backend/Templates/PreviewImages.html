@@ -17,7 +17,7 @@
 					<div class="carousel-inner row">
 						<f:for each="{fileReferences}" as="fileReference" iteration="iterator">
 							<f:variable name="itemOverflow">{iterator.index % 5}</f:variable>
-
+							
 							<f:if condition="{itemOverflow} === 0">
 									<div class="dalle-preview-item carousel-item {f:if(condition: '{iterator.isFirst}', then: ' active', else: '')} {f:if(condition: '{isSliding}', then: ' py-4', else: '')}">
 							</f:if>
