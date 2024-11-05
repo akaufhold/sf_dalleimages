@@ -165,10 +165,14 @@
 		&-header-controls {
 			background: $headerBackground;
 			bottom: 0;
-			height: 30px;
+			height: 35px;
 			opacity: .7;
 			position: absolute;
 			width: 100%;
+
+			button[data-action^="sort"] {
+				display: none;
+			}
 		}
 	}
 
