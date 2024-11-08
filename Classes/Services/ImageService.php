@@ -18,7 +18,7 @@ use TYPO3\CMS\Core\Resource\FileRepository;
 
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-
+use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\Log\LogLevel;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -234,8 +234,9 @@ class ImageService
         $databaseConnection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('sys_file_reference');
 
         $queryBuilder = $databaseConnection->createQueryBuilder();
+        $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
         $queryBuilder
-            ->select('uid_local')
+            ->select('uid','uid_local','hidden')
             ->from('sys_file_reference')
             ->where(
                 $queryBuilder->expr()->eq('tablenames', $queryBuilder->createNamedParameter($table)),
@@ -249,7 +250,11 @@ class ImageService
         $assetUids = $statement->fetchAll();
 
         $assetUidsFlat = array_map( function($n) {
-            return $n['uid_local'];
+            return [
+                'reference_uid' => $n['uid'],
+                'file_uid' => $n['uid_local'],
+                'hidden' => $n['hidden']
+            ];
         }, $assetUids);
 
         return $assetUidsFlat ? $assetUidsFlat : null;
