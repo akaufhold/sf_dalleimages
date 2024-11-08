@@ -132,11 +132,13 @@ class ImageService
     }
 
     /**
-     * Add user image to sys_file_reference
+     * Add user image to sys_file_reference and return id
      *
      * @param string $table
      * @param integer $uid
      * @param integer $contentUid
+     * @param string $alternative
+     * @param string $prompt
      * @param string $fieldname
      * @throws Exception
      * @throws AspectNotFoundException
@@ -158,7 +160,7 @@ class ImageService
                     'fieldname' => $fieldname,
                     'tstamp' => $context->getPropertyFromAspect('date', 'timestamp'),
                     'crdate' => $context->getPropertyFromAspect('date', 'timestamp'),
-                    'alternative' => $alternative,
+                    //'alternative' => $alternative,
                     //'title' => $prompt,
                     'tx_dalleimage_prompt' => $prompt
                 ],
