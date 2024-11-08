@@ -4,71 +4,97 @@
 	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
 	data-namespace-typo3-fluid="true">
 
-<div id="carouselPreview" 
-	class="carousel carousel-dark dalle-preview slide{f:if(condition: '{isSliding}', then: ' px-5', else: '')}" 
-	data-bs-ride="carousel" 
-	data-bs-wrap="false">
+	<fieldset class="form-section">
+		<div class="form-group t3js-formengine-validation-marker t3js-formengine-palette-field">
+			<label class="form-label t3js-formengine-label">
+				Media elements <code>[assets]</code>
+			</label>
 
-		<f:if condition="{fileReferences}">
+			<typo3-formengine-container-files identifier="data-1-tt_content-26-assets">
 
-			<f:then>
-				<f:spaceless>
+				<div class="form-group t3js-file-controls" 
+					id="data-{data.parentPageRow.uid}-{data.inlineStructure.stable.0.table}-{data.databaseRow.uid}-assets" 
+					data-uid="{data.databaseRow.uid}" 
+					data-local-table="{data.inlineStructure.stable.0.table}" 
+					data-local-field="assets" 
+					data-foreign-table="{data.tableName}" 
+					data-object-group="data-{data.parentPageRow.uid}-{data.inlineStructure.stable.0.table}-{data.databaseRow.uid}-assets-{data.tableName}" 
+					data-form-field="data[{data.inlineStructure.stable.0.table}][{data.databaseRow.uid}][assets]">
 
-					<div class="carousel-inner row">
-						<f:for each="{fileReferences}" as="fileReference" iteration="iterator">
-							<f:variable name="itemOverflow">{iterator.index % 5}</f:variable>
+					<div id="carouselPreview" 
+						class="carousel carousel-dark dalle-preview slide{f:if(condition: '{isSliding}', then: ' px-5', else: '')}" 
+						data-bs-ride="carousel" 
+						data-bs-wrap="false">
+
+						<f:if condition="{fileReferences}">
+
+							<f:then>
+								<f:spaceless>
+
+									<div id="data-{data.parentPageRow.uid}-{data.inlineStructure.stable.0.table}-{data.databaseRow.uid}-assets_records" class="carousel-inner row panel-group panel-hover" data-title="Media elements">
+
+										<f:for each="{fileReferences}" as="fileReference" iteration="iterator">
+											<f:variable name="itemOverflow">{iterator.index % 5}</f:variable>
+											
+											<f:if condition="{itemOverflow} === 0">
+													<div class="dalle-preview-item carousel-item {f:if(condition: '{iterator.isFirst}', then: ' active', else: '')} {f:if(condition: '{isSliding}', then: ' py-4', else: '')}">
+											</f:if>
 							
-							<f:if condition="{itemOverflow} === 0">
-									<div class="dalle-preview-item carousel-item {f:if(condition: '{iterator.isFirst}', then: ' active', else: '')} {f:if(condition: '{isSliding}', then: ' py-4', else: '')}">
-							</f:if>
-			
-							<f:if condition="{fileReference.publicUrl}">
-								<f:then>
-									<div class="dalle-preview-item-wrap">
-										<f:variable name="imageUrl" value="{fileReference.publicUrl}" />
-										<img class="dalle-preview-item-image {f:if(condition: '{isSliding}', then: ' zoom p-2', else: '')}" src="{imageUrl}" alt="" />
-									
-										<f:if condition="{fileReference.controlHtml}">
-											<div class="dalle-preview-item-header-controls">
-												<f:transform.html>{fileReference.controlHtml}</f:transform.html>
-											</div>
-										</f:if>
+											<f:if condition="{fileReference.publicUrl}">
+												<f:then>
+													<div class="dalle-preview-item-wrap {f:if(condition: '{fileReference.hidden}', then: 't3-form-field-container-inline-hidden', else: '')}">
+														<f:variable name="imageUrl" value="{fileReference.publicUrl}" />
+															<!--img class="dalle-preview-item-image {f:if(condition: '{isSliding}', then: ' zoom p-2', else: '')}" src="{imageUrl}" alt="" /-->
 
+															<div class="dalle-preview-item-image">
+
+																<f:if condition="{fileReference.controlHtml}">
+																	<f:transform.html>{fileReference.controlHtml}</f:transform.html>
+																</f:if>
+
+															</div>
+
+														</div>
+
+												</f:then>
+											</f:if>
+							
+											<f:if condition="{itemOverflow} === 4 || {iterator.isLast}">
+													</div>
+											</f:if>
+										</f:for>
 									</div>
-								</f:then>
-							</f:if>
-			
-							<f:if condition="{itemOverflow} === 4 || {iterator.isLast}">
-									</div>
-							</f:if>
-						</f:for>
+								
+									<f:if condition="{isSliding}">
+
+											<a class="carousel-control-prev" role="button" data-bs-target="#carouselPreview" data-bs-slide="prev">
+													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+													<span class="visually-hidden">Previous</span>
+											</a>
+
+											<a class="carousel-control-next" role="button" data-bs-target="#carouselPreview" data-bs-slide="next">
+													<span class="carousel-control-next-icon" aria-hidden="true"></span>
+													<span class="visually-hidden">Next</span>
+											</a>
+											
+									</f:if>
+
+								</f:spaceless>
+							</f:then>
+
+							<f:else>
+
+								<div class="alert alert-secondary w-25 p-3">
+									<f:translate key="LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_be.xlf:template.previewimages.noimage" />			
+								</div>
+
+							</f:else>
+
+						</f:if>
+						
 					</div>
-				
-					<f:if condition="{isSliding}">
-
-							<a class="carousel-control-prev" role="button" data-bs-target="#carouselPreview" data-bs-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-							</a>
-
-							<a class="carousel-control-next" role="button" data-bs-target="#carouselPreview" data-bs-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-							</a>
-							
-					</f:if>
-
-				</f:spaceless>
-			</f:then>
-
-			<f:else>
-
-				<div class="alert alert-secondary w-25 p-3">
-					<f:translate key="LLL:EXT:sf_dalleimages/Resources/Private/Language/locallang_be.xlf:template.previewimages.noimage" />			
 				</div>
 
-			</f:else>
-
-		</f:if>
-	
-</div>
+			</typo3-formengine-container-files>
+		</div>
+	</fieldset>
