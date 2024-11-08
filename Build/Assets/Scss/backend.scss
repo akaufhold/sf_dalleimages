@@ -139,6 +139,12 @@
   overflow:hidden;
   scroll-behavior: smooth;
 
+	.panel-group {
+		border: none;
+		box-shadow: none;
+		flex-flow: unset;
+	}
+
 	&-item {
 	padding: 0 2px;
 	transition: .5s all;
@@ -151,27 +157,37 @@
 
 		&-image {
 			height: auto;
-			max-width: 210px;
+			opacity: .85;
 			transition: .2s all;
+
+			& div {
+				--panel-header-padding-y: 4px;
+				background-color: transparent;
+				padding-inline-end:0;
+			}
+
+			> .panel {
+				border: none;
+				box-shadow: none;
+
+				.form-irre-header-cell {
+					bottom: 0;
+					display: flex;
+					justify-content: space-between;
+					position: absolute;
+					width: 100%;
+				}
+			}
+
+			button[data-action^="sort"] {
+				display: none;
+			}
 
 			&.zoom {
 				&:hover {
 					margin: 0 30px;
 					transform: scale(1.2);
 				}
-			}
-		}
-
-		&-header-controls {
-			background: $headerBackground;
-			bottom: 0;
-			height: 35px;
-			opacity: .7;
-			position: absolute;
-			width: 100%;
-
-			button[data-action^="sort"] {
-				display: none;
 			}
 		}
 	}
