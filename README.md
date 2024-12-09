@@ -12,7 +12,7 @@ Be sure to not use any stylistics, artworks or artists presets that can cause co
 
 ## Installation
 
-- require stackfactory/sf_dalleimages in when running TYPO3 in composer mode
+- tba (require stackfactory/sf_dalleimages in when running TYPO3 in composer mode)
 - or install with extension manager
 - clear caches
 
