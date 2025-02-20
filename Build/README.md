@@ -13,12 +13,11 @@ npm i / npm ci (npm Version 6 or higher)
 ### Building files
 
 ```bash
-# Currently webpack build has 4 default scripts
+# Currently webpack build has 3 default scripts
 # 
-# "dev-server": "encore dev-server"
-# "dev": "encore dev"
-# "watch": "encore dev --watch"
-# "build": "encore production"
+# "build": "webpack --config webpack.prod.js --mode production",
+# "dev": "webpack --config webpack.dev.js --mode development",
+# "watch": "webpack --config webpack.dev.js --mode development --watch",
 #
 # Production build has no sourcemapping for displaying all scss-files into dev-tools
 
